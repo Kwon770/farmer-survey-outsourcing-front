@@ -1,6 +1,6 @@
 export default {
-    bodyColor: "#F1F3F4",
-    highlightColor: "#2ecc71",
+    bodyColor: "#eef5ff",
+    highlightColor: "#2980b9",
     backgroundColor: "#e8faf0",
     fontHighlightColor: "#3498db"
 }
