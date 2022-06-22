@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import Background from "../components/Background";
 import SmallQuestionBlock from "../components/SmallQuestionBlock";
 
 const Sector1 = () => {
@@ -54,11 +55,6 @@ const Sector1 = () => {
         </Background>
     )
 }
-
-const Background = styled.div`
-  width: ${(props) => props.theme.blockWidth};
-  padding: 60px 0px;
-`;
 
 const TextBlock = styled.div`
   width: 100%;
