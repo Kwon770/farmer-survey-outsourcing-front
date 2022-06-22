@@ -1,20 +1,20 @@
 import React, {useEffect, useState} from "react";
 import styled from "styled-components";
+import { useNavigate } from "react-router-dom";
 import Background from "../components/Background";
 import SmallQuestionBlock from "../components/SmallQuestionBlock";
 import {
-    Alert,
-    Button,
     Checkbox,
     FormControlLabel,
     MenuItem,
     Radio,
-    Select, Slider, Snackbar, Stack, TextField,
+    Select, TextField,
 } from "@mui/material";
 import CenterBox from "../components/CenterBox";
 import SectorFooter from "../components/SectorFooter";
 
 const Sector1 = () => {
+    const navigate = useNavigate();
     const [alertOpen, setAlertOpen] = useState(false);
     const [s1b1, setS1b1] = useState('');
     const [s1b2, setS1b2] = useState('');
@@ -170,6 +170,7 @@ const Sector1 = () => {
         }
 
         localStorage.setItem('sector1', JSON.stringify(sector1DataObject))
+
     }
 
     const moveNextSector = () => {
@@ -179,7 +180,7 @@ const Sector1 = () => {
         }
 
         saveSector1Data()
-
+        navigate('/2')
     }
 
     return (
