@@ -53,14 +53,15 @@ const Sector1 = () => {
                 1. 응답자 정보
             </TitleBlock>
 
-                    <SmallQuestionBlock title={<div>10) 영농 승계 여부<br/><strong>(부모·친지·지인으로 부터)</strong></div>}
-                                        gridColumnProperty={"repeat(2,1fr)"}
-                                        announcement={<div><em>※ 영농지는 가장 큰 규모의 농지를 기준으로 응답해주세요.</em></div>}
-                                        onChange={handleQ1b1}
-                    >
-                        <FormControlLabel value='1' control={<Radio/>} label='예'/>
-                        <FormControlLabel value='2' control={<Radio/>} label='아니요'/>
-                    </SmallQuestionBlock>
+            <strong><em>(2021년 12월 31일 기준으로 응답 부탁드립니다.)</em></strong>
+            <SmallQuestionBlock title={<div>10) 영농 승계 여부<br/><strong>(부모·친지·지인으로 부터)</strong></div>}
+                                gridColumnProperty={"repeat(2,1fr)"}
+                                announcement={<div><em>※ 영농지는 가장 큰 규모의 농지를 기준으로 응답해주세요.</em></div>}
+                                onChange={handleQ1b1}
+            >
+                <FormControlLabel value='1' control={<Radio/>} label='예'/>
+                <FormControlLabel value='2' control={<Radio/>} label='아니요'/>
+            </SmallQuestionBlock>
         </Background>
     )
 }
@@ -95,6 +96,7 @@ const TitleBlock = styled.div`
   border: 1px solid ${(props) => props.theme.borderShadowColor};
 
   margin-top: 60px;
+  margin-bottom: 40px;
 `
 
 const BigText = styled.div`

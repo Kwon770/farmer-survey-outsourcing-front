@@ -29,7 +29,7 @@ const Block = styled.div`
   border: 1px solid ${(props) => props.theme.borderShadowColor};
   border-radius: ${(props) => props.theme.blockBorder};
 
-  margin-top: ${(props) => props.theme.blockMargin};
+  margin-bottom: ${(props) => props.theme.blockMargin};
 
   display: flex;
   justify-content: space-between;
