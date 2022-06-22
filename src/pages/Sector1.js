@@ -166,7 +166,7 @@ const Sector1 = () => {
             's1b8' : s1b8,
             's1b9' : s1b9,
             's1b10' : s1b10,
-            's1b11' : s1b11data1 + '-' + s1b11data2 + '-' + s1b11data3,
+            's1b11' : s1b11data1 + s1b11data2 + s1b11data3,
         }
 
         localStorage.setItem('sector1', JSON.stringify(sector1DataObject))
@@ -175,20 +175,6 @@ const Sector1 = () => {
     const moveNextSector = () => {
         if (!validateAllWritten()) {
             setAlertOpen(true)
-            const sector1DataObject = {
-                's1b1' : s1b1,
-                's1b2' : s1b2,
-                's1b3' : s1b3,
-                's1b4' : s1b4,
-                's1b5' : s1b5,
-                's1b6' : s1b6,
-                's1b7' : s1b7,
-                's1b8' : s1b8,
-                's1b9' : s1b9,
-                's1b10' : s1b10,
-                's1b11' : s1b11data1 + '-' + s1b11data2 + '-' + s1b11data3,
-            }
-            console.log(sector1DataObject)
             return
         }
 
