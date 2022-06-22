@@ -14,13 +14,13 @@ import CenterBox from "../components/CenterBox";
 import SectorFooter from "../components/SectorFooter";
 
 const Sector1 = () => {
-    const [q1b1, setQ1b1] = useState('');
-    const [q1b2, setQ1b2] = useState('');
-    const [q1b3, setQ1b3] = useState('');
-    const [q1b4, setQ1b4] = useState('');
-    const [q1b5, setQ1b5] = useState('');
-    const [q1b6, setQ1b6] = useState('');
-    const [q1b6Data, setQ1b6Data] = useState([
+    const [s1b1, setS1b1] = useState('');
+    const [s1b2, setS1b2] = useState('');
+    const [s1b3, setS1b3] = useState('');
+    const [s1b4, setS1b4] = useState('');
+    const [s1b5, setS1b5] = useState('');
+    const [s1b6, setS1b6] = useState('');
+    const [s1b6Data, setS1b6Data] = useState([
         false, // 0
         false, // 1
         false,
@@ -29,8 +29,8 @@ const Sector1 = () => {
         false,
         false  // 6
     ]);
-    const [q1b7, setQ1b7] = useState('');
-    const [q1b7Data, setQ1b7Data] = useState([
+    const [s1b7, setS1b7] = useState('');
+    const [s1b7Data, setS1b7Data] = useState([
         false, // 0
         false, // 1
         false,
@@ -43,48 +43,51 @@ const Sector1 = () => {
         false,
         false, // 10
     ]);
-    const [q1b8, setQ1b8] = useState('');
-    const [q1b9, setQ1b9] = useState('');
-    const [q1b10, setQ1b10] = useState('');
-    const [q1b11b1, setQ1b11b1] = useState('');
-    const [q1b11b2, setQ1b11b2] = useState('');
-    const [q1b11b3, setQ1b11b3] = useState('');
+    const [s1b8, setS1b8] = useState('');
+    const [s1b9, setS1b9] = useState('');
+    const [s1b10, setS1b10] = useState('');
+    const [s1b11data1, setS1b11data1] = useState('');
+    const [s1b11data2, setS1b11data2] = useState('');
+    const [s1b11data3, setS1b11data3] = useState('');
 
     useEffect(() => {
-        console.log(q1b10)
-    }, [q1b10])
+        console.log(s1b6)
+    }, [s1b6]);
 
-    const handleQ1b1 = (e) => {
-        setQ1b1(e.target.value);
+
+    const handleS1b1 = (e) => {
+        setS1b1(e.target.value);
     }
-    const handleQ1b2 = (e) => {
-        setQ1b2(e.target.value);
+    const handleS1b2 = (e) => {
+        setS1b2(e.target.value);
     }
-    const handleQ1b3 = (e) => {
-        setQ1b3(e.target.value);
+    const handleS1b3 = (e) => {
+        setS1b3(e.target.value);
     }
-    const handleQ1b4 = (e) => {
-        setQ1b4(e.target.value);
+    const handleS1b4 = (e) => {
+        setS1b4(e.target.value);
     }
-    const handleQ1b5 = (e) => {
-        setQ1b5(e.target.value);
+    const handleS1b5 = (e) => {
+        setS1b5(e.target.value);
     }
-    const handleQ1b6 = (e) => {
-        setQ1b6Data(q1b6Data.map((b, idx) => {
+    const handleS1b6 = (e) => {
+        setS1b6Data(s1b6Data.map((b, idx) => {
             if (idx === parseInt(e.target.name)) {
                 return !b
             } else {
                 return b
             }
         }))
-        setQ1b6(q1b6Data.map((b, idx) => { if (b) return idx}).filter(a => a).toString());
+        setS1b6(s1b6Data.map((b, idx) => {
+            if (b) return idx
+        }).filter(a => a).toString());
     }
-    const handleQ1b7 = (e) => {
+    const handleS1b7 = (e) => {
         // 최대 3개 선택 유효성 확인
         let checking = false;
         let checkedCount = 0;
         let checkable = false;
-        q1b7Data.map((b, idx) => {
+        s1b7Data.map((b, idx) => {
             if (b) checkedCount++
             if (!b && idx === parseInt(e.target.name)) checking = true;
         })
@@ -95,34 +98,75 @@ const Sector1 = () => {
         }
         //
 
-        setQ1b7Data(q1b7Data.map((b, idx) => {
+        setS1b7Data(s1b7Data.map((b, idx) => {
             if (idx === parseInt(e.target.name)) {
                 return !b
             } else {
                 return b
             }
         }))
-        setQ1b7(q1b7Data.map((b, idx) => { if (b) return idx}).filter(a => a).toString());
+        setS1b7(s1b7Data.map((b, idx) => {
+            if (b) return idx
+        }).filter(a => a).toString());
     }
-    const handleQ1b8 = (e) => {
-        setQ1b8(e.target.value);
+    const handleS1b8 = (e) => {
+        setS1b8(e.target.value);
     }
-    const handleQ1b9 = (e) => {
-        setQ1b9(e.target.value);
+    const handleS1b9 = (e) => {
+        setS1b9(e.target.value);
     }
-    const handleQ1b10 = (e) => {
-        setQ1b10(e.target.value);
+    const handleS1b10 = (e) => {
+        setS1b10(e.target.value);
     }
-    const handleQ1b11b1 = (e) => {
-        setQ1b11b1(e.target.value);
+    const handleS1b11data1 = (e) => {
+        setS1b11data1(e.target.value);
     }
-    const handleQ1b11b2 = (e) => {
-        setQ1b11b2(e.target.value);
+    const handleS1b11data2 = (e) => {
+        setS1b11data2(e.target.value);
     }
-    const handleQ1b11b3 = (e) => {
-        setQ1b11b3(e.target.value);
+    const handleS1b11data3 = (e) => {
+        setS1b11data3(e.target.value);
     }
 
+    const validateAllWritten = () => {
+        if (
+            s1b1 === '' ||
+            s1b2 === '' ||
+            s1b3 === '' ||
+            s1b4 === '' ||
+            s1b5 === '' ||
+            s1b6 === '' ||
+            s1b7 === '' ||
+            s1b8 === '' ||
+            s1b9 === '' ||
+            s1b10 === '' ||
+            s1b11data1 === '' ||
+            s1b11data2 === '' ||
+            s1b11data3 === ''
+        ) {
+            return false
+        }
+
+        return true
+    }
+
+    const saveSector1Data = () => {
+        const sector1DataObject = {
+            's1b1' : s1b1,
+            's1b2' : s1b2,
+            's1b3' : s1b3,
+            's1b4' : s1b4,
+            's1b5' : s1b5,
+            's1b6' : s1b6,
+            's1b7' : s1b7,
+            's1b8' : s1b8,
+            's1b9' : s1b9,
+            's1b10' : s1b10,
+            's1b11' : s1b11data1 + '-' + s1b11data2 + '-' + s1b11data3,
+        }
+
+        localStorage.setItem('sector1', JSON.stringify(sector1DataObject))
+    }
 
     return (
         <Background>
@@ -166,7 +210,7 @@ const Sector1 = () => {
             <strong><em>(2021년 12월 31일 기준으로 응답 부탁드립니다.)</em></strong>
             <SmallQuestionBlock title={<div>1) 성별</div>}
                                 gridColumnProperty={"repeat(2,1fr)"}
-                                onChange={handleQ1b1}
+                                onChange={handleS1b1}
             >
                 <FormControlLabel value='1' control={<Radio/>} label='남'/>
                 <FormControlLabel value='2' control={<Radio/>} label='여'/>
@@ -174,9 +218,9 @@ const Sector1 = () => {
 
             <SmallQuestionBlock title={<div>2) 출생연도</div>}
                                 gridColumnProperty={"repeat(2,2fr)"}
-                                onChange={handleQ1b2}
+                                onChange={handleS1b2}
             >
-                <Select value={q1b2} onChange={handleQ1b2}>
+                <Select value={s1b2} onChange={handleS1b2}>
                     <MenuItem value={'1970'}>1970</MenuItem>
                     <MenuItem value={'1971'}>1971</MenuItem>
                     <MenuItem value={'1972'}>1972</MenuItem>
@@ -218,13 +262,13 @@ const Sector1 = () => {
 
             <SmallQuestionBlock title={<div>3) 거주지 주소</div>}
                                 gridColumnProperty={"repeat(2,1fr)"}
-                                onChange={handleQ1b3}
+                                onChange={handleS1b3}
             >
             </SmallQuestionBlock>
 
             <SmallQuestionBlock title={<div>4) 영농지 위치</div>}
                                 gridColumnProperty={"repeat(3,1fr)"}
-                                onChange={handleQ1b4}
+                                onChange={handleS1b4}
                                 announcement={<em>※ 영농지는 가장 큰 규모의 농지를 기준으로 응답해주세요.</em>}
             >
                 <FormControlLabel value='1' control={<Radio/>} label='거주지 인근(도보 10분이내)'/>
@@ -239,7 +283,7 @@ const Sector1 = () => {
 
             <SmallQuestionBlock title={<div>5) 영농 시작연도</div>}
                                 gridColumnProperty={"repeat(1,1fr)"}
-                                onChange={handleQ1b5}
+                                onChange={handleS1b5}
             >
                 <FormControlLabel value='1' control={<Radio/>} label='년에 농사 시작'/>
                 <FormControlLabel value='2' control={<Radio/>} label='아직 농사지은 경험이 없음'/>
@@ -247,35 +291,51 @@ const Sector1 = () => {
 
             <SmallQuestionBlock title={<div>6) 영농형태<br/><strong>(중복답변 가능)</strong></div>}
                                 gridColumnProperty={"repeat(3,1fr)"}
-                                onChange={handleQ1b6}
+                                onChange={handleS1b6}
             >
-                <FormControlLabel control={<Checkbox name='1' checked={q1b6Data[1]} onChange={handleQ1b6}/>} label='논 (벼)'/>
-                <FormControlLabel control={<Checkbox name='2' checked={q1b6Data[2]} onChange={handleQ1b6}/>} label='논 (타작물)'/>
-                <FormControlLabel control={<Checkbox name='3' checked={q1b6Data[3]} onChange={handleQ1b6}/>} label='시설원예'/>
-                <FormControlLabel control={<Checkbox name='4' checked={q1b6Data[4]} onChange={handleQ1b6}/>} label='밭 (노지)'/>
-                <FormControlLabel control={<Checkbox name='5' checked={q1b6Data[5]} onChange={handleQ1b6}/>} label='괴수'/>
-                <FormControlLabel control={<Checkbox name='6' checked={q1b6Data[6]} onChange={handleQ1b6}/>} label='축산'/>
+                <FormControlLabel control={<Checkbox name='1' checked={s1b6Data[1]} onChange={handleS1b6}/>}
+                                  label='논 (벼)'/>
+                <FormControlLabel control={<Checkbox name='2' checked={s1b6Data[2]} onChange={handleS1b6}/>}
+                                  label='논 (타작물)'/>
+                <FormControlLabel control={<Checkbox name='3' checked={s1b6Data[3]} onChange={handleS1b6}/>}
+                                  label='시설원예'/>
+                <FormControlLabel control={<Checkbox name='4' checked={s1b6Data[4]} onChange={handleS1b6}/>}
+                                  label='밭 (노지)'/>
+                <FormControlLabel control={<Checkbox name='5' checked={s1b6Data[5]} onChange={handleS1b6}/>}
+                                  label='괴수'/>
+                <FormControlLabel control={<Checkbox name='6' checked={s1b6Data[6]} onChange={handleS1b6}/>}
+                                  label='축산'/>
             </SmallQuestionBlock>
 
             <SmallQuestionBlock title={<div>7) 주요 생산 품목 <strong>(최대 3개 선택 가능)</strong></div>}
                                 gridColumnProperty={"repeat(5,1fr)"}
-                                onChange={handleQ1b7}
+                                onChange={handleS1b7}
             >
-                <FormControlLabel control={<Checkbox name='1' checked={q1b7Data[1]} onChange={handleQ1b7}/>} label='미곡'/>
-                <FormControlLabel control={<Checkbox name='2' checked={q1b7Data[2]} onChange={handleQ1b7}/>} label='맥류'/>
-                <FormControlLabel control={<Checkbox name='3' checked={q1b7Data[3]} onChange={handleQ1b7}/>} label='잡곡'/>
-                <FormControlLabel control={<Checkbox name='4' checked={q1b7Data[4]} onChange={handleQ1b7}/>} label='두류'/>
-                <FormControlLabel control={<Checkbox name='5' checked={q1b7Data[5]} onChange={handleQ1b7}/>} label='서류'/>
-                <FormControlLabel control={<Checkbox name='6' checked={q1b7Data[6]} onChange={handleQ1b7}/>} label='채소'/>
-                <FormControlLabel control={<Checkbox name='7' checked={q1b7Data[7]} onChange={handleQ1b7}/>} label='과수'/>
-                <FormControlLabel control={<Checkbox name='8' checked={q1b7Data[8]} onChange={handleQ1b7}/>} label='화훼'/>
-                <FormControlLabel control={<Checkbox name='9' checked={q1b7Data[9]} onChange={handleQ1b7}/>} label='특용작물'/>
-                <FormControlLabel control={<Checkbox name='10' checked={q1b7Data[10]} onChange={handleQ1b7}/>} label='축산'/>
+                <FormControlLabel control={<Checkbox name='1' checked={s1b7Data[1]} onChange={handleS1b7}/>}
+                                  label='미곡'/>
+                <FormControlLabel control={<Checkbox name='2' checked={s1b7Data[2]} onChange={handleS1b7}/>}
+                                  label='맥류'/>
+                <FormControlLabel control={<Checkbox name='3' checked={s1b7Data[3]} onChange={handleS1b7}/>}
+                                  label='잡곡'/>
+                <FormControlLabel control={<Checkbox name='4' checked={s1b7Data[4]} onChange={handleS1b7}/>}
+                                  label='두류'/>
+                <FormControlLabel control={<Checkbox name='5' checked={s1b7Data[5]} onChange={handleS1b7}/>}
+                                  label='서류'/>
+                <FormControlLabel control={<Checkbox name='6' checked={s1b7Data[6]} onChange={handleS1b7}/>}
+                                  label='채소'/>
+                <FormControlLabel control={<Checkbox name='7' checked={s1b7Data[7]} onChange={handleS1b7}/>}
+                                  label='과수'/>
+                <FormControlLabel control={<Checkbox name='8' checked={s1b7Data[8]} onChange={handleS1b7}/>}
+                                  label='화훼'/>
+                <FormControlLabel control={<Checkbox name='9' checked={s1b7Data[9]} onChange={handleS1b7}/>}
+                                  label='특용작물'/>
+                <FormControlLabel control={<Checkbox name='10' checked={s1b7Data[10]} onChange={handleS1b7}/>}
+                                  label='축산'/>
             </SmallQuestionBlock>
 
             <SmallQuestionBlock title={<div>8) 농가소득 수준 <strong>(연소득 기준)</strong></div>}
                                 gridColumnProperty={"repeat(4,1fr)"}
-                                onChange={handleQ1b8}
+                                onChange={handleS1b8}
             >
                 <FormControlLabel value='1' control={<Radio/>} label='1천만원 미안'/>
                 <FormControlLabel value='2' control={<Radio/>} label='1-2천만원'/>
@@ -293,7 +353,7 @@ const Sector1 = () => {
 
             <SmallQuestionBlock title={<div>9) 농가형태</div>}
                                 gridColumnProperty={"repeat(1,1fr)"}
-                                onChange={handleQ1b9}
+                                onChange={handleS1b9}
             >
                 <FormControlLabel value='1' control={<Radio/>} label='전업농가 (영리목적으로 30일 이상 농사 이외의 일에 종사한 가구원 없음)'/>
                 <FormControlLabel value='2' control={<Radio/>} label='1종겸업농가 (농업수입이 농외소득보다 많음)'/>
@@ -302,7 +362,7 @@ const Sector1 = () => {
 
             <SmallQuestionBlock title={<div>10) 영농 승계 여부<br/><strong>(부모·친지·지인으로 부터)</strong></div>}
                                 gridColumnProperty={"repeat(2,1fr)"}
-                                onChange={handleQ1b10}
+                                onChange={handleS1b10}
             >
                 <FormControlLabel value='1' control={<Radio/>} label='예'/>
                 <FormControlLabel value='2' control={<Radio/>} label='아니요'/>
@@ -311,14 +371,14 @@ const Sector1 = () => {
             <SmallQuestionBlock title={<div>11) 연락처(휴대폰)</div>}
                                 gridColumnProperty={"repeat(5,1fr)"}
             >
-                <TextField type='number' value={q1b11b1} onChange={handleQ1b11b1} />
+                <TextField type='number' value={s1b11data1} onChange={handleS1b11data1}/>
                 <CenterBox size={20}>-</CenterBox>
-                <TextField type='number' value={q1b11b2} onChange={handleQ1b11b2} />
+                <TextField type='number' value={s1b11data2} onChange={handleS1b11data2}/>
                 <CenterBox size={20}>-</CenterBox>
-                <TextField type='number' value={q1b11b3} onChange={handleQ1b11b3} />
+                <TextField type='number' value={s1b11data3} onChange={handleS1b11data3}/>
             </SmallQuestionBlock>
 
-            <SectorFooter />
+            <SectorFooter/>
         </Background>
     )
 }
