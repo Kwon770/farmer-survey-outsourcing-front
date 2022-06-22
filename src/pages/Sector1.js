@@ -46,7 +46,9 @@ const Sector1 = () => {
     const [q1b8, setQ1b8] = useState('');
     const [q1b9, setQ1b9] = useState('');
     const [q1b10, setQ1b10] = useState('');
-    const [q1b11, setQ1b11] = useState('');
+    const [q1b11b1, setQ1b11b1] = useState('');
+    const [q1b11b2, setQ1b11b2] = useState('');
+    const [q1b11b3, setQ1b11b3] = useState('');
 
     useEffect(() => {
         console.log(q1b10)
@@ -111,8 +113,14 @@ const Sector1 = () => {
     const handleQ1b10 = (e) => {
         setQ1b10(e.target.value);
     }
-    const handleQ1b11 = (e) => {
-        setQ1b11(e.target.value);
+    const handleQ1b11b1 = (e) => {
+        setQ1b11b1(e.target.value);
+    }
+    const handleQ1b11b2 = (e) => {
+        setQ1b11b2(e.target.value);
+    }
+    const handleQ1b11b3 = (e) => {
+        setQ1b11b3(e.target.value);
     }
 
 
@@ -302,13 +310,12 @@ const Sector1 = () => {
 
             <SmallQuestionBlock title={<div>11) 연락처(휴대폰)</div>}
                                 gridColumnProperty={"repeat(5,1fr)"}
-                                onChange={handleQ1b1}
             >
-                <TextField type='number' maxlength='2' />
+                <TextField type='number' value={q1b11b1} onChange={handleQ1b11b1} />
                 <CenterBox size={20}>-</CenterBox>
-                <TextField type='number' maxlength='2' />
+                <TextField type='number' value={q1b11b2} onChange={handleQ1b11b2} />
                 <CenterBox size={20}>-</CenterBox>
-                <TextField type='number' maxlength='2' />
+                <TextField type='number' value={q1b11b3} onChange={handleQ1b11b3} />
             </SmallQuestionBlock>
 
             <SectorFooter />

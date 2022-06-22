@@ -2,12 +2,12 @@ import React from "react";
 import styled from "styled-components";
 import {Button, Step, StepLabel, Stepper} from "@mui/material";
 
-const SectorFooter = ({sector}) => {
+const SectorFooter = ({sector, movePreviousSector, moveNextSector}) => {
 
     const steps = ['응답자 정보', '농지 수요', '스마트팜 수요', '저활용 농지 수요', "농업 스타트업단지 조성사업 참여 의향"]
     return (
         <Footer>
-            <Button variant='text'>이전</Button>
+            <Button variant='text' onClick={movePreviousSector}>이전</Button>
 
             <Stepper activeStep={sector} alternativeLabel>
                 {steps.map((label) => (
@@ -17,7 +17,7 @@ const SectorFooter = ({sector}) => {
                 ))}
             </Stepper>
 
-            <Button variant='text'>다음</Button>
+            <Button variant='text' onClick={moveNextSector}>다음</Button>
         </Footer>
     )
 }
