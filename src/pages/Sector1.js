@@ -3,17 +3,19 @@ import styled from "styled-components";
 import Background from "../components/Background";
 import SmallQuestionBlock from "../components/SmallQuestionBlock";
 import {
+    Alert,
     Button,
     Checkbox,
     FormControlLabel,
     MenuItem,
     Radio,
-    Select, Slider, Stack, TextField,
+    Select, Slider, Snackbar, Stack, TextField,
 } from "@mui/material";
 import CenterBox from "../components/CenterBox";
 import SectorFooter from "../components/SectorFooter";
 
 const Sector1 = () => {
+    const [alertOpen, setAlertOpen] = useState(false);
     const [s1b1, setS1b1] = useState('');
     const [s1b2, setS1b2] = useState('');
     const [s1b3, setS1b3] = useState('');
@@ -50,10 +52,18 @@ const Sector1 = () => {
     const [s1b11data2, setS1b11data2] = useState('');
     const [s1b11data3, setS1b11data3] = useState('');
 
-    useEffect(() => {
-        console.log(s1b6)
-    }, [s1b6]);
 
+    useEffect(() => {
+        setS1b6(s1b6Data.map((b, idx) => {
+            if (b) return idx
+        }).filter(a => a).toString());
+    }, [s1b6Data]);
+
+    useEffect(() => {
+        setS1b7(s1b7Data.map((b, idx) => {
+            if (b) return idx
+        }).filter(a => a).toString());
+    }, [s1b7Data]);
 
     const handleS1b1 = (e) => {
         setS1b1(e.target.value);
@@ -78,9 +88,6 @@ const Sector1 = () => {
                 return b
             }
         }))
-        setS1b6(s1b6Data.map((b, idx) => {
-            if (b) return idx
-        }).filter(a => a).toString());
     }
     const handleS1b7 = (e) => {
         // 최대 3개 선택 유효성 확인
@@ -105,9 +112,6 @@ const Sector1 = () => {
                 return b
             }
         }))
-        setS1b7(s1b7Data.map((b, idx) => {
-            if (b) return idx
-        }).filter(a => a).toString());
     }
     const handleS1b8 = (e) => {
         setS1b8(e.target.value);
@@ -168,6 +172,30 @@ const Sector1 = () => {
         localStorage.setItem('sector1', JSON.stringify(sector1DataObject))
     }
 
+    const moveNextSector = () => {
+        if (!validateAllWritten()) {
+            setAlertOpen(true)
+            const sector1DataObject = {
+                's1b1' : s1b1,
+                's1b2' : s1b2,
+                's1b3' : s1b3,
+                's1b4' : s1b4,
+                's1b5' : s1b5,
+                's1b6' : s1b6,
+                's1b7' : s1b7,
+                's1b8' : s1b8,
+                's1b9' : s1b9,
+                's1b10' : s1b10,
+                's1b11' : s1b11data1 + '-' + s1b11data2 + '-' + s1b11data3,
+            }
+            console.log(sector1DataObject)
+            return
+        }
+
+        saveSector1Data()
+
+    }
+
     return (
         <Background>
             <TextBlock>
@@ -218,7 +246,6 @@ const Sector1 = () => {
 
             <SmallQuestionBlock title={<div>2) 출생연도</div>}
                                 gridColumnProperty={"repeat(2,2fr)"}
-                                onChange={handleS1b2}
             >
                 <Select value={s1b2} onChange={handleS1b2}>
                     <MenuItem value={'1970'}>1970</MenuItem>
@@ -262,8 +289,10 @@ const Sector1 = () => {
 
             <SmallQuestionBlock title={<div>3) 거주지 주소</div>}
                                 gridColumnProperty={"repeat(2,1fr)"}
-                                onChange={handleS1b3}
             >
+                <Select value={s1b3} onChange={handleS1b3}>
+                    <MenuItem value={'서울특별시'}>서울특별시</MenuItem>
+                </Select>
             </SmallQuestionBlock>
 
             <SmallQuestionBlock title={<div>4) 영농지 위치</div>}
@@ -378,7 +407,7 @@ const Sector1 = () => {
                 <TextField type='number' value={s1b11data3} onChange={handleS1b11data3}/>
             </SmallQuestionBlock>
 
-            <SectorFooter/>
+            <SectorFooter sector={1} moveNextSector={moveNextSector} alertOpen={alertOpen} setAlertOpen={setAlertOpen}/>
         </Background>
     )
 }

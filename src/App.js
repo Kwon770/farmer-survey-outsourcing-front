@@ -3,12 +3,12 @@ import {ThemeProvider, createGlobalStyle} from "styled-components";
 import reset from 'styled-reset';
 import Theme from "./styles/Theme"
 import {BrowserRouter as Router, Routes, Route} from "react-router-dom";
-import Home from "./pages/Sector1";
+import Sector1 from "./pages/Sector1";
 
 const AppRouter = () => (
     <Router>
         <Routes>
-            <Route path="/" element={<Home/>}/>
+            <Route path="/" element={<Sector1/>}/>
         </Routes>
     </Router>
 )
