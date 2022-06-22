@@ -45,7 +45,7 @@ const Title = styled.div`
 
 const Content = styled.div`
   width: 82%;
-  padding: 0px 20px;
+  padding-left: 20px;
 `
 
 const ContentGrid = styled.div`
