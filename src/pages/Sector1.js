@@ -6,13 +6,53 @@ import {FormControl, FormControlLabel, Radio, RadioGroup, useRadioGroup} from "@
 
 const Sector1 = () => {
     const [q1b1, setQ1b1] = useState(undefined);
+    const [q1b2, setQ1b2] = useState(undefined);
+    const [q1b3, setQ1b3] = useState(undefined);
+    const [q1b4, setQ1b4] = useState(undefined);
+    const [q1b5, setQ1b5] = useState(undefined);
+    const [q1b6, setQ1b6] = useState(undefined);
+    const [q1b7, setQ1b7] = useState(undefined);
+    const [q1b8, setQ1b8] = useState(undefined);
+    const [q1b9, setQ1b9] = useState(undefined);
+    const [q1b10, setQ1b10] = useState(undefined);
+    const [q1b11, setQ1b11] = useState(undefined);
 
     useEffect(() => {
-        console.log(q1b1)
-    }, [q1b1])
+        console.log(q1b10)
+    }, [q1b10])
 
     const handleQ1b1 = (e) => {
         setQ1b1(e.target.value);
+    }
+    const handleQ1b2 = (e) => {
+        setQ1b2(e.target.value);
+    }
+    const handleQ1b3 = (e) => {
+        setQ1b3(e.target.value);
+    }
+    const handleQ1b4 = (e) => {
+        setQ1b4(e.target.value);
+    }
+    const handleQ1b5 = (e) => {
+        setQ1b5(e.target.value);
+    }
+    const handleQ1b6 = (e) => {
+        setQ1b6(e.target.value);
+    }
+    const handleQ1b7 = (e) => {
+        setQ1b7(e.target.value);
+    }
+    const handleQ1b8 = (e) => {
+        setQ1b8(e.target.value);
+    }
+    const handleQ1b9 = (e) => {
+        setQ1b9(e.target.value);
+    }
+    const handleQ1b10 = (e) => {
+        setQ1b10(e.target.value);
+    }
+    const handleQ1b11 = (e) => {
+        setQ1b11(e.target.value);
     }
 
     return (
@@ -53,11 +93,19 @@ const Sector1 = () => {
                 1. 응답자 정보
             </TitleBlock>
 
+
             <strong><em>(2021년 12월 31일 기준으로 응답 부탁드립니다.)</em></strong>
+            <SmallQuestionBlock title={<div>1) 성별</div>}
+                                gridColumnProperty={"repeat(2,1fr)"}
+                                onChange={handleQ1b1}
+            >
+                <FormControlLabel value='1' control={<Radio/>} label='남'/>
+                <FormControlLabel value='2' control={<Radio/>} label='여'/>
+            </SmallQuestionBlock>
+
             <SmallQuestionBlock title={<div>10) 영농 승계 여부<br/><strong>(부모·친지·지인으로 부터)</strong></div>}
                                 gridColumnProperty={"repeat(2,1fr)"}
-                                announcement={<div><em>※ 영농지는 가장 큰 규모의 농지를 기준으로 응답해주세요.</em></div>}
-                                onChange={handleQ1b1}
+                                onChange={handleQ1b10}
             >
                 <FormControlLabel value='1' control={<Radio/>} label='예'/>
                 <FormControlLabel value='2' control={<Radio/>} label='아니요'/>

@@ -9,5 +9,5 @@ export default {
     blockWidth: "750px",
     blockBorder: "8px",
     blockMargin: "20px",
-    blockPadding: "30px"
+    blockPadding: "25px"
 }

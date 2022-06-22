@@ -53,7 +53,6 @@ const ContentGrid = styled.div`
   display: grid;
   grid-template-columns: ${(props) => props.gridColumnProperty};
 
-  margin-bottom: 10px;
 `
 
 export default SmallQuestionBlock;
