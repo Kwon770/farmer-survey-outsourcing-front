@@ -59,7 +59,7 @@ const GlobalStyle = createGlobalStyle`
     display: flex;
     flex-direction: column;
     align-items: center;
-    
+
     background-color: ${Theme.bodyColor};
   }
 
@@ -69,7 +69,7 @@ const GlobalStyle = createGlobalStyle`
     -webkit-box-sizing: border-box;
     box-sizing: border-box;
   }
-  
+
   strong {
     color: ${Theme.fontHighlightColor}
   }

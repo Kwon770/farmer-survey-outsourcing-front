@@ -1,9 +1,20 @@
-import React from "react";
+import React, {useEffect, useState} from "react";
 import styled from "styled-components";
 import Background from "../components/Background";
 import SmallQuestionBlock from "../components/SmallQuestionBlock";
+import {FormControl, FormControlLabel, Radio, RadioGroup, useRadioGroup} from "@mui/material";
 
 const Sector1 = () => {
+    const [q1b1, setQ1b1] = useState(undefined);
+
+    useEffect(() => {
+        console.log(q1b1)
+    }, [q1b1])
+
+    const handleQ1b1 = (e) => {
+        setQ1b1(e.target.value);
+    }
+
     return (
         <Background>
             <TextBlock>
@@ -42,16 +53,14 @@ const Sector1 = () => {
                 1. 응답자 정보
             </TitleBlock>
 
-            <SmallQuestionBlock title={<div>8) 영농 승계 여부<br/><strong>(부모·친지·지인으로 부터)</strong></div>}
-                                gridColumnProperty={"repeat(3,1fr)"}
-                                announcement={<div><em>※ 영농지는 가장 큰 규모의 농지를 기준으로 응답해주세요.</em></div>}>
-                <div>1</div>
-                <div>1</div>
-                <div>1</div>
-                <div>1</div>
-                <div>1</div>
-                <div></div>
-            </SmallQuestionBlock>
+                    <SmallQuestionBlock title={<div>10) 영농 승계 여부<br/><strong>(부모·친지·지인으로 부터)</strong></div>}
+                                        gridColumnProperty={"repeat(2,1fr)"}
+                                        announcement={<div><em>※ 영농지는 가장 큰 규모의 농지를 기준으로 응답해주세요.</em></div>}
+                                        onChange={handleQ1b1}
+                    >
+                        <FormControlLabel value='1' control={<Radio/>} label='예'/>
+                        <FormControlLabel value='2' control={<Radio/>} label='아니요'/>
+                    </SmallQuestionBlock>
         </Background>
     )
 }
