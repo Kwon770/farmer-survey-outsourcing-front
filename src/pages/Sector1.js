@@ -2,7 +2,6 @@ import React, {useEffect, useState} from "react";
 import styled from "styled-components";
 import { useNavigate } from "react-router-dom";
 import Background from "../components/Background";
-import SmallQuestionBlock from "../components/SmallQuestionBlock";
 import {
     Checkbox,
     FormControlLabel,
@@ -10,7 +9,9 @@ import {
     Radio,
     Select, TextField,
 } from "@mui/material";
+import SmallQuestionBlock from "../components/SmallQuestionBlock";
 import CenterBox from "../components/CenterBox";
+import TitleBlock from "../components/TitleBlock";
 import SectorFooter from "../components/SectorFooter";
 
 const Sector1 = () => {
@@ -51,20 +52,6 @@ const Sector1 = () => {
     const [s1b11data1, setS1b11data1] = useState('');
     const [s1b11data2, setS1b11data2] = useState('');
     const [s1b11data3, setS1b11data3] = useState('');
-
-
-    useEffect(() => {
-        setS1b6(s1b6Data.map((b, idx) => {
-            if (b) return idx
-        }).filter(a => a).toString());
-    }, [s1b6Data]);
-
-    useEffect(() => {
-        setS1b7(s1b7Data.map((b, idx) => {
-            if (b) return idx
-        }).filter(a => a).toString());
-    }, [s1b7Data]);
-
     const handleS1b1 = (e) => {
         setS1b1(e.target.value);
     }
@@ -80,6 +67,11 @@ const Sector1 = () => {
     const handleS1b5 = (e) => {
         setS1b5(e.target.value);
     }
+    useEffect(() => {
+        setS1b6(s1b6Data.map((b, idx) => {
+            if (b) return idx
+        }).filter(a => a).toString());
+    }, [s1b6Data]);
     const handleS1b6 = (e) => {
         setS1b6Data(s1b6Data.map((b, idx) => {
             if (idx === parseInt(e.target.name)) {
@@ -89,6 +81,11 @@ const Sector1 = () => {
             }
         }))
     }
+    useEffect(() => {
+        setS1b7(s1b7Data.map((b, idx) => {
+            if (b) return idx
+        }).filter(a => a).toString());
+    }, [s1b7Data]);
     const handleS1b7 = (e) => {
         // 최대 3개 선택 유효성 확인
         let checking = false;
@@ -223,7 +220,7 @@ const Sector1 = () => {
 
 
             <strong><em>(2021년 12월 31일 기준으로 응답 부탁드립니다.)</em></strong>
-            <SmallQuestionBlock title={<div>1) 성별</div>}
+            <SmallQuestionBlock title={<div>1. 성별</div>}
                                 gridColumnProperty={"repeat(2,1fr)"}
                                 onChange={handleS1b1}
             >
@@ -231,7 +228,7 @@ const Sector1 = () => {
                 <FormControlLabel value='2' control={<Radio/>} label='여'/>
             </SmallQuestionBlock>
 
-            <SmallQuestionBlock title={<div>2) 출생연도</div>}
+            <SmallQuestionBlock title={<div>2. 출생연도</div>}
                                 gridColumnProperty={"repeat(2,2fr)"}
             >
                 <Select value={s1b2} onChange={handleS1b2}>
@@ -274,7 +271,7 @@ const Sector1 = () => {
                 </Select>
             </SmallQuestionBlock>
 
-            <SmallQuestionBlock title={<div>3) 거주지 주소</div>}
+            <SmallQuestionBlock title={<div>3. 거주지 주소</div>}
                                 gridColumnProperty={"repeat(2,1fr)"}
             >
                 <Select value={s1b3} onChange={handleS1b3}>
@@ -282,7 +279,7 @@ const Sector1 = () => {
                 </Select>
             </SmallQuestionBlock>
 
-            <SmallQuestionBlock title={<div>4) 영농지 위치</div>}
+            <SmallQuestionBlock title={<div>4. 영농지 위치</div>}
                                 gridColumnProperty={"repeat(3,1fr)"}
                                 onChange={handleS1b4}
                                 announcement={<em>※ 영농지는 가장 큰 규모의 농지를 기준으로 응답해주세요.</em>}
@@ -297,7 +294,7 @@ const Sector1 = () => {
                 <FormControlLabel value='8' control={<Radio/>} label='차로 1시간 이내'/>
             </SmallQuestionBlock>
 
-            <SmallQuestionBlock title={<div>5) 영농 시작연도</div>}
+            <SmallQuestionBlock title={<div>5. 영농 시작연도</div>}
                                 gridColumnProperty={"repeat(1,1fr)"}
                                 onChange={handleS1b5}
             >
@@ -305,7 +302,7 @@ const Sector1 = () => {
                 <FormControlLabel value='2' control={<Radio/>} label='아직 농사지은 경험이 없음'/>
             </SmallQuestionBlock>
 
-            <SmallQuestionBlock title={<div>6) 영농형태<br/><strong>(중복답변 가능)</strong></div>}
+            <SmallQuestionBlock title={<div>6. 영농형태<br/><strong>(중복답변 가능)</strong></div>}
                                 gridColumnProperty={"repeat(3,1fr)"}
                                 onChange={handleS1b6}
             >
@@ -323,7 +320,7 @@ const Sector1 = () => {
                                   label='축산'/>
             </SmallQuestionBlock>
 
-            <SmallQuestionBlock title={<div>7) 주요 생산 품목 <strong>(최대 3개 선택 가능)</strong></div>}
+            <SmallQuestionBlock title={<div>7. 주요 생산 품목 <strong>(최대 3개 선택 가능)</strong></div>}
                                 gridColumnProperty={"repeat(5,1fr)"}
                                 onChange={handleS1b7}
             >
@@ -349,7 +346,7 @@ const Sector1 = () => {
                                   label='축산'/>
             </SmallQuestionBlock>
 
-            <SmallQuestionBlock title={<div>8) 농가소득 수준 <strong>(연소득 기준)</strong></div>}
+            <SmallQuestionBlock title={<div>8. 농가소득 수준 <strong>(연소득 기준)</strong></div>}
                                 gridColumnProperty={"repeat(4,1fr)"}
                                 onChange={handleS1b8}
             >
@@ -367,7 +364,7 @@ const Sector1 = () => {
                 <FormControlLabel value='12' control={<Radio/>} label='미취업 또는 소득없음'/>
             </SmallQuestionBlock>
 
-            <SmallQuestionBlock title={<div>9) 농가형태</div>}
+            <SmallQuestionBlock title={<div>9. 농가형태</div>}
                                 gridColumnProperty={"repeat(1,1fr)"}
                                 onChange={handleS1b9}
             >
@@ -376,7 +373,7 @@ const Sector1 = () => {
                 <FormControlLabel value='3' control={<Radio/>} label='2종겸업농가 (농업수입이 농외소득보다 적음)'/>
             </SmallQuestionBlock>
 
-            <SmallQuestionBlock title={<div>10) 영농 승계 여부<br/><strong>(부모·친지·지인으로 부터)</strong></div>}
+            <SmallQuestionBlock title={<div>10. 영농 승계 여부<br/><strong>(부모·친지·지인으로 부터)</strong></div>}
                                 gridColumnProperty={"repeat(2,1fr)"}
                                 onChange={handleS1b10}
             >
@@ -384,7 +381,7 @@ const Sector1 = () => {
                 <FormControlLabel value='2' control={<Radio/>} label='아니요'/>
             </SmallQuestionBlock>
 
-            <SmallQuestionBlock title={<div>11) 연락처(휴대폰)</div>}
+            <SmallQuestionBlock title={<div>11. 연락처(휴대폰)</div>}
                                 gridColumnProperty={"repeat(5,1fr)"}
             >
                 <TextField type='number' value={s1b11data1} onChange={handleS1b11data1}/>
@@ -414,22 +411,6 @@ const TextBlock = styled.div`
 
   display: inline-block;
   line-break: normal;
-`
-
-const TitleBlock = styled.div`
-  width: 100%;
-  padding: 13px;
-  text-align: center;
-  font-size: 30px;
-  font-weight: bold;
-  color: white;
-
-  background-color: ${(props) => props.theme.highlightColor};
-  border-radius: 8px;
-  border: 1px solid ${(props) => props.theme.borderShadowColor};
-
-  margin-top: 60px;
-  margin-bottom: 40px;
 `
 
 const BigText = styled.div`
