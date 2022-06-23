@@ -91,7 +91,7 @@ const Sector1 = () => {
         let checking = false;
         let checkedCount = 0;
         let checkable = false;
-        s1b7Data.map((b, idx) => {
+        s1b7Data.forEach((b, idx) => {
             if (b) checkedCount++
             if (!b && idx === parseInt(e.target.name)) checking = true;
         })

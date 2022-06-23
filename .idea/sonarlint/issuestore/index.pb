@@ -10,8 +10,6 @@ L
 src/components/Background.js,1/a/1a23a3f0898c27924d13629f81d01e7497c95026
 T
 $src/components/KoreanLocationData.js,7/0/70f4f1342c295c9b1daf32461bace48c586d83ab
-K
-src/components/CenterBox.js,7/4/7445fd8bc687df889b9d95399f86103ead930204
 <
 package.json,7/0/7030d0b2f71b999ff89a343de08c414af32fc93a
 :
