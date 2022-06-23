@@ -1,5 +1,6 @@
 import React, {useEffect, useState} from "react";
 import styled from "styled-components";
+import {useNavigate} from "react-router-dom";
 import Background from "../components/Background";
 import TitleBlock from "../components/TitleBlock";
 import SectorFooter from "../components/SectorFooter";
