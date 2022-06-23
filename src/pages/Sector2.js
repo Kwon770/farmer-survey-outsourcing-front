@@ -42,7 +42,7 @@ const Sector2 = () => {
         false,
         false,
         false, // 8
-    ])
+    ]);
 
     const [s2b3b3, setS2b3b3] = useState('');
 
@@ -54,13 +54,13 @@ const Sector2 = () => {
     const [s2b4Data, setS2b4Data] = useState([]);
 
     const [s2b5, setS2b5] = useState('');
-    const [s2b5_Etc, setS2b5_Etc] = useState('');
+    const [s2b5_Etc8, setS2b5_Etc8] = useState('');
 
     const [s2b6, setS2b6] = useState('');
     const [s2b6b1, setS2b6b1] = useState('');
 
     const [s2b7b1, setS2b7b1] = useState('');
-    const [s2b7b1_Etc, setS2b7b1_Etc] = useState('');
+    const [s2b7b1_Etc5, setS2b7b1_Etc5] = useState('');
 
     const [s2b7b2_1, setS2b7b2_1] = useState('');
     const [s2b7b2_2, setS2b7b2_2] = useState('');
@@ -85,9 +85,9 @@ const Sector2 = () => {
 
     const [s2b8, setS2b8] = useState('');
     const [s2b8b1, setS2b8b1] = useState('');
-    const [s2b8b1_Etc, setS2b8b1_Etc] = useState('');
+    const [s2b8b1_Etc6, setS2b8b1_Etc6] = useState('');
     const [s2b8b2, setS2b8b2] = useState('');
-    const [s2b8b2_Etc, setS2b8b2_Etc] = useState('');
+    const [s2b8b2_Etc6, setS2b8b2_Etc6] = useState('');
 
     useEffect(() => {
         let non_total = 0;
@@ -362,25 +362,83 @@ const Sector2 = () => {
 
 
     const validateAllWritten = () => {
-        // if (
-        //     (s2b1_1 === '' && s2b1_2 === '' && s2b1_3 === '' && s2b1_4 === '' && s2b1_5 === '' ) ||
-        //     s2b2 === ''
-        // ) {
-        //     return false;
-        // }
-        //
-        // if (s2b2 === '1')
-        //     if (/**/
-        //         s2b3b2 === '' || s2b3b2_2 === '' || s2b3b3 === '')
-        //         return false;
-        //
-        // return true;
+        if (
+            (s2b1_1 === '' && s2b1_2 === '' && s2b1_3 === '' && s2b1_4 === '' && s2b1_5 === '') ||
+            s2b2 === '' ||
+            s2b6 === '' ||
+            s2b8 === ''
+        ) {
+            return false;
+        }
+
+        if (s2b2 === '1')
+            if (
+                (s2b3b1_1 === '' && s2b3b1_2 === '' && s2b3b1_3 === '' && s2b3b1_4 === '' && s2b3b1_5 === '') ||
+                s2b3b2_1 === '' || s2b3b2_2 === '' ||
+                s2b3b3 === ''
+            )
+                return false;
+
+        if (s2b2 === '2')
+            if ((s2b4_1 === '' && s2b4_2 === '' && s2b4_3 === '' && s2b4_4 === '' && s2b4_5 === '') ||
+                s2b5 === '')
+                return false;
+
+        if (s2b2 === '3')
+            if (s2b5 === '')
+                return false;
+
+        if (s2b6 === '1')
+            if (s2b6b1 === '')
+                return false;
+
+        if (s2b6b1 === '2' || s2b6b1 === '3')
+            if (s2b7b1 === '' ||
+                s2b7b2_1 === '' || s2b7b2_2 === '' || s2b7b2_3 === '')
+                return false;
+
+        if (s2b8 === '1')
+            if (s2b8b1 === '')
+                return false;
+
+        if (s2b8 === '3')
+            if (s2b8b2 === '')
+                return false;
+
+        return true;
     }
 
     const saveSector2Data = () => {
         const sector2DataObject = {
-            //
-            //
+            's2b1_1': s2b1_1,
+            's2b1_2': s2b1_2,
+            's2b1_3': s2b1_3,
+            's2b1_4': s2b1_4,
+            's2b1_5': s2b1_5,
+            's2b2': s2b2,
+            's2b3b1_1': s2b3b1_1,
+            's2b3b1_2': s2b3b1_2,
+            's2b3b1_3': s2b3b1_3,
+            's2b3b1_4': s2b3b1_4,
+            's2b3b1_5': s2b3b1_5,
+            's2b3b2_1': s2b3b2_1 === '7' ? '7,'+s2b3b2_Etc7 : (s2b3b2_1 === '8' ? '7,'+s2b3b2_Etc8 : s2b3b2_1),
+            's2b3b2_2': s2b3b2_2 === '7' ? '7,'+s2b3b2_Etc7 : (s2b3b2_2 === '8' ? '7,'+s2b3b2_Etc8 : s2b3b2_2),
+            's2b3b3': s2b3b3,
+            's2b4_1': s2b4_1,
+            's2b4_2': s2b4_2,
+            's2b4_3': s2b4_3,
+            's2b4_4': s2b4_4,
+            's2b4_5': s2b4_5,
+            's2b5': s2b5 === '8' ? '8,'+s2b5_Etc8 : s2b5,
+            's2b6': s2b6,
+            's2b6b1': s2b6b1,
+            's2b7b1': s2b7b1 === '5' ? '5,'+s2b7b1_Etc5 : s2b7b1,
+            's2b7b2_1': s2b7b2_1 === '9' ? '9,'+s2b7b2_Etc9 : (s2b7b2_1 === '10' ? '9,'+s2b7b2_Etc10 : (s2b7b2_1 === '11' ? '9,'+s2b7b2_Etc11 : s2b7b2_1)),
+            's2b7b2_2': s2b7b2_2 === '9' ? '9,'+s2b7b2_Etc9 : (s2b7b2_2 === '10' ? '9,'+s2b7b2_Etc10 : (s2b7b2_2 === '11' ? '9,'+s2b7b2_Etc11 : s2b7b2_2)),
+            's2b7b2_3': s2b7b2_3 === '9' ? '9,'+s2b7b2_Etc9 : (s2b7b2_3 === '10' ? '9,'+s2b7b2_Etc10 : (s2b7b2_3 === '11' ? '9,'+s2b7b2_Etc11 : s2b7b2_3)),
+            's2b8': s2b8,
+            's2b8b1': s2b8b1 === '6' ? '6,'+s2b8b1_Etc6 : s2b8b1,
+            's2b8b2': s2b8b2 === '6' ? '6,'+s2b8b2_Etc6 : s2b8b2
         }
 
         localStorage.setItem('sector2', JSON.stringify(sector2DataObject))
@@ -418,7 +476,7 @@ const Sector2 = () => {
                 {
                     s2b1Data.map((element, idx) => (
                         <>
-                            <Select value={element[0]} onChange={(e) => handleS2b3b1(e, idx, 0)}>
+                            <Select value={element[0]} onChange={(e) => handleS2b1(e, idx, 0)}>
                                 <MenuItem value={'1'}>논</MenuItem>
                                 <MenuItem value={'2'}>밭</MenuItem>
                                 <MenuItem value={'3'}>과수원</MenuItem>
@@ -597,7 +655,7 @@ const Sector2 = () => {
                         <FormControlLabel value='7' control={<Radio/>} label='농사를 그만두려고'/>
                         <Stack direction='row'>
                             <FormControlLabel value='8' control={<Radio/>} label='기타'/>
-                            <TextField value={s2b5_Etc} onChange={(e) => setS2b5_Etc(e.target.value)}/>
+                            <TextField value={s2b5_Etc8} onChange={(e) => setS2b5_Etc8(e.target.value)}/>
                         </Stack>
                     </QuestionBlock>
                 </>
@@ -638,7 +696,7 @@ const Sector2 = () => {
                                 <FormControlLabel value='4' control={<Radio/>} label='자기자금'/>
                                 <Stack direction='row'>
                                     <FormControlLabel value='5' control={<Radio/>} label='기타'/>
-                                    <TextField value={s2b7b1_Etc} onChange={(e) => setS2b7b1_Etc(e.target.value)}/>
+                                    <TextField value={s2b7b1_Etc5} onChange={(e) => setS2b7b1_Etc5(e.target.value)}/>
                                 </Stack>
                             </QuestionBlock>
 
@@ -724,7 +782,7 @@ const Sector2 = () => {
                         <FormControlLabel value='5' control={<Radio/>} label='50% 이상'/>
                         <Stack direction='row'>
                             <FormControlLabel value='6' control={<Radio/>} label='기타'/>
-                            <TextField value={s2b8b1_Etc} onChange={(e) => setS2b8b1_Etc(e.target.value)}/>
+                            <TextField value={s2b8b1_Etc6} onChange={(e) => setS2b8b1_Etc6(e.target.value)}/>
                         </Stack>
                     </QuestionBlock>
                 </>
@@ -745,7 +803,7 @@ const Sector2 = () => {
                         <FormControlLabel value='5' control={<Radio/>} label='50% 이상'/>
                         <Stack direction='row'>
                             <FormControlLabel value='6' control={<Radio/>} label='기타'/>
-                            <TextField value={s2b8b2_Etc} onChange={(e) => setS2b8b2_Etc(e.target.value)}/>
+                            <TextField value={s2b8b2_Etc6} onChange={(e) => setS2b8b2_Etc6(e.target.value)}/>
                         </Stack>
                     </QuestionBlock>
                 </>
