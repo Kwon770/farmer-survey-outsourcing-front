@@ -4,7 +4,7 @@ import Background from "../components/Background";
 import TitleBlock from "../components/TitleBlock";
 import SectorFooter from "../components/SectorFooter";
 
-const Sector2 = () => {
+const Sector4 = () => {
     const navigate = useNavigate();
     const [alertOpen, setAlertOpen] = useState(false);
 
@@ -13,12 +13,12 @@ const Sector2 = () => {
         return true;
     }
 
-    const saveSector2Data = () => {
-        const sector2DataObject = {
+    const saveSector4Data = () => {
+        const sector4DataObject = {
 
         }
 
-        localStorage.setItem('sector4', JSON.stringify(sector2DataObject))
+        localStorage.setItem('sector4', JSON.stringify(sector4DataObject))
 
     }
 
@@ -28,8 +28,8 @@ const Sector2 = () => {
             return
         }
 
-        saveSector2Data()
-        navigate('/3')
+        saveSector4Data()
+        navigate('/5')
     }
     return (
         <Background>
@@ -40,4 +40,4 @@ const Sector2 = () => {
     )
 }
 
-export default Sector2;
+export default Sector4;

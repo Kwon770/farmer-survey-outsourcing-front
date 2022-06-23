@@ -4,7 +4,7 @@ import {Alert, Button, Snackbar, Step, StepLabel, Stepper} from "@mui/material";
 
 const SectorFooter = ({sector, movePreviousSector, moveNextSector, alertOpen, setAlertOpen}) => {
 
-    const steps = ['응답자 정보', '농지 수요', '스마트팜 수요', '저활용 농지 수요', "농업 스타트업단지 조성사업 참여 의향"]
+    const steps = ['응답자 정보', "농업 스타트업단지 조성사업 참여 의향", '농지 수요', '스마트팜 수요', '저활용 농지 수요']
     return (
         <Footer>
             <Button variant='text' onClick={movePreviousSector} disabled={sector === 1}>이전</Button>

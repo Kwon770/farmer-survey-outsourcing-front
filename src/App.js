@@ -5,12 +5,16 @@ import Theme from "./styles/Theme"
 import {BrowserRouter as Router, Routes, Route} from "react-router-dom";
 import Sector1 from "./pages/Sector1";
 import Sector2 from "./pages/Sector2";
+import Sector3 from "./pages/Sector3";
+import Sector4 from "./pages/Sector4";
 
 const AppRouter = () => (
     <Router>
         <Routes>
             <Route path="/" element={<Sector1/>} />
             <Route path="/2" element={<Sector2/>} />
+            <Route path="/3" element={<Sector3/>} />
+            <Route path="/4" element={<Sector4/>} />
         </Routes>
     </Router>
 )
