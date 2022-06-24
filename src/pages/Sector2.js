@@ -174,21 +174,77 @@ const Sector2 = () => {
     const validateAllWritten = () => {
         if (
             s2b1 === '' ||
-            s2b2 === ''
-
+            s2b2 === '' ||
+            s2b3_1 === '' || s2b3_2 === '' ||
+            s2b4_1 === '' || s2b4_2 === '' || s2b4_3 === '' ||
+            s2b5 === ''
         ) {
             return false;
         }
 
-        // if (s2b2 === '1' || s2b2 === '2')
-        //     if ()
+        if (s2b2 === '1' || s2b2 === '2')
+            if (
+                s2b2b1 === '' ||
+                s2b2b2_1 === '' || s2b2b2_2 === '' || s2b2b2_3 === '' ||
+                s2b2b3 === '' ||
+                s2b2b5 === '' ||
+                s2b2b6 === ''
+            ) {
+                return false;
+            }
+
+        if (s2b2b3 === '2')
+            if (s2b2b4 === '')
+                return false;
+
+        if (s2b2b5 === '8')
+            if (s2b2b5_Etc8 === '')
+                return false;
+
+        if (s2b3_1 === '9' || s2b3_2 === '9')
+            if (s2b3_Etc9 === '')
+                return false;
+
+        if (s2b3_1 === '10' || s2b3_2 === '10')
+            if (s2b3_Etc10 === '')
+                return false;
+
+        if (s2b4_1 === '12' || s2b4_2 === '12' || s2b4_3 === '12')
+            if (s2b4_Etc12 === '')
+                return false;
+
+        if (s2b4_1 === '13' || s2b4_2 === '13' || s2b4_3 === '13')
+            if (s2b4_Etc13 === '')
+                return false;
+
+        if (s2b4_1 === '14' || s2b4_2 === '14' || s2b4_3 === '14')
+            if (s2b4_Etc14 === '')
+                return false;
 
         return true;
     }
 
     const saveSector2Data = () => {
-        const sector2DataObject = {}
+        const sector2DataObject = {
+            's2b1': s2b1,
+            's2b2': s2b2,
+            's2b2b1': s2b2b1,
+            's2b2b2_1': s2b2b2_1,
+            's2b2b2_2': s2b2b2_2,
+            's2b2b2_3': s2b2b2_3,
+            's2b2b3': s2b2b3,
+            's2b2b4': s2b2b4,
+            's2b2b5': s2b2b5 === '8' ? '8,'+s2b2b5_Etc8 : s2b2b5,
+            's2b2b6': s2b2b6,
+            's2b3_1': s2b3_1 === '9' ? '9,'+s2b3_Etc9 : (s2b3_1 === '10' ? '10,'+s2b3_Etc10 : s2b3_1),
+            's2b3_2': s2b3_2 === '9' ? '9,'+s2b3_Etc9 : (s2b3_2 === '10' ? '10,'+s2b3_Etc10 : s2b3_2),
+            's2b4_1': s2b4_1 === '12' ? '12,'+s2b4_Etc12 : (s2b4_1 === '13' ? '13,'+s2b4_Etc13 : (s2b4_1 === '14' ? '14,'+s2b4_Etc14 : s2b4_1)),
+            's2b4_2': s2b4_2 === '12' ? '12,'+s2b4_Etc12 : (s2b4_2 === '13' ? '13,'+s2b4_Etc13 : (s2b4_2 === '14' ? '14,'+s2b4_Etc14 : s2b4_2)),
+            's2b4_3': s2b4_3 === '12' ? '12,'+s2b4_Etc12 : (s2b4_3 === '13' ? '13,'+s2b4_Etc13 : (s2b4_3 === '14' ? '14,'+s2b4_Etc14 : s2b4_3)),
+            's2b5': s2b5
+        }
 
+        console.log(sector2DataObject);
         localStorage.setItem('sector2', JSON.stringify(sector2DataObject))
 
     }
@@ -243,7 +299,7 @@ const Sector2 = () => {
             {
                 (s2b2 === '1' || s2b2 === '2') &&
                 <>
-                    <strong><em>※ 5-2.문항에서 1, 2번을 선택하신 분의 경우에만 응답해주세요.</em></strong>
+                    <strong><em>※ 2-2.문항에서 1, 2번을 선택하신 분의 경우에만 응답해주세요.</em></strong>
                     <QuestionBlock title={<div>2-2-1. 귀하의 농업 스타트업단지 입주 혹은 이전을 희망하는 시기는 언제입니까?</div>}
                                    gridColumnProperty={"repeat(3,1fr)"}
                                    onChange={handleS2b2b1}
@@ -254,56 +310,62 @@ const Sector2 = () => {
                         <FormControlLabel value='4' control={<Radio/>} label='5년 이내'/>
                         <FormControlLabel value='5' control={<Radio/>} label='시기 상관없음'/>
                     </QuestionBlock>
+
+                    <strong><em>※ 2-2.문항에서 1, 2번을 선택하신 분의 경우에만 응답해주세요.</em></strong>
+                    <QuestionBlock title={
+                        <>
+                            <div>2-2-2. 귀하께서는 농업 스타트업단지에 입주하신다면, 재배를 희망하는 작물 부문과 영농형태는 무엇입니까?</div>
+                            <br/>
+                            <strong><em>※ 아래 3개 질문(재배희망작물, 영농형태, 스마트팜 여부)에 모두 답변해주세요.</em></strong>
+                        </>}
+                                   gridColumnProperty={"repeat(1,1fr)"}
+                    >
+                        <QuestionBlock title={<ColorCenterBlock>재배희망작물</ColorCenterBlock>}
+                                       gridColumnProperty={"repeat(5,1fr)"}
+                                       onChange={handleS2b2b2_1}
+                        >
+                            <FormControlLabel value='1' control={<Radio/>} label='미곡'/>
+                            <FormControlLabel value='2' control={<Radio/>} label='맥류'/>
+                            <FormControlLabel value='3' control={<Radio/>} label='잡곡'/>
+                            <FormControlLabel value='4' control={<Radio/>} label='두류'/>
+                            <FormControlLabel value='5' control={<Radio/>} label='서류'/>
+                            <FormControlLabel value='6' control={<Radio/>} label='채소'/>
+                            <FormControlLabel value='7' control={<Radio/>} label='과수'/>
+                            <FormControlLabel value='8' control={<Radio/>} label='화훼'/>
+                            <FormControlLabel value='9' control={<Radio/>} label='특용작물'/>
+                            <FormControlLabel value='10' control={<Radio/>} label='축산'/>
+
+                        </QuestionBlock>
+                        <QuestionBlock title={<ColorCenterBlock>영농형태</ColorCenterBlock>}
+                                       gridColumnProperty={"repeat(2,1fr)"}
+                                       onChange={handleS2b2b2_2}
+                        >
+                            <FormControlLabel value='1' control={<Radio/>} label='논'/>
+                            <FormControlLabel value='2' control={<Radio/>} label='밭, 과수'/>
+                            <FormControlLabel value='3' control={<Radio/>} label='축산'/>
+                            <FormControlLabel value='4' control={<Radio/>} label='시설원예'/>
+
+                        </QuestionBlock>
+                        <QuestionBlock title={<ColorCenterBlock>스마트팜 여부</ColorCenterBlock>}
+                                       gridColumnProperty={"repeat(2,1fr)"}
+                                       onChange={handleS2b2b2_3}
+                        >
+                            <FormControlLabel value='1' control={<Radio/>} label='예'/>
+                            <FormControlLabel value='2' control={<Radio/>} label='아니오'/>
+                        </QuestionBlock>
+                    </QuestionBlock>
+
+                    <strong><em>※ 2-2.문항에서 1, 2번을 선택하신 분의 경우에만 응답해주세요.</em></strong>
+                    <QuestionBlock title={<div>2-2-3. 귀하께서는 농업 스타트업단지에 입주하신다면, 분양, 임대, 임대 후 분양 중 어느 것을 선호하십니까?</div>}
+                                   gridColumnProperty={"repeat(3,1fr)"}
+                                   onChange={handleS2b2b3}
+                    >
+                        <FormControlLabel value='1' control={<Radio/>} label='분양'/>
+                        <FormControlLabel value='2' control={<Radio/>} label='임대'/>
+                        <FormControlLabel value='3' control={<Radio/>} label='임대 후 분양'/>
+                    </QuestionBlock>
                 </>
             }
-
-            <strong><em>※ 아래 3개 질문(재배희망작물, 영농형태, 스마트팜 여부)에 모두 답변해주세요.</em></strong>
-            <QuestionBlock title={<div>2-2-2. 귀하께서는 농업 스타트업단지에 입주하신다면, 재배를 희망하는 작물 부문과 영농형태는 무엇입니까?</div>}
-                           gridColumnProperty={"repeat(1,1fr)"}
-            >
-                <QuestionBlock title={<ColorCenterBlock>재배희망작물</ColorCenterBlock>}
-                               gridColumnProperty={"repeat(5,1fr)"}
-                               onChange={handleS2b2b2_1}
-                >
-                    <FormControlLabel value='1' control={<Radio/>} label='미곡'/>
-                    <FormControlLabel value='2' control={<Radio/>} label='맥류'/>
-                    <FormControlLabel value='3' control={<Radio/>} label='잡곡'/>
-                    <FormControlLabel value='4' control={<Radio/>} label='두류'/>
-                    <FormControlLabel value='5' control={<Radio/>} label='서류'/>
-                    <FormControlLabel value='6' control={<Radio/>} label='채소'/>
-                    <FormControlLabel value='7' control={<Radio/>} label='과수'/>
-                    <FormControlLabel value='8' control={<Radio/>} label='화훼'/>
-                    <FormControlLabel value='9' control={<Radio/>} label='특용작물'/>
-                    <FormControlLabel value='10' control={<Radio/>} label='축산'/>
-
-                </QuestionBlock>
-                <QuestionBlock title={<ColorCenterBlock>영농형태</ColorCenterBlock>}
-                               gridColumnProperty={"repeat(2,1fr)"}
-                               onChange={handleS2b2b2_2}
-                >
-                    <FormControlLabel value='1' control={<Radio/>} label='논'/>
-                    <FormControlLabel value='2' control={<Radio/>} label='밭, 과수'/>
-                    <FormControlLabel value='3' control={<Radio/>} label='축산'/>
-                    <FormControlLabel value='4' control={<Radio/>} label='시설원예'/>
-
-                </QuestionBlock>
-                <QuestionBlock title={<ColorCenterBlock>스마트팜 여부</ColorCenterBlock>}
-                               gridColumnProperty={"repeat(2,1fr)"}
-                               onChange={handleS2b2b2_3}
-                >
-                    <FormControlLabel value='1' control={<Radio/>} label='예'/>
-                    <FormControlLabel value='2' control={<Radio/>} label='아니오'/>
-                </QuestionBlock>
-            </QuestionBlock>
-
-            <QuestionBlock title={<div>2-2-3. 귀하께서는 농업 스타트업단지에 입주하신다면, 분양, 임대, 임대 후 분양 중 어느 것을 선호하십니까?</div>}
-                           gridColumnProperty={"repeat(3,1fr)"}
-                           onChange={handleS2b2b3}
-            >
-                <FormControlLabel value='1' control={<Radio/>} label='분양'/>
-                <FormControlLabel value='2' control={<Radio/>} label='임대'/>
-                <FormControlLabel value='3' control={<Radio/>} label='임대 후 분양'/>
-            </QuestionBlock>
 
             {
                 s2b2b3 === '2' &&
@@ -323,35 +385,45 @@ const Sector2 = () => {
                 </>
             }
 
-            <QuestionBlock title={<div>2-2-5. 귀하께서는 농업 스타트업단지에 입주하신다면, 거주지에서 몇 분 이내의 통작거리까지 고려할 의향이 있으십니까? <strong><em>(※ 승용차 편도 기준)</em></strong></div>}
-                           gridColumnProperty={"repeat(2,1fr)"}
-                           onChange={handleS2b2b5}
-            >
-                <FormControlLabel value='1' control={<Radio/>} label='10분 이내'/>
-                <FormControlLabel value='2' control={<Radio/>} label='20분 이내'/>
-                <FormControlLabel value='3' control={<Radio/>} label='30분 이내'/>
-                <FormControlLabel value='4' control={<Radio/>} label='40분 이내'/>
-                <FormControlLabel value='5' control={<Radio/>} label='50분 이내'/>
-                <FormControlLabel value='6' control={<Radio/>} label='1시간 이내'/>
-                <FormControlLabel value='7' control={<Radio/>} label='통작 시간은 중요하지 않음'/>
-                <Stack direction='row'>
-                    <FormControlLabel value='8' control={<Radio/>} label='기타'/>
-                    <TextField value={s2b2b5_Etc8} onChange={(e) => setS2b2b5_Etc8(e.target.value)}/>
-                </Stack>
+            {
+                (s2b2 === '1' || s2b2 === '2') &&
+                <>
+                    <strong><em>※ 2-2.문항에서 1, 2번을 선택하신 분의 경우에만 응답해주세요.</em></strong>
+                    <QuestionBlock
+                        title={<div>2-2-5. 귀하께서는 농업 스타트업단지에 입주하신다면, 거주지에서 몇 분 이내의 통작거리까지 고려할 의향이 있으십니까? <strong><em>(※
+                            승용차 편도 기준)</em></strong></div>}
+                        gridColumnProperty={"repeat(2,1fr)"}
+                        onChange={handleS2b2b5}
+                    >
+                        <FormControlLabel value='1' control={<Radio/>} label='10분 이내'/>
+                        <FormControlLabel value='2' control={<Radio/>} label='20분 이내'/>
+                        <FormControlLabel value='3' control={<Radio/>} label='30분 이내'/>
+                        <FormControlLabel value='4' control={<Radio/>} label='40분 이내'/>
+                        <FormControlLabel value='5' control={<Radio/>} label='50분 이내'/>
+                        <FormControlLabel value='6' control={<Radio/>} label='1시간 이내'/>
+                        <FormControlLabel value='7' control={<Radio/>} label='통작 시간은 중요하지 않음'/>
+                        <Stack direction='row'>
+                            <FormControlLabel value='8' control={<Radio/>} label='기타'/>
+                            <TextField value={s2b2b5_Etc8} onChange={(e) => setS2b2b5_Etc8(e.target.value)}/>
+                        </Stack>
+                    </QuestionBlock>
 
-                <FormControlLabel value='2' control={<Radio/>} label='기타'/>
-            </QuestionBlock>
+                    <strong><em>※ 2-2.문항에서 1, 2번을 선택하신 분의 경우에만 응답해주세요.</em></strong>
+                    <QuestionBlock title={<div>2-2-6. 농업 스타트업단지가 거주지와 인접한 타 시·군에 설립되어도 <strong><em>상기 문항(2-2-6.)에서</em></strong> 응답한
+                        통 작거리 이내에 위치할 경우, 입주하실 의향은 변함이 없습니까?</div>}
+                                   gridColumnProperty={"repeat(2,1fr)"}
+                                   onChange={handleS2b2b6}
+                    >
+                        <FormControlLabel value='1' control={<Radio/>} label='의향 변함 없음 (입주할 것임)'/>
+                        <FormControlLabel value='2' control={<Radio/>} label='의향 변함 (입주하지 않을 것임)'/>
+                    </QuestionBlock>
+                </>
+            }
 
-            <QuestionBlock title={<div>2-2-6. 농업 스타트업단지가 거주지와 인접한 타 시·군에 설립되어도 <strong><em>상기 문항(5-2-6.)에서</em></strong> 응답한 통 작거리 이내에 위치할 경우, 입주하실 의향은 변함이 없습니까?</div>}
-                           gridColumnProperty={"repeat(2,1fr)"}
-                           onChange={handleS2b2b6}
-            >
-                <FormControlLabel value='1' control={<Radio/>} label='의향 변함 없음 (입주할 것임)'/>
-                <FormControlLabel value='2' control={<Radio/>} label='의향 변함 (입주하지 않을 것임)'/>
-            </QuestionBlock>
 
-            <QuestionBlock title={<div>2-3. 귀하께서는 농업 스타트업단지 내 농업기반시설 외 필요한 시설은 무엇이라고 생각하십니까? 다음 조건들에서 1, 2순위를 골라주세요.</div>}
-                           gridColumnProperty={"repeat(2,1fr)"}
+            <QuestionBlock
+                title={<div>2-3. 귀하께서는 농업 스타트업단지 내 농업기반시설 외 필요한 시설은 무엇이라고 생각하십니까? 다음 조건들에서 1, 2순위를 골라주세요.</div>}
+                gridColumnProperty={"repeat(2,1fr)"}
             >
                 <CenterBox padding={20}>1순위 : <strong>{s2b3_1}</strong></CenterBox>
                 <CenterBox padding={20}>2순위 : <strong>{s2b3_2}</strong></CenterBox>
@@ -400,7 +472,7 @@ const Sector2 = () => {
                 <CenterBox padding={20}>1순위 : <strong>{s2b4_1}</strong></CenterBox>
                 <CenterBox padding={20}>2순위 : <strong>{s2b4_2}</strong></CenterBox>
                 <CenterBox padding={20}>3순위 : <strong>{s2b4_3}</strong></CenterBox>
-                <div />
+                <div/>
 
                 <FormControlLabel
                     control={<Checkbox name='1' checked={s2b4Data[1]} onChange={handleS2b4}/>}
