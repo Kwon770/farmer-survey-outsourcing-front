@@ -153,8 +153,38 @@ const Sector3 = () => {
         setS3b1Data(s3b1Data.filter((_, i) => i !== idx));
     }
 
-    const handleS3b2 = (e) => {
-        setS3b2(e.target.value);
+    const resetAllS3b3s = () => {
+        setS3b3b1_1('');
+        setS3b3b1_2('');
+        setS3b3b1_3('');
+        setS3b3b1_4('');
+        setS3b3b1_5('');
+        setS3b3b2_1('');
+        setS3b3b2_2('');
+        setS3b3b3('');
+
+    }
+    const resetAllS3b4s = () => {
+        setS3b4_1('');
+        setS3b4_2('');
+        setS3b4_3('');
+        setS3b4_4('');
+        setS3b4_5('');
+    }
+    const resetAllS3b5s = () => {
+        setS3b5('');
+    }
+    const handleS3b2 = ({target: {value}}) => {
+        setS3b2(value);
+        if (value !== '1') {
+            resetAllS3b4s();
+            resetAllS3b5s();
+        } else if (value !== '2') {
+            resetAllS3b3s();
+        } else if (value !== '3') {
+            resetAllS3b3s();
+            resetAllS3b4s();
+        }
     }
 
     useEffect(() => {
@@ -320,11 +350,24 @@ const Sector3 = () => {
         setS3b5(e.target.value);
     }
 
-    const handleS3b6 = (e) => {
-        setS3b6(e.target.value);
+    const handleS3b6 = ({target: {value}}) => {
+        setS3b6(value);
+        if (value !== '1') {
+            setS3b6b1('');
+            setS3b7b1('');
+            setS3b7b2_1('');
+            setS3b7b2_2('');
+            setS3b7b2_3('');
+        }
     }
-    const handleS3b6b1 = (e) => {
-        setS3b6b1(e.target.value);
+    const handleS3b6b1 = ({target: {value}}) => {
+        setS3b6b1(value);
+        if (value !== '2' && value !== '3') {
+            setS3b7b1('');
+            setS3b7b2_1('');
+            setS3b7b2_2('');
+            setS3b7b2_3('');
+        }
     }
 
     const handleS3b7b1 = (e) => {
@@ -366,8 +409,13 @@ const Sector3 = () => {
         }
     }
 
-    const handleS3b8 = (e) => {
-        setS3b8(e.target.value);
+    const handleS3b8 = ({target: {value}}) => {
+        setS3b8(value);
+        if (value !== '1') {
+            setS3b8b1('');
+        } else if (value !== '3') {
+            setS3b8b2('');
+        }
     }
     const handleS3b8b1 = (e) => {
         setS3b8b1(e.target.value);

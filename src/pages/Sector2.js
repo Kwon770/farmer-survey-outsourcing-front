@@ -78,8 +78,18 @@ const Sector2 = () => {
         setS2b1(e.target.value);
     }
 
-    const handleS2b2 = (e) => {
-        setS2b2(e.target.value);
+    const handleS2b2 = ({target: {value}}) => {
+        setS2b2(value);
+        if (value !== '1' && value !== '2') {
+            setS2b2b1('');
+            setS2b2b2_1('');
+            setS2b2b2_2('');
+            setS2b2b2_3('');
+            setS2b2b3('');
+            setS2b2b4('');
+            setS2b2b5('');
+            setS2b2b6('');
+        }
     }
     const handleS2b2b1 = (e) => {
         setS2b2b1(e.target.value);
@@ -95,8 +105,11 @@ const Sector2 = () => {
         setS2b2b2_3(e.target.value);
     }
 
-    const handleS2b2b3 = (e) => {
-        setS2b2b3(e.target.value);
+    const handleS2b2b3 = ({target: {value}}) => {
+        setS2b2b3(value);
+        if (value !== '2') {
+            setS2b2b4('');
+        }
     }
     const handleS2b2b4 = (e) => {
         setS2b2b4(e.target.value);

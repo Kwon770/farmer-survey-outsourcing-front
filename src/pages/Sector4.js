@@ -21,8 +21,12 @@ const Sector4 = () => {
     ])
     const [s4b2b2, setS4b2b2] = useState('');
 
-    const handleS4b1 = (e) => {
-        setS4b1(e.target.value);
+    const handleS4b1 = ({target: {value}}) => {
+        setS4b1(value);
+        if (value !== '1') {
+            setS4b2b1('');
+            setS4b2b2('');
+        }
     }
 
     useEffect(() => {
