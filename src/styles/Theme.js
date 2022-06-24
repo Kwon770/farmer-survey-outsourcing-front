@@ -7,7 +7,7 @@ export default {
     borderShadowColor: "#D5D7DB",
     innerShadowColor: "#eaedf1",
 
-    blockWidth: "750px",
+    blockWidth: "800px",
     blockBorder: "8px",
     blockMargin: "20px",
     blockPadding: "25px"

@@ -11,6 +11,7 @@ import {
 } from "@mui/material";
 import SmallQuestionBlock from "../components/SmallQuestionBlock";
 import CenterBox from "../components/CenterBox";
+import TextBlock from "../components/TextBlock";
 import TitleBlock from "../components/TitleBlock";
 import SectorFooter from "../components/SectorFooter";
 
@@ -395,23 +396,6 @@ const Sector1 = () => {
         </Background>
     )
 }
-
-const TextBlock = styled.div`
-  width: 100%;
-  padding: ${(props) => props.theme.blockPadding};
-  text-align: ${(props) => props.start ? "start" : "center"};
-  font-size: 18px;
-  line-height: 25px;
-
-  background-color: white;
-  border-radius: ${(props) => props.theme.blockBorder};
-  border: 1px solid ${(props) => props.theme.borderShadowColor};
-
-  margin-bottom: ${(props) => props.theme.blockMargin};
-
-  display: inline-block;
-  line-break: normal;
-`
 
 const BigText = styled.div`
   font-size: 25px;

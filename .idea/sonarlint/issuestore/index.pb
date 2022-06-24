@@ -6,8 +6,6 @@
 .gitignore,a/5/a5cc2925ca8258af241be7e5b0381edf30266302
 <
 src/index.js,f/9/f900edc44cb929c2267a16100a32851f6d5b477d
-L
-src/components/Background.js,1/a/1a23a3f0898c27924d13629f81d01e7497c95026
 T
 $src/components/KoreanLocationData.js,7/0/70f4f1342c295c9b1daf32461bace48c586d83ab
 <

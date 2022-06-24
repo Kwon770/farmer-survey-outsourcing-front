@@ -1,16 +1,18 @@
 import React, {useEffect, useState} from "react";
 import styled from "styled-components";
-import Background from "../components/Background";
 import {useNavigate} from "react-router-dom";
+import {Button, FormControlLabel, Select, MenuItem, Radio, TextField, Checkbox, Stack} from "@mui/material";
+import Background from "../components/Background";
 import TitleBlock from "../components/TitleBlock";
 import QuestionBlock from "../components/QuestionBlock";
 import SectorFooter from "../components/SectorFooter";
-import {Button, FormControlLabel, Select, MenuItem, Radio, TextField, Checkbox, Stack} from "@mui/material";
+import ColorCenterBlock from "../components/ColorCenterBlock";
 import CenterBox from "../components/CenterBox";
 
 const Sector3 = () => {
     const navigate = useNavigate();
     const [alertOpen, setAlertOpen] = useState(false);
+
     const [s3b1_1, setS3b1_1] = useState('');
     const [s3b1_2, setS3b1_2] = useState('');
     const [s3b1_3, setS3b1_3] = useState('');
@@ -39,7 +41,7 @@ const Sector3 = () => {
         false,
         false,
         false,
-        false,
+        false, // 7
         false, // 8
     ]);
 
@@ -77,7 +79,7 @@ const Sector3 = () => {
         false,
         false,
         false,
-        false,
+        false, // 9
         false,
         false, // 11
     ])
@@ -812,16 +814,5 @@ const Sector3 = () => {
         </Background>
     )
 }
-
-const ColorCenterBlock = styled.div`
-  padding: 8px;
-
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
-  background-color: ${(props) => props.theme.innerHighlightColor};
-
-`
 
 export default Sector3;

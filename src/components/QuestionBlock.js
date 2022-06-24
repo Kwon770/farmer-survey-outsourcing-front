@@ -23,7 +23,7 @@ const QuestionBlock = ({title, gridColumnProperty, rowGap, columnGap, announceme
 }
 
 const Block = styled.div`
-  width: ${(props) => props.theme.blockWidth};
+  width: 100%;
   padding: ${(props) => props.theme.blockPadding};
   background-color: white;
   border: 1px solid ${(props) => props.theme.borderShadowColor};
