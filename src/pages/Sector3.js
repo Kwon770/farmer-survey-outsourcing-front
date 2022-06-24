@@ -225,19 +225,19 @@ const Sector3 = () => {
 
         setS3b3b2Data(s3b3b2Data.map((b, idx) => {
             if (idx === parseInt(e.target.name)) {
-                if (checking) {
-                    if (s3b3b2_1 === '') setS3b3b2_1(e.target.name);
-                    else setS3b3b2_2(e.target.name);
-                } else {
-                    if (s3b3b2_1 === e.target.name) setS3b3b2_1('');
-                    else setS3b3b2_2('');
-                }
-
                 return !b
             } else {
                 return b
             }
         }))
+
+        if (checking) {
+            if (s3b3b2_1 === '') setS3b3b2_1(e.target.name);
+            else setS3b3b2_2(e.target.name);
+        } else {
+            if (s3b3b2_1 === e.target.name) setS3b3b2_1('');
+            else setS3b3b2_2('');
+        }
     }
     const handleS3b3b3 = (e) => {
         setS3b3b3(e.target.value);
@@ -328,6 +328,14 @@ const Sector3 = () => {
         }
         //
 
+        setS3b7b2Data(s3b7b2Data.map((b, idx) => {
+            if (idx === parseInt(e.target.name)) {
+                return !b
+            } else {
+                return b
+            }
+        }))
+
         if (checking) {
             if (s3b7b2_1 === '') {
                 setS3b7b2_1(e.target.name);
@@ -341,14 +349,6 @@ const Sector3 = () => {
             else if (s3b7b2_2 === e.target.name) setS3b7b2_2('');
             else setS3b7b2_3('');
         }
-
-        setS3b7b2Data(s3b7b2Data.map((b, idx) => {
-            if (idx === parseInt(e.target.name)) {
-                return !b
-            } else {
-                return b
-            }
-        }))
     }
 
     const handleS3b8 = (e) => {
@@ -422,24 +422,24 @@ const Sector3 = () => {
             's3b3b1_3': s3b3b1_3,
             's3b3b1_4': s3b3b1_4,
             's3b3b1_5': s3b3b1_5,
-            's3b3b2_1': s3b3b2_1 === '7' ? '7,'+s3b3b2_Etc7 : (s3b3b2_1 === '8' ? '7,'+s3b3b2_Etc8 : s3b3b2_1),
-            's3b3b2_2': s3b3b2_2 === '7' ? '7,'+s3b3b2_Etc7 : (s3b3b2_2 === '8' ? '7,'+s3b3b2_Etc8 : s3b3b2_2),
+            's3b3b2_1': s3b3b2_1 === '7' ? '7,' + s3b3b2_Etc7 : (s3b3b2_1 === '8' ? '7,' + s3b3b2_Etc8 : s3b3b2_1),
+            's3b3b2_2': s3b3b2_2 === '7' ? '7,' + s3b3b2_Etc7 : (s3b3b2_2 === '8' ? '7,' + s3b3b2_Etc8 : s3b3b2_2),
             's3b3b3': s3b3b3,
             's3b4_1': s3b4_1,
             's3b4_2': s3b4_2,
             's3b4_3': s3b4_3,
             's3b4_4': s3b4_4,
             's3b4_5': s3b4_5,
-            's3b5': s3b5 === '8' ? '8,'+s3b5_Etc8 : s3b5,
+            's3b5': s3b5 === '8' ? '8,' + s3b5_Etc8 : s3b5,
             's3b6': s3b6,
             's3b6b1': s3b6b1,
-            's3b7b1': s3b7b1 === '5' ? '5,'+s3b7b1_Etc5 : s3b7b1,
-            's3b7b2_1': s3b7b2_1 === '9' ? '9,'+s3b7b2_Etc9 : (s3b7b2_1 === '10' ? '9,'+s3b7b2_Etc10 : (s3b7b2_1 === '11' ? '9,'+s3b7b2_Etc11 : s3b7b2_1)),
-            's3b7b2_2': s3b7b2_2 === '9' ? '9,'+s3b7b2_Etc9 : (s3b7b2_2 === '10' ? '9,'+s3b7b2_Etc10 : (s3b7b2_2 === '11' ? '9,'+s3b7b2_Etc11 : s3b7b2_2)),
-            's3b7b2_3': s3b7b2_3 === '9' ? '9,'+s3b7b2_Etc9 : (s3b7b2_3 === '10' ? '9,'+s3b7b2_Etc10 : (s3b7b2_3 === '11' ? '9,'+s3b7b2_Etc11 : s3b7b2_3)),
+            's3b7b1': s3b7b1 === '5' ? '5,' + s3b7b1_Etc5 : s3b7b1,
+            's3b7b2_1': s3b7b2_1 === '9' ? '9,' + s3b7b2_Etc9 : (s3b7b2_1 === '10' ? '9,' + s3b7b2_Etc10 : (s3b7b2_1 === '11' ? '9,' + s3b7b2_Etc11 : s3b7b2_1)),
+            's3b7b2_2': s3b7b2_2 === '9' ? '9,' + s3b7b2_Etc9 : (s3b7b2_2 === '10' ? '9,' + s3b7b2_Etc10 : (s3b7b2_2 === '11' ? '9,' + s3b7b2_Etc11 : s3b7b2_2)),
+            's3b7b2_3': s3b7b2_3 === '9' ? '9,' + s3b7b2_Etc9 : (s3b7b2_3 === '10' ? '9,' + s3b7b2_Etc10 : (s3b7b2_3 === '11' ? '9,' + s3b7b2_Etc11 : s3b7b2_3)),
             's3b8': s3b8,
-            's3b8b1': s3b8b1 === '6' ? '6,'+s3b8b1_Etc6 : s3b8b1,
-            's3b8b2': s3b8b2 === '6' ? '6,'+s3b8b2_Etc6 : s3b8b2
+            's3b8b1': s3b8b1 === '6' ? '6,' + s3b8b1_Etc6 : s3b8b1,
+            's3b8b2': s3b8b2 === '6' ? '6,' + s3b8b2_Etc6 : s3b8b2
         }
 
         localStorage.setItem('sector3', JSON.stringify(sector3DataObject))
@@ -704,7 +704,6 @@ const Sector3 = () => {
                             <strong><em>※ 3-6-1.문항에서 2,3번을 선택하신 분의 경우에만 응답해주세요.</em></strong>
                             <QuestionBlock title={<div>3-7-2. 농지은행이 아닌 개인간 매매로 농지를 취득하신 주요 요인은 무엇입니까?</div>}
                                            gridColumnProperty={"repeat(2,1fr)"}
-                                // onChange={handleS3b7b2}
                             >
                                 <CenterBox padding={20}>1순위 : <strong>{s3b7b2_1}</strong></CenterBox>
                                 <CenterBox padding={20}>2순위 : <strong>{s3b7b2_2}</strong></CenterBox>
@@ -737,19 +736,19 @@ const Sector3 = () => {
                                     label='8. 자기자본 풍부'/>
                                 <Stack direction='row'>
                                     <FormControlLabel
-                                        control={<Checkbox name='9' checked={s3b3b2Data[9]} onChange={handleS3b7b2}/>}
+                                        control={<Checkbox name='9' checked={s3b7b2Data[9]} onChange={handleS3b7b2}/>}
                                         label='9. 기타'/>
                                     <TextField value={s3b7b2_Etc9} onChange={(e) => setS3b7b2_Etc9(e.target.value)}/>
                                 </Stack>
                                 <Stack direction='row'>
                                     <FormControlLabel
-                                        control={<Checkbox name='10' checked={s3b3b2Data[10]} onChange={handleS3b7b2}/>}
+                                        control={<Checkbox name='10' checked={s3b7b2Data[10]} onChange={handleS3b7b2}/>}
                                         label='10. 기타'/>
                                     <TextField value={s3b7b2_Etc10} onChange={(e) => setS3b7b2_Etc10(e.target.value)}/>
                                 </Stack>
                                 <Stack direction='row'>
                                     <FormControlLabel
-                                        control={<Checkbox name='11' checked={s3b3b2Data[11]} onChange={handleS3b7b2}/>}
+                                        control={<Checkbox name='11' checked={s3b7b2Data[11]} onChange={handleS3b7b2}/>}
                                         label='11. 기타'/>
                                     <TextField value={s3b7b2_Etc11} onChange={(e) => setS3b7b2_Etc11(e.target.value)}/>
                                 </Stack>
