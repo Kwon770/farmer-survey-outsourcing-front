@@ -387,39 +387,83 @@ const Sector3 = () => {
             return false;
         }
 
-        if (s3b2 === '1')
+        if (s3b2 === '1') {
             if (
                 (s3b3b1_1 === '' && s3b3b1_2 === '' && s3b3b1_3 === '' && s3b3b1_4 === '' && s3b3b1_5 === '') ||
                 s3b3b2_1 === '' || s3b3b2_2 === '' ||
                 s3b3b3 === ''
-            )
+            ) {
                 return false;
+            }
+
+            if (s3b3b2_1 === '7' || s3b3b2_2 === '7')
+                if (s3b3b2_Etc7 === '')
+                    return false;
+
+            if (s3b3b2_1 === '8' || s3b3b2_2 === '8')
+                if (s3b3b2_Etc8 === '')
+                    return false;
+        }
 
         if (s3b2 === '2')
             if ((s3b4_1 === '' && s3b4_2 === '' && s3b4_3 === '' && s3b4_4 === '' && s3b4_5 === '') ||
-                s3b5 === '')
+                s3b5 === '') {
                 return false;
+            }
 
-        if (s3b2 === '3')
+        if (s3b2 === '3') {
             if (s3b5 === '')
                 return false;
+
+            if (s3b5 === '8')
+                if (s3b5_Etc8 === '')
+                    return false;
+        }
 
         if (s3b6 === '1')
             if (s3b6b1 === '')
                 return false;
 
-        if (s3b6b1 === '2' || s3b6b1 === '3')
+        if (s3b6b1 === '2' || s3b6b1 === '3') {
             if (s3b7b1 === '' ||
-                s3b7b2_1 === '' || s3b7b2_2 === '' || s3b7b2_3 === '')
+                s3b7b2_1 === '' || s3b7b2_2 === '' || s3b7b2_3 === '') {
                 return false;
+            }
 
-        if (s3b8 === '1')
+            if (s3b7b1 === '5')
+                if (s3b7b1_Etc5 === '')
+                    return false;
+
+            if (s3b7b2_1 === '9' || s3b7b2_2 === '9' || s3b7b2_3 === '9')
+                if (s3b7b2_Etc9 === '')
+                    return false;
+
+            if (s3b7b2_1 === '10' || s3b7b2_2 === '10' || s3b7b2_3 === '10')
+                if (s3b7b2_Etc10 === '')
+                    return false;
+
+            if (s3b7b2_1 === '11' || s3b7b2_2 === '11' || s3b7b2_3 === '11')
+                if (s3b7b2_Etc11 === '')
+                    return false;
+        }
+
+        if (s3b8 === '1') {
             if (s3b8b1 === '')
                 return false;
 
-        if (s3b8 === '3')
+            if (s3b8b1 === '6')
+                if (s3b8b1_Etc6 === '')
+                    return false;
+        }
+
+        if (s3b8 === '3') {
             if (s3b8b2 === '')
                 return false;
+
+            if (s3b8b2 === '6')
+                if (s3b8b1_Etc6 === '')
+                    return false;
+        }
 
         return true;
     }
