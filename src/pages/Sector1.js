@@ -23,6 +23,7 @@ const Sector1 = () => {
     const [s1b3, setS1b3] = useState('');
     const [s1b4, setS1b4] = useState('');
     const [s1b5, setS1b5] = useState('');
+    const [s1b5_Etc1, setS1b5_Etc1] = useState('');
     const [s1b6, setS1b6] = useState('');
     const [s1b6Data, setS1b6Data] = useState([
         false, // 0
@@ -50,9 +51,9 @@ const Sector1 = () => {
     const [s1b8, setS1b8] = useState('');
     const [s1b9, setS1b9] = useState('');
     const [s1b10, setS1b10] = useState('');
-    const [s1b11data1, setS1b11data1] = useState('');
-    const [s1b11data2, setS1b11data2] = useState('');
-    const [s1b11data3, setS1b11data3] = useState('');
+    const [s1b11_1, setS1b11_1] = useState('');
+    const [s1b11_2, setS1b11_2] = useState('');
+    const [s1b11_3, setS1b11_3] = useState('');
     const handleS1b1 = (e) => {
         setS1b1(e.target.value);
     }
@@ -120,14 +121,14 @@ const Sector1 = () => {
     const handleS1b10 = (e) => {
         setS1b10(e.target.value);
     }
-    const handleS1b11data1 = (e) => {
-        setS1b11data1(e.target.value);
+    const handleS1b11_1 = (e) => {
+        setS1b11_1(e.target.value);
     }
-    const handleS1b11data2 = (e) => {
-        setS1b11data2(e.target.value);
+    const handleS1b11_2 = (e) => {
+        setS1b11_2(e.target.value);
     }
-    const handleS1b11data3 = (e) => {
-        setS1b11data3(e.target.value);
+    const handleS1b11_3 = (e) => {
+        setS1b11_3(e.target.value);
     }
 
     const validateAllWritten = () => {
@@ -142,12 +143,16 @@ const Sector1 = () => {
             s1b8 === '' ||
             s1b9 === '' ||
             s1b10 === '' ||
-            s1b11data1 === '' ||
-            s1b11data2 === '' ||
-            s1b11data3 === ''
+            s1b11_1 === '' ||
+            s1b11_2 === '' ||
+            s1b11_3 === ''
         ) {
             return false
         }
+
+        if (s1b5 === '1')
+            if (s1b5_Etc1 === '')
+                return false;
 
         return true
     }
@@ -158,13 +163,13 @@ const Sector1 = () => {
             's1b2' : s1b2,
             's1b3' : s1b3,
             's1b4' : s1b4,
-            's1b5' : s1b5,
+            's1b5' : s1b5 === '1' ? '1,'+s1b5_Etc1 : s1b5,
             's1b6' : s1b6,
             's1b7' : s1b7,
             's1b8' : s1b8,
             's1b9' : s1b9,
             's1b10' : s1b10,
-            's1b11' : s1b11data1 + s1b11data2 + s1b11data3,
+            's1b11' : s1b11_1 + s1b11_2 + s1b11_3,
         }
 
         localStorage.setItem('sector1', JSON.stringify(sector1DataObject))
@@ -299,7 +304,7 @@ const Sector1 = () => {
                                 gridColumnProperty={"repeat(1,1fr)"}
                                 onChange={handleS1b5}
             >
-                <FormControlLabel value='1' control={<Radio/>} label='년에 농사 시작'/>
+                <FormControlLabel value='1' control={<><Radio/><TextField value={s1b5_Etc1} onChange={(e) => setS1b5_Etc1(e.target.value)} style={{marginRight: 10}} /></>} label='년에 농사 시작'/>
                 <FormControlLabel value='2' control={<Radio/>} label='아직 농사지은 경험이 없음'/>
             </SmallQuestionBlock>
 
@@ -385,11 +390,11 @@ const Sector1 = () => {
             <SmallQuestionBlock title={<div>11. 연락처(휴대폰)</div>}
                                 gridColumnProperty={"repeat(5,1fr)"}
             >
-                <TextField type='number' value={s1b11data1} onChange={handleS1b11data1}/>
+                <TextField type='number' value={s1b11_1} onChange={handleS1b11_1}/>
                 <CenterBox size={20}>-</CenterBox>
-                <TextField type='number' value={s1b11data2} onChange={handleS1b11data2}/>
+                <TextField type='number' value={s1b11_2} onChange={handleS1b11_2}/>
                 <CenterBox size={20}>-</CenterBox>
-                <TextField type='number' value={s1b11data3} onChange={handleS1b11data3}/>
+                <TextField type='number' value={s1b11_3} onChange={handleS1b11_3}/>
             </SmallQuestionBlock>
 
             <SectorFooter sector={1} moveNextSector={moveNextSector} alertOpen={alertOpen} setAlertOpen={setAlertOpen}/>
