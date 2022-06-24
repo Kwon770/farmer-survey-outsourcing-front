@@ -18,7 +18,7 @@ const Sector3 = () => {
     const [s3b1_3, setS3b1_3] = useState('');
     const [s3b1_4, setS3b1_4] = useState('');
     const [s3b1_5, setS3b1_5] = useState('');
-    const [s3b1Data, setS3b1Data] = useState([]);
+    const [s3b1Data, setS3b1Data] = useState([['', '', '']]);
 
     const [s3b2, setS3b2] = useState('');
 
@@ -27,7 +27,7 @@ const Sector3 = () => {
     const [s3b3b1_3, setS3b3b1_3] = useState('');
     const [s3b3b1_4, setS3b3b1_4] = useState('');
     const [s3b3b1_5, setS3b3b1_5] = useState('');
-    const [s3b3b1Data, setS3b3b1Data] = useState([]);
+    const [s3b3b1Data, setS3b3b1Data] = useState([['', '', '']]);
 
     const [s3b3b2_1, setS3b3b2_1] = useState('');
     const [s3b3b2_2, setS3b3b2_2] = useState('');
@@ -52,7 +52,7 @@ const Sector3 = () => {
     const [s3b4_3, setS3b4_3] = useState('');
     const [s3b4_4, setS3b4_4] = useState('');
     const [s3b4_5, setS3b4_5] = useState('');
-    const [s3b4Data, setS3b4Data] = useState([]);
+    const [s3b4Data, setS3b4Data] = useState([['', '', '']]);
 
     const [s3b5, setS3b5] = useState('');
     const [s3b5_Etc8, setS3b5_Etc8] = useState('');
@@ -486,8 +486,10 @@ const Sector3 = () => {
                             </Select>
                             <TextField type='number' value={element[1]} onChange={(e) => handleS3b1(e, idx, 1)}/>
                             <TextField type='number' value={element[2]} onChange={(e) => handleS3b1(e, idx, 2)}/>
-                            <Button variant='text' color='error'
-                                    onClick={() => handleS3b1RemovingColumn(idx)}>삭제</Button>
+                            {
+                                idx === 0 ? <div/> : <Button variant='text' color='error'
+                                                             onClick={() => handleS3b1RemovingColumn(idx)}>삭제</Button>
+                            }
                         </>
                     ))
                 }
@@ -537,8 +539,10 @@ const Sector3 = () => {
                                                onChange={(e) => handleS3b3b1(e, idx, 1)}/>
                                     <TextField type='number' value={element[2]}
                                                onChange={(e) => handleS3b3b1(e, idx, 2)}/>
-                                    <Button variant='text' color='error'
-                                            onClick={() => handleS3b3b1RemovingColumn(idx)}>삭제</Button>
+                                    {
+                                        idx === 0 ? <div/> : <Button variant='text' color='error'
+                                                                     onClick={() => handleS3b3b1RemovingColumn(idx)}>삭제</Button>
+                                    }
                                 </>
                             ))
                         }
@@ -626,8 +630,10 @@ const Sector3 = () => {
                                                onChange={(e) => handleS3b4(e, idx, 1)}/>
                                     <TextField type='number' value={element[2]}
                                                onChange={(e) => handleS3b4(e, idx, 2)}/>
-                                    <Button variant='text' color='error'
-                                            onClick={() => handleS3b4RemovingColumn(idx)}>삭제</Button>
+                                    {
+                                        idx === 0 ? <div/> : <Button variant='text' color='error'
+                                                                     onClick={() => handleS3b4RemovingColumn(idx)}>삭제</Button>
+                                    }
                                 </>
                             ))
                         }
