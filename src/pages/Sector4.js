@@ -48,13 +48,14 @@ const Sector4 = () => {
 
     const validateAllWritten = () => {
         if (
-            s4b1 === '' ||
-            s4b2b2 === ''
-        )
+            s4b1 === ''
+        ) {
             return false;
+        }
 
-        if (s4b1 === '1' && s4b2b1 === '')
-            return false;
+        if (s4b1 === '1')
+            if (s4b2b1 === '' || s4b2b2 === '')
+                return false;
 
         return true;
     }
@@ -66,9 +67,7 @@ const Sector4 = () => {
             's4b2b2': s4b2b2
         }
 
-        console.log(sector4DataObject);
         localStorage.setItem('sector4', JSON.stringify(sector4DataObject))
-
     }
 
     const moveNextSector = () => {
@@ -109,18 +108,19 @@ const Sector4 = () => {
                         <FormControlLabel control={<Checkbox name='4' checked={s4b2b1Data[4]} onChange={handleS4b2b1}/>}
                                           label='스마트 축사'/>
                     </QuestionBlock>
+
+                    <strong><em>※ 3-1.문항에서 1번을 선택하신 분의 경우에만 응답해주세요.</em></strong>
+                    <QuestionBlock title={<div>4-2-2. 귀하의 차후 스마트팜(시설 또는 면적) 수요에 대한 질문입니다. 해당하는 번호를 선택해주세요.</div>}
+                                   gridColumnProperty={"repeat(1,1fr)"}
+                                   onChange={handleS4b2b2}
+                    >
+                        <FormControlLabel value='1' control={<Radio/>} label='스마트팜 시설과 면적 모두 유지한다'/>
+                        <FormControlLabel value='2' control={<Radio/>} label='스마트팜 시설은 확충하고 면적은 유지한다'/>
+                        <FormControlLabel value='3' control={<Radio/>} label='스마트팜 시설은 유지하고 면적은 확대한다'/>
+                        <FormControlLabel value='4' control={<Radio/>} label='스마트팜 시설과 면적 모두 늘린다'/>
+                    </QuestionBlock>
                 </>
             }
-
-            <QuestionBlock title={<div>4-2-2. 귀하의 차후 스마트팜(시설 또는 면적) 수요에 대한 질문입니다. 해당하는 번호를 선택해주세요.</div>}
-                           gridColumnProperty={"repeat(1,1fr)"}
-                           onChange={handleS4b2b2}
-            >
-                <FormControlLabel value='1' control={<Radio/>} label='스마트팜 시설과 면적 모두 유지한다'/>
-                <FormControlLabel value='2' control={<Radio/>} label='스마트팜 시설은 확충하고 면적은 유지한다'/>
-                <FormControlLabel value='3' control={<Radio/>} label='스마트팜 시설은 유지하고 면적은 확대한다'/>
-                <FormControlLabel value='4' control={<Radio/>} label='스마트팜 시설과 면적 모두 늘린다'/>
-            </QuestionBlock>
 
             <SectorFooter sector={4} moveNextSector={moveNextSector} alertOpen={alertOpen} setAlertOpen={setAlertOpen}/>
         </Background>
