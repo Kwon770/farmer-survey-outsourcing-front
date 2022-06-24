@@ -105,33 +105,38 @@ const Sector3 = () => {
         s3b1Data.forEach((element) => {
             switch (element[0]) {
                 case '1':
-                    non_total += parseInt(element[1])
-                    non_rent += parseInt(element[2]);
+                    non_total += Number(element[1])
+                    non_rent += Number(element[2]);
                     break;
                 case '2':
-                    bat_total += parseInt(element[1])
-                    bat_rent += parseInt(element[2]);
+                    bat_total += Number(element[1])
+                    bat_rent += Number(element[2]);
                     break;
                 case '3':
-                    gwa_total += parseInt(element[1])
-                    gwa_rent += parseInt(element[2]);
+                    gwa_total += Number(element[1])
+                    gwa_rent += Number(element[2]);
                     break;
                 case '4':
-                    si_total += parseInt(element[1])
-                    si_rent += parseInt(element[2]);
+                    si_total += Number(element[1])
+                    si_rent += Number(element[2]);
                     break;
                 case '5':
-                    chuk_total += parseInt(element[1])
-                    chuk_rent += parseInt(element[2]);
+                    chuk_total += Number(element[1])
+                    chuk_rent += Number(element[2]);
                     break;
             }
         })
 
-        setS3b1_1(non_total + ',' + non_rent)
-        setS3b1_2(bat_total + ',' + bat_rent)
-        setS3b1_3(gwa_total + ',' + gwa_rent)
-        setS3b1_4(si_total + ',' + si_rent)
-        setS3b1_5(chuk_total + ',' + chuk_rent)
+        if (bat_total === 0 || bat_rent === 0) setS3b1_2('');
+        else setS3b1_2(bat_total + ',' + bat_rent);
+        if (non_total === 0 || non_rent === 0) setS3b1_1('');
+        else setS3b1_1(non_total + ',' + non_rent);
+        if (gwa_total === 0 || gwa_rent === 0) setS3b1_3('');
+        else setS3b1_3(gwa_total + ',' + gwa_rent);
+        if (si_total === 0 || si_rent === 0) setS3b1_4('');
+        else setS3b1_4(si_total + ',' + si_rent);
+        if (chuk_total === 0 || chuk_rent === 0) setS3b1_5('');
+        else setS3b1_5(chuk_total + ',' + chuk_rent);
     }, [s3b1Data])
     const handleS3b1 = (e, idx, type) => {
         setS3b1Data(s3b1Data.map((element, i) => {
@@ -167,33 +172,38 @@ const Sector3 = () => {
         s3b3b1Data.forEach((element) => {
             switch (element[0]) {
                 case '1':
-                    non_total += parseInt(element[1])
-                    non_rent += parseInt(element[2]);
+                    non_total += Number(element[1])
+                    non_rent += Number(element[2]);
                     break;
                 case '2':
-                    bat_total += parseInt(element[1])
-                    bat_rent += parseInt(element[2]);
+                    bat_total += Number(element[1])
+                    bat_rent += Number(element[2]);
                     break;
                 case '3':
-                    gwa_total += parseInt(element[1])
-                    gwa_rent += parseInt(element[2]);
+                    gwa_total += Number(element[1])
+                    gwa_rent += Number(element[2]);
                     break;
                 case '4':
-                    si_total += parseInt(element[1])
-                    si_rent += parseInt(element[2]);
+                    si_total += Number(element[1])
+                    si_rent += Number(element[2]);
                     break;
                 case '5':
-                    chuk_total += parseInt(element[1])
-                    chuk_rent += parseInt(element[2]);
+                    chuk_total += Number(element[1])
+                    chuk_rent += Number(element[2]);
                     break;
             }
         })
 
-        setS3b3b1_1(non_total + ',' + non_rent)
-        setS3b3b1_2(bat_total + ',' + bat_rent)
-        setS3b3b1_3(gwa_total + ',' + gwa_rent)
-        setS3b3b1_4(si_total + ',' + si_rent)
-        setS3b3b1_5(chuk_total + ',' + chuk_rent)
+        if (bat_total === 0 || bat_rent === 0) setS3b3b1_1('');
+        else setS3b3b1_1(bat_total + ',' + bat_rent);
+        if (non_total === 0 || non_rent === 0) setS3b3b1_2('');
+        else setS3b3b1_2(non_total + ',' + non_rent);
+        if (gwa_total === 0 || gwa_rent === 0) setS3b3b1_3('');
+        else setS3b3b1_3(gwa_total + ',' + gwa_rent);
+        if (si_total === 0 || si_rent === 0) setS3b3b1_4('');
+        else setS3b3b1_4(si_total + ',' + si_rent);
+        if (chuk_total === 0 || chuk_rent === 0) setS3b3b1_5('');
+        else setS3b3b1_5(chuk_total + ',' + chuk_rent);
     }, [s3b3b1Data])
     const handleS3b3b1 = (e, idx, type) => {
         setS3b3b1Data(s3b3b1Data.map((element, i) => {
@@ -215,7 +225,7 @@ const Sector3 = () => {
         let checking = false;
         let checkable = s3b3b2_1 === '' || s3b3b2_2 === '';
         s3b3b2Data.forEach((b, idx) => {
-            if (!b && idx === parseInt(e.target.name)) checking = true;
+            if (!b && idx === Number(e.target.name)) checking = true;
         })
         // 2개 이미 선택시 중단
         if (checking && !checkable) {
@@ -224,7 +234,7 @@ const Sector3 = () => {
         //
 
         setS3b3b2Data(s3b3b2Data.map((b, idx) => {
-            if (idx === parseInt(e.target.name)) {
+            if (idx === Number(e.target.name)) {
                 return !b
             } else {
                 return b
@@ -258,33 +268,38 @@ const Sector3 = () => {
         s3b4Data.forEach((element) => {
             switch (element[0]) {
                 case '1':
-                    non_total += parseInt(element[1])
-                    non_rent += parseInt(element[2]);
+                    non_total += Number(element[1])
+                    non_rent += Number(element[2]);
                     break;
                 case '2':
-                    bat_total += parseInt(element[1])
-                    bat_rent += parseInt(element[2]);
+                    bat_total += Number(element[1])
+                    bat_rent += Number(element[2]);
                     break;
                 case '3':
-                    gwa_total += parseInt(element[1])
-                    gwa_rent += parseInt(element[2]);
+                    gwa_total += Number(element[1])
+                    gwa_rent += Number(element[2]);
                     break;
                 case '4':
-                    si_total += parseInt(element[1])
-                    si_rent += parseInt(element[2]);
+                    si_total += Number(element[1])
+                    si_rent += Number(element[2]);
                     break;
                 case '5':
-                    chuk_total += parseInt(element[1])
-                    chuk_rent += parseInt(element[2]);
+                    chuk_total += Number(element[1])
+                    chuk_rent += Number(element[2]);
                     break;
             }
         })
 
-        setS3b4_1(non_total + ',' + non_rent)
-        setS3b4_2(bat_total + ',' + bat_rent)
-        setS3b4_3(gwa_total + ',' + gwa_rent)
-        setS3b4_4(si_total + ',' + si_rent)
-        setS3b4_5(chuk_total + ',' + chuk_rent)
+        if (bat_total === 0 || bat_rent === 0) setS3b4_1('');
+        else setS3b4_1(bat_total + ',' + bat_rent);
+        if (non_total === 0 || non_rent === 0) setS3b4_2('');
+        else setS3b4_2(non_total + ',' + non_rent);
+        if (gwa_total === 0 || gwa_rent === 0) setS3b4_3('');
+        else setS3b4_3(gwa_total + ',' + gwa_rent);
+        if (si_total === 0 || si_rent === 0) setS3b4_4('');
+        else setS3b4_4(si_total + ',' + si_rent);
+        if (chuk_total === 0 || chuk_rent === 0) setS3b4_5('');
+        else setS3b4_5(chuk_total + ',' + chuk_rent);
     }, [s3b4Data])
     const handleS3b4 = (e, idx, type) => {
         setS3b4Data(s3b4Data.map((element, i) => {
@@ -320,7 +335,7 @@ const Sector3 = () => {
         let checking = false;
         let checkable = s3b7b2_1 === '' || s3b7b2_2 === '' || s3b7b2_3 === '';
         s3b7b2Data.forEach((b, idx) => {
-            if (!b && idx === parseInt(e.target.name)) checking = true;
+            if (!b && idx === Number(e.target.name)) checking = true;
         })
         // 3개 이미 선택시 중단
         if (checking && !checkable) {
@@ -329,7 +344,7 @@ const Sector3 = () => {
         //
 
         setS3b7b2Data(s3b7b2Data.map((b, idx) => {
-            if (idx === parseInt(e.target.name)) {
+            if (idx === Number(e.target.name)) {
                 return !b
             } else {
                 return b

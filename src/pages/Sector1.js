@@ -76,7 +76,7 @@ const Sector1 = () => {
     }, [s1b6Data]);
     const handleS1b6 = (e) => {
         setS1b6Data(s1b6Data.map((b, idx) => {
-            if (idx === parseInt(e.target.name)) {
+            if (idx === Number(e.target.name)) {
                 return !b
             } else {
                 return b
@@ -95,7 +95,7 @@ const Sector1 = () => {
         let checkable = false;
         s1b7Data.forEach((b, idx) => {
             if (b) checkedCount++
-            if (!b && idx === parseInt(e.target.name)) checking = true;
+            if (!b && idx === Number(e.target.name)) checking = true;
         })
         if (checkedCount < 3) checkable = true;
         // 최대 3개시 중단
@@ -105,7 +105,7 @@ const Sector1 = () => {
         //
 
         setS1b7Data(s1b7Data.map((b, idx) => {
-            if (idx === parseInt(e.target.name)) {
+            if (idx === Number(e.target.name)) {
                 return !b
             } else {
                 return b

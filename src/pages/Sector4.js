@@ -34,7 +34,7 @@ const Sector4 = () => {
     }, [s4b2b1Data])
     const handleS4b2b1 = (e) => {
         setS4b2b1Data(s4b2b1Data.map((element, i) => {
-            if (i === parseInt(e.target.name)) {
+            if (i === Number(e.target.name)) {
                 return !element;
             } else {
                 return element;
@@ -112,7 +112,7 @@ const Sector4 = () => {
                 </>
             }
 
-            <QuestionBlock title={<div>3-2-2. 귀하의 차후 스마트팜(시설 또는 면적) 수요에 대한 질문입니다. 아래의 그림을 보고 해당하는 번호 를 선택해주세요.</div>}
+            <QuestionBlock title={<div>4-2-2. 귀하의 차후 스마트팜(시설 또는 면적) 수요에 대한 질문입니다. 해당하는 번호를 선택해주세요.</div>}
                            gridColumnProperty={"repeat(1,1fr)"}
                            onChange={handleS4b2b2}
             >

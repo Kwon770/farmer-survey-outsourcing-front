@@ -113,7 +113,7 @@ const Sector2 = () => {
         let checking = false;
         let checkable = s2b3_1 === '' || s2b3_2 === '';
         s2b3Data.forEach((b, idx) => {
-            if (!b && idx === parseInt(e.target.name)) checking = true;
+            if (!b && idx === Number(e.target.name)) checking = true;
         })
         // 2개 이미 선택시 중단
         if (checking && !checkable) {
@@ -122,7 +122,7 @@ const Sector2 = () => {
         //
 
         setS2b3Data(s2b3Data.map((b, idx) => {
-            if (idx === parseInt(e.target.name)) {
+            if (idx === Number(e.target.name)) {
                 return !b
             } else {
                 return b
@@ -143,7 +143,7 @@ const Sector2 = () => {
         let checking = false;
         let checkable = s2b4_1 === '' || s2b4_2 === '' || s2b4_3 === '';
         s2b4Data.forEach((b, idx) => {
-            if (!b && idx === parseInt(e.target.name)) checking = true;
+            if (!b && idx === Number(e.target.name)) checking = true;
         })
         // 3개 이미 선택시 중단
         if (checking && !checkable) {
@@ -152,7 +152,7 @@ const Sector2 = () => {
         //
 
         setS2b4Data(s2b4Data.map((b, idx) => {
-            if (idx === parseInt(e.target.name)) {
+            if (idx === Number(e.target.name)) {
                 return !b
             } else {
                 return b
