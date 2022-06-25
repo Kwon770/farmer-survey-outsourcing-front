@@ -23,7 +23,7 @@ const SmallQuestionBlock = ({title, gridColumnProperty, announcement, onChange, 
 }
 
 const Block = styled.div`
-  width: ${(props) => props.theme.blockWidth};
+  width: 100%;
   padding: ${(props) => props.theme.blockPadding};
   background-color: white;
   border: 1px solid ${(props) => props.theme.borderShadowColor};
