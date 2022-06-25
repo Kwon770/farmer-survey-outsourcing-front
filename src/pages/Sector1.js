@@ -7,7 +7,7 @@ import {
     FormControlLabel,
     MenuItem,
     Radio,
-    Select, TextField,
+    Select, Stack, TextField,
 } from "@mui/material";
 import SmallQuestionBlock from "../components/SmallQuestionBlock";
 import CenterBox from "../components/CenterBox";
@@ -304,7 +304,11 @@ const Sector1 = () => {
                                 gridColumnProperty={"repeat(1,1fr)"}
                                 onChange={handleS1b5}
             >
-                <FormControlLabel value='1' control={<><Radio/><TextField value={s1b5_Etc1} onChange={(e) => setS1b5_Etc1(e.target.value)} style={{marginRight: 10}} /></>} label='년에 농사 시작'/>
+                <Stack direction='row'>
+                    <FormControlLabel value='1' control={<Radio/>} />
+                    <TextField type ='number' value={s1b5_Etc1} onChange={(e) => setS1b5_Etc1(e.target.value)} style={{marginRight: 10}} />
+                    <CenterBox>년에 농사 시작</CenterBox>
+                </Stack>
                 <FormControlLabel value='2' control={<Radio/>} label='아직 농사지은 경험이 없음'/>
             </SmallQuestionBlock>
 
