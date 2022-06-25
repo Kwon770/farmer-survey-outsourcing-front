@@ -70,6 +70,13 @@ const GlobalStyle = createGlobalStyle`
 
     background-color: ${Theme.bodyColor};
   }
+  
+  #root {
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
 
   * {
     font-family: 'Noto Sans KR', AppleGothic, sans-serif;
