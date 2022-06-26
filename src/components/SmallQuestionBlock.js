@@ -1,21 +1,14 @@
 import React from "react";
 import styled from "styled-components";
-import {FormControl, RadioGroup} from "@mui/material";
 
-const SmallQuestionBlock = ({title, gridColumnProperty, announcement, onChange, children}) => {
+const SmallQuestionBlock = ({title, gridColumnProperty, announcement, children}) => {
     return (
         <Block>
             <Title>
                 {title}
             </Title>
             <Content>
-                <FormControl fullWidth={true} >
-                    <RadioGroup onChange={onChange}>
-                        <ContentGrid gridColumnProperty={gridColumnProperty}>
-                            {children}
-                        </ContentGrid>
-                    </RadioGroup>
-                </FormControl>
+                {children}
                 {announcement}
             </Content>
         </Block>
@@ -46,13 +39,6 @@ const Title = styled.div`
 const Content = styled.div`
   width: 82%;
   padding-left: 20px;
-`
-
-const ContentGrid = styled.div`
-  width: 100%;
-  display: grid;
-  grid-template-columns: ${(props) => props.gridColumnProperty};
-
 `
 
 export default SmallQuestionBlock;

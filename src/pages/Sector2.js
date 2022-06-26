@@ -257,9 +257,7 @@ const Sector2 = () => {
             's2b5': s2b5
         }
 
-        console.log(sector2DataObject);
         localStorage.setItem('sector2', JSON.stringify(sector2DataObject))
-
     }
 
     const moveNextSector = () => {
