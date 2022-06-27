@@ -11,12 +11,8 @@ R
 "src/components/ColorCenterBlock.js,5/d/5def6db2562af04d2b8d36f90f1e3100394abc16
 L
 src/components/TitleBlock.js,5/e/5e8778452a1daca6daeb474e7060f6c3e56865eb
-D
-src/pages/Sector3.js,3/3/33a6d55cc226c68f542289e7a2e4770676f9d9fb
 <
 package.json,7/0/7030d0b2f71b999ff89a343de08c414af32fc93a
-D
-src/pages/Sector4.js,c/2/c298ab446dd7aa2cfce447025cd79e13061ab6e8
 C
 src/styles/Theme.js,a/2/a2a8cd67cc67e04d2101c0e95da09147b5c5e2b2
 L

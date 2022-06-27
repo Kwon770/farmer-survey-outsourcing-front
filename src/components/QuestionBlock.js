@@ -1,21 +1,14 @@
 import React from "react";
 import styled from "styled-components";
-import {FormControl, RadioGroup} from "@mui/material";
 
-const QuestionBlock = ({title, gridColumnProperty, rowGap, columnGap, announcement, onChange, children}) => {
+const QuestionBlock = ({title, announcement, onChange, children}) => {
     return (
         <Block>
             <Title>
                 {title}
             </Title>
             <Content>
-                <FormControl fullWidth={true} >
-                    <RadioGroup onChange={onChange}>
-                        <ContentGrid gridColumnProperty={gridColumnProperty} rowGap={rowGap} columnGap={columnGap}>
-                            {children}
-                        </ContentGrid>
-                    </RadioGroup>
-                </FormControl>
+                {children}
                 {announcement}
             </Content>
         </Block>
@@ -41,15 +34,6 @@ const Title = styled.div`
 
 const Content = styled.div`
   width: 100%;
-`
-
-const ContentGrid = styled.div`
-  width: 100%;
-  display: grid;
-  grid-template-columns: ${(props) => props.gridColumnProperty};
-  row-gap: ${(props) => props.rowGap ? props.rowGap : 0}px;
-  column-gap: ${(props) => props.columnGap ? props.columnGap : 0}px;
-
 `
 
 export default QuestionBlock;
