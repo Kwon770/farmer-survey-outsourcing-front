@@ -7,7 +7,7 @@ import {
     FormControlLabel,
     MenuItem,
     Radio,
-    Select, Stack, TextField, InputLabel, FormControl, RadioGroup
+    Select, Stack, TextField, FormControl, RadioGroup
 } from "@mui/material";
 import SmallQuestionBlock from "../components/SmallQuestionBlock";
 import CenterBox from "../components/CenterBox";
@@ -328,8 +328,8 @@ const Sector1 = () => {
             <SmallQuestionBlock title={<div>3. 거주지 주소</div>}>
                 <Grid gridColumnProperty={"3fr 1fr 3fr 1fr 3fr"}>
                     <FormControl fullWidth>
-                        <InputLabel id="s1b3_1_label">도·시</InputLabel>
-                        <Select value={s1b3_1} onChange={handleS1b3_1} labelId="s1b3_1_label" label="도·시">
+                        <Select displayEmpty={} value={s1b3_1} onChange={handleS1b3_1}>
+                            <MenuItem disabled value={''}>도·시</MenuItem>
                             {
                                 dosis.map((dosi, idx) => <MenuItem key={dosi.code} value={idx}>{dosi.name}</MenuItem>)
                             }
@@ -337,8 +337,8 @@ const Sector1 = () => {
                     </FormControl>
                     <div/>
                     <FormControl fullWidth>
-                        <InputLabel id="s1b3_2_label">시·군·구</InputLabel>
-                        <Select value={s1b3_2} onChange={handleS1b3_2} labelId="s1b3_2_label" label="시·군·구">
+                        <Select displayEmpty value={s1b3_2} onChange={handleS1b3_2}>
+                            <MenuItem disabled value={''}>시·군·구</MenuItem>
                             {
                                 sigungus.map((sigungu, idx) => <MenuItem key={sigungu.code}
                                                                          value={idx}>{sigungu.name}</MenuItem>)
@@ -347,8 +347,8 @@ const Sector1 = () => {
                     </FormControl>
                     <div/>
                     <FormControl fullWidth>
-                        <InputLabel id="s1b3_3_label">읍·면·동</InputLabel>
-                        <Select value={s1b3_3} onChange={handleS1b3_3} labelId="s1b3_3_label" label="읍·면·동">
+                        <Select displayEmpty value={s1b3_3} onChange={handleS1b3_3}>
+                            <MenuItem disabled value={''}>읍·면·동</MenuItem>
                             {
                                 upmeongdongs.map((upmeongdong, idx) => <MenuItem key={upmeongdong.code}
                                                                                  value={idx}>{upmeongdong.name}</MenuItem>)
