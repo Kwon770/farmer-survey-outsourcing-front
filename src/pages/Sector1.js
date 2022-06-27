@@ -328,7 +328,7 @@ const Sector1 = () => {
             <SmallQuestionBlock title={<div>3. 거주지 주소</div>}>
                 <Grid gridColumnProperty={"3fr 1fr 3fr 1fr 3fr"}>
                     <FormControl fullWidth>
-                        <Select displayEmpty={} value={s1b3_1} onChange={handleS1b3_1}>
+                        <Select displayEmpty value={s1b3_1} onChange={handleS1b3_1}>
                             <MenuItem disabled value={''}>도·시</MenuItem>
                             {
                                 dosis.map((dosi, idx) => <MenuItem key={dosi.code} value={idx}>{dosi.name}</MenuItem>)
