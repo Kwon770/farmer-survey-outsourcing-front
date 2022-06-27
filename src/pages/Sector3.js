@@ -10,7 +10,7 @@ import {
     RadioGroup,
     TextField,
     Checkbox,
-    Stack, InputLabel
+    Stack
 } from "@mui/material";
 import Background from "../components/Background";
 import TitleBlock from "../components/TitleBlock";
@@ -591,9 +591,9 @@ const Sector3 = () => {
                     {
                         s3b1Data.map((element, idx) => (
                             <>
-                                <FormControl fullWidth>
+                                <FormControl fullWidth size={'small'}>
                                     <Select displayEmpty value={element[0]} onChange={(e) => handleS3b1(e, idx, 0)}>
-                                        <MenuItem disabled value={''}>논·밭·과수원·시설원예·축산</MenuItem>
+                                        <MenuItem disabled value={''}><i>논·밭·과수원·시설원예·축산</i></MenuItem>
                                         <MenuItem value={'1'}>논</MenuItem>
                                         <MenuItem value={'2'}>밭</MenuItem>
                                         <MenuItem value={'3'}>과수원</MenuItem>
@@ -603,11 +603,11 @@ const Sector3 = () => {
                                 </FormControl>
                                 <FormControl fullWidth>
                                     <TextField placeholder='전체 영농 면적' type='number' value={element[1]}
-                                               onChange={(e) => handleS3b1(e, idx, 1)}/>
+                                               onChange={(e) => handleS3b1(e, idx, 1)} size={'small'}/>
                                 </FormControl>
                                 <FormControl fullWidth>
                                     <TextField placeholder='임대한 농지' type='number' value={element[2]}
-                                               onChange={(e) => handleS3b1(e, idx, 2)}/>
+                                               onChange={(e) => handleS3b1(e, idx, 2)} size={'small'}/>
                                 </FormControl>
 
                                 {
@@ -649,25 +649,31 @@ const Sector3 = () => {
                         <Grid gridColumnProperty={"10fr 10fr 10fr 1fr"} rowGap={10} columnGap={10}>
                             <ColorCenterBlock>구분</ColorCenterBlock>
                             <ColorCenterBlock>전체 영농 면적<br/>(경작, 사육)</ColorCenterBlock>
-                            <ColorCenterBlock>임대한 농지</ColorCenterBlock>
+                            <ColorCenterBlock>임대할 농지</ColorCenterBlock>
                             <div/>
 
                             {
                                 s3b3b1Data.map((element, idx) => (
                                     <>
-                                        <Select displayEmpty value={element[0]}
-                                                onChange={(e) => handleS3b3b1(e, idx, 0)}>
-                                            <MenuItem disabled value={''}>논·밭·과수원·시설원예·축산</MenuItem>
-                                            <MenuItem value={'1'}>논</MenuItem>
-                                            <MenuItem value={'2'}>밭</MenuItem>
-                                            <MenuItem value={'3'}>과수원</MenuItem>
-                                            <MenuItem value={'4'}>시설원예</MenuItem>
-                                            <MenuItem value={'5'}>축산</MenuItem>
-                                        </Select>
-                                        <TextField placeholder='전체 영농 면적' type='number' value={element[1]}
-                                                   onChange={(e) => handleS3b3b1(e, idx, 1)}/>
-                                        <TextField placeholder='임대한 농지' type='number' value={element[2]}
-                                                   onChange={(e) => handleS3b3b1(e, idx, 2)}/>
+                                        <FormControl fullWidth size={'small'}>
+                                            <Select displayEmpty value={element[0]}
+                                                    onChange={(e) => handleS3b3b1(e, idx, 0)}>
+                                                <MenuItem disabled value={''}><i>논·밭·과수원·시설원예·축산</i></MenuItem>
+                                                <MenuItem value={'1'}>논</MenuItem>
+                                                <MenuItem value={'2'}>밭</MenuItem>
+                                                <MenuItem value={'3'}>과수원</MenuItem>
+                                                <MenuItem value={'4'}>시설원예</MenuItem>
+                                                <MenuItem value={'5'}>축산</MenuItem>
+                                            </Select>
+                                        </FormControl>
+                                        <FormControl fullWidth>
+                                            <TextField placeholder='전체 영농 면적' type='number' value={element[1]}
+                                                       onChange={(e) => handleS3b3b1(e, idx, 1)} size={'small'}/>
+                                        </FormControl>
+                                        <FormControl fullWidth>
+                                            <TextField placeholder='임대한 농지' type='number' value={element[2]}
+                                                       onChange={(e) => handleS3b3b1(e, idx, 2)} size={'small'}/>
+                                        </FormControl>
                                         {
                                             idx === 0 ? <div/> : <Button variant='text' color='error'
                                                                          onClick={() => handleS3b3b1RemovingColumn(idx)}>삭제</Button>
@@ -687,8 +693,10 @@ const Sector3 = () => {
                         <FormControl fullWidth>
                             <Grid gridColumnProperty={"repeat(2,1fr)"}>
 
-                                <CenterBox padding={20}>1순위 : <strong>{s3b3b2_1}</strong></CenterBox>
-                                <CenterBox padding={20}>2순위 : <strong>{s3b3b2_2}</strong></CenterBox>
+                                <CenterBox size={20} weight={500} padding={20}>1순위 :&nbsp;&nbsp;
+                                    <strong>{s3b3b2_1}</strong></CenterBox>
+                                <CenterBox size={20} weight={500} padding={20}>2순위 :&nbsp;&nbsp;
+                                    <strong>{s3b3b2_2}</strong></CenterBox>
 
                                 <FormControlLabel
                                     control={<Checkbox name='1' checked={s3b3b2Data[1]} onChange={handleS3b3b2}/>}
@@ -712,13 +720,15 @@ const Sector3 = () => {
                                     <FormControlLabel
                                         control={<Checkbox name='7' checked={s3b3b2Data[7]} onChange={handleS3b3b2}/>}
                                         label='7. 기타'/>
-                                    <TextField value={s3b3b2_Etc7} onChange={(e) => setS3b3b2_Etc7(e.target.value)}/>
+                                    <TextField value={s3b3b2_Etc7} onChange={(e) => setS3b3b2_Etc7(e.target.value)}
+                                               size={"small"}/>
                                 </Stack>
                                 <Stack direction='row'>
                                     <FormControlLabel
                                         control={<Checkbox name='8' checked={s3b3b2Data[8]} onChange={handleS3b3b2}/>}
                                         label='8. 기타'/>
-                                    <TextField value={s3b3b2_Etc8} onChange={(e) => setS3b3b2_Etc8(e.target.value)}/>
+                                    <TextField value={s3b3b2_Etc8} onChange={(e) => setS3b3b2_Etc8(e.target.value)}
+                                               size={"small"}/>
                                 </Stack>
                             </Grid>
                         </FormControl>
@@ -754,16 +764,16 @@ const Sector3 = () => {
                         <Grid gridColumnProperty={"10fr 10fr 10fr 1fr"} rowGap={10} columnGap={10}>
                             <ColorCenterBlock>구분</ColorCenterBlock>
                             <ColorCenterBlock>전체 영농 면적<br/>(경작, 사육)</ColorCenterBlock>
-                            <ColorCenterBlock>임대한 농지</ColorCenterBlock>
+                            <ColorCenterBlock>임대할 농지</ColorCenterBlock>
                             <div/>
 
                             {
                                 s3b4Data.map((element, idx) => (
                                     <>
-                                        <FormControl fullWidth>
+                                        <FormControl fullWidth size={'small'}>
                                             <Select displayEmpty value={element[0]}
                                                     onChange={(e) => handleS3b4(e, idx, 0)}>
-                                                <MenuItem disabled value={''}>논·밭·과수원·시설원예·축산</MenuItem>
+                                                <MenuItem disabled value={''}><i>논·밭·과수원·시설원예·축산</i></MenuItem>
                                                 <MenuItem value={'1'}>논</MenuItem>
                                                 <MenuItem value={'2'}>밭</MenuItem>
                                                 <MenuItem value={'3'}>과수원</MenuItem>
@@ -773,10 +783,10 @@ const Sector3 = () => {
                                         </FormControl>
                                         <FormControl fullWidth>
                                             <TextField placeholder='전체 영농 면적' type='number' value={element[1]}
-                                                       onChange={(e) => handleS3b4(e, idx, 1)}/>
+                                                       onChange={(e) => handleS3b4(e, idx, 1)} size={"small"}/>
                                         </FormControl>
                                         <TextField placeholder='임대한 농지' type='number' value={element[2]}
-                                                   onChange={(e) => handleS3b4(e, idx, 2)}/>
+                                                   onChange={(e) => handleS3b4(e, idx, 2)} size={"small"}/>
                                         {
                                             idx === 0 ? <div/> : <Button variant='text' color='error'
                                                                          onClick={() => handleS3b4RemovingColumn(idx)}>삭제</Button>
@@ -811,7 +821,8 @@ const Sector3 = () => {
                                     <FormControlLabel value='7' control={<Radio/>} label='농사를 그만두려고'/>
                                     <Stack direction='row'>
                                         <FormControlLabel value='8' control={<Radio/>} label='기타'/>
-                                        <TextField value={s3b5_Etc8} onChange={(e) => setS3b5_Etc8(e.target.value)}/>
+                                        <TextField value={s3b5_Etc8} onChange={(e) => setS3b5_Etc8(e.target.value)}
+                                                   size={"small"}/>
                                     </Stack>
                                 </Grid>
                             </RadioGroup>
@@ -858,14 +869,16 @@ const Sector3 = () => {
                                 <FormControl fullWidth>
                                     <RadioGroup onChange={handleS3b7b1}>
                                         <Grid gridColumnProperty={"repeat(3,1fr)"}>
-                                            <FormControlLabel value='1' control={<Radio/>} label='창업자금(3억) 등 정부융자지원'/>
+                                            <FormControlLabel value='1' control={<Radio/>}
+                                                              label={<CenterBox>창업자급(3억) 등<br/>정부융자지원</CenterBox>}/>
                                             <FormControlLabel value='2' control={<Radio/>} label='은행 등 금융기관 대출'/>
                                             <FormControlLabel value='3' control={<Radio/>} label='부모님 등 직계가족'/>
                                             <FormControlLabel value='4' control={<Radio/>} label='자기자금'/>
                                             <Stack direction='row'>
                                                 <FormControlLabel value='5' control={<Radio/>} label='기타'/>
                                                 <TextField value={s3b7b1_Etc5}
-                                                           onChange={(e) => setS3b7b1_Etc5(e.target.value)}/>
+                                                           onChange={(e) => setS3b7b1_Etc5(e.target.value)}
+                                                           style={{flex: 1}} size={'small'}/>
                                             </Stack>
                                         </Grid>
                                     </RadioGroup>
@@ -877,9 +890,12 @@ const Sector3 = () => {
                             <QuestionBlock title={<div>3-7-2. 농지은행이 아닌 개인간 매매로 농지를 취득하신 주요 요인은 무엇입니까?</div>}>
                                 <FormControl fullWidth>
                                     <Grid gridColumnProperty={"repeat(2,1fr)"}>
-                                        <CenterBox padding={20}>1순위 : <strong>{s3b7b2_1}</strong></CenterBox>
-                                        <CenterBox padding={20}>2순위 : <strong>{s3b7b2_2}</strong></CenterBox>
-                                        <CenterBox padding={20}>3순위 : <strong>{s3b7b2_3}</strong></CenterBox>
+                                        <CenterBox size={20} weight={500} padding={20}>1순위 :&nbsp;&nbsp;
+                                            <strong>{s3b7b2_1}</strong></CenterBox>
+                                        <CenterBox size={20} weight={500} padding={20}>2순위 :&nbsp;&nbsp;
+                                            <strong>{s3b7b2_2}</strong></CenterBox>
+                                        <CenterBox size={20} weight={500} padding={20}>3순위 :&nbsp;&nbsp;
+                                            <strong>{s3b7b2_3}</strong></CenterBox>
                                         <div/>
 
                                         <FormControlLabel
@@ -914,29 +930,31 @@ const Sector3 = () => {
                                             control={<Checkbox name='8' checked={s3b7b2Data[8]}
                                                                onChange={handleS3b7b2}/>}
                                             label='8. 자기자본 풍부'/>
-                                        <Stack direction='row'>
+                                        <Stack direction='row' justifyContent={"space-between"} paddingRight={5}>
                                             <FormControlLabel
                                                 control={<Checkbox name='9' checked={s3b7b2Data[9]}
                                                                    onChange={handleS3b7b2}/>}
                                                 label='9. 기타'/>
                                             <TextField value={s3b7b2_Etc9}
-                                                       onChange={(e) => setS3b7b2_Etc9(e.target.value)}/>
+                                                       onChange={(e) => setS3b7b2_Etc9(e.target.value)} size={'small'}/>
                                         </Stack>
-                                        <Stack direction='row'>
+                                        <Stack direction='row' justifyContent={"space-between"} paddingRight={5}>
                                             <FormControlLabel
                                                 control={<Checkbox name='10' checked={s3b7b2Data[10]}
                                                                    onChange={handleS3b7b2}/>}
                                                 label='10. 기타'/>
                                             <TextField value={s3b7b2_Etc10}
-                                                       onChange={(e) => setS3b7b2_Etc10(e.target.value)}/>
+                                                       onChange={(e) => setS3b7b2_Etc10(e.target.value)}
+                                                       size={'small'}/>
                                         </Stack>
-                                        <Stack direction='row'>
+                                        <Stack direction='row' justifyContent={"space-between"} paddingRight={5}>
                                             <FormControlLabel
                                                 control={<Checkbox name='11' checked={s3b7b2Data[11]}
                                                                    onChange={handleS3b7b2}/>}
                                                 label='11. 기타'/>
                                             <TextField value={s3b7b2_Etc11}
-                                                       onChange={(e) => setS3b7b2_Etc11(e.target.value)}/>
+                                                       onChange={(e) => setS3b7b2_Etc11(e.target.value)}
+                                                       size={'small'}/>
                                         </Stack>
                                     </Grid>
                                 </FormControl>
@@ -975,7 +993,8 @@ const Sector3 = () => {
                                     <FormControlLabel value='5' control={<Radio/>} label='50% 이상'/>
                                     <Stack direction='row'>
                                         <FormControlLabel value='6' control={<Radio/>} label='기타'/>
-                                        <TextField value={s3b8b1_Etc6} onChange={(e) => setS3b8b1_Etc6(e.target.value)}/>
+                                        <TextField value={s3b8b1_Etc6} onChange={(e) => setS3b8b1_Etc6(e.target.value)}
+                                                   size={'small'}/>
                                     </Stack>
                                 </Grid>
                             </RadioGroup>
@@ -1000,7 +1019,8 @@ const Sector3 = () => {
                                     <FormControlLabel value='5' control={<Radio/>} label='50% 이상'/>
                                     <Stack direction='row'>
                                         <FormControlLabel value='6' control={<Radio/>} label='기타'/>
-                                        <TextField value={s3b8b2_Etc6} onChange={(e) => setS3b8b2_Etc6(e.target.value)}/>
+                                        <TextField value={s3b8b2_Etc6} onChange={(e) => setS3b8b2_Etc6(e.target.value)}
+                                                   size={"small"}/>
                                     </Stack>
                                 </Grid>
                             </RadioGroup>

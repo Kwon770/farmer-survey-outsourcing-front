@@ -92,6 +92,10 @@ const GlobalStyle = createGlobalStyle`
   em {
     text-decoration: underline;
   }
+  
+  i {
+    color: ${Theme.placeholderColor};
+  }
 `
 
 function App() {

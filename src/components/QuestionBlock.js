@@ -27,13 +27,21 @@ const Block = styled.div`
 
 const Title = styled.div`
   width: 100%;
-  padding-bottom: 10px;
+  margin-bottom: 15px;
 
   text-align: start;
+  font-size: 17px;
+  font-weight: normal;
+  color: ${(props) => props.theme.titleFontColor};
 `
 
 const Content = styled.div`
   width: 100%;
+  margin-top: 5px;
+  
+  font-size: 16px;
+  font-weight: normal;
+  color: ${(props) => props.theme.contentFontColor};
 `
 
 export default QuestionBlock;

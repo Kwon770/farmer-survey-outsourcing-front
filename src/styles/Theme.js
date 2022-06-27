@@ -3,9 +3,12 @@ export default {
     highlightColor: "#2980b9",
     innerHighlightColor: "#E0E6F5",
     backgroundColor: "#e8faf0",
+    contentFontColor: "#3f4041",
+    titleFontColor: "#000000",
     fontHighlightColor: "#3498db",
     borderShadowColor: "#D5D7DB",
     innerShadowColor: "#eaedf1",
+    placeholderColor: "#AEAEAE",
 
     blockWidth: "800px",
     blockBorder: "8px",

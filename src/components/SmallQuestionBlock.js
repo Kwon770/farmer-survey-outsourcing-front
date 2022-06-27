@@ -34,11 +34,18 @@ const Title = styled.div`
   border-right: 3px solid ${(props) => props.theme.innerShadowColor};
 
   text-align: start;
+  font-size: 17px;
+  font-weight: normal;
+  color: ${(props) => props.theme.titleFontColor};
 `
 
 const Content = styled.div`
   width: 82%;
   padding-left: 20px;
+
+  font-size: 16px;
+  font-weight: normal;
+  color: ${(props) => props.theme.contentFontColor};
 `
 
 export default SmallQuestionBlock;

@@ -189,8 +189,7 @@ const Sector2 = () => {
             s2b1 === '' ||
             s2b2 === '' ||
             s2b3_1 === '' || s2b3_2 === '' ||
-            s2b4_1 === '' || s2b4_2 === '' || s2b4_3 === '' ||
-            s2b5 === ''
+            s2b4_1 === '' || s2b4_2 === '' || s2b4_3 === ''
         ) {
             return false;
         }
@@ -293,7 +292,7 @@ const Sector2 = () => {
                             <FormControlLabel value='1' control={<Radio/>} label='매우 필요함'/>
                             <FormControlLabel value='2' control={<Radio/>} label='대체로 필요함'/>
                             <FormControlLabel value='3' control={<Radio/>} label='모르겠음'/>
-                            <FormControlLabel value='4' control={<Radio/>} label='그다지 필요없음'/>
+                            <FormControlLabel value='4' control={<Radio/>} label={<CenterBox>그다지<br/>필요없음</CenterBox>}/>
                             <FormControlLabel value='5' control={<Radio/>} label='전혀 필요 없음'/>
                         </Grid>
                     </RadioGroup>
@@ -305,7 +304,7 @@ const Sector2 = () => {
                 <FormControl fullWidth>
                     <RadioGroup onChange={handleS2b2}>
                         <Grid gridColumnProperty={"repeat(5,1fr)"}>
-                            <FormControlLabel value='1' control={<Radio/>} label='적극적으로 입주할 것임'/>
+                            <FormControlLabel value='1' control={<Radio/>} label={<CenterBox>적극적으로<br/>입주할 것임</CenterBox>}/>
                             <FormControlLabel value='2' control={<Radio/>} label='입주를 고려할 것 같음'/>
                             <FormControlLabel value='3' control={<Radio/>} label='모르겠음'/>
                             <FormControlLabel value='4' control={<Radio/>} label='입주를 고려할 것 같지 않음'/>
@@ -447,7 +446,7 @@ const Sector2 = () => {
                                     <Stack direction='row'>
                                         <FormControlLabel value='8' control={<Radio/>} label='기타'/>
                                         <TextField value={s2b2b5_Etc8}
-                                                   onChange={(e) => setS2b2b5_Etc8(e.target.value)}/>
+                                                   onChange={(e) => setS2b2b5_Etc8(e.target.value)} size={'small'}/>
                                     </Stack>
                                 </Grid>
                             </RadioGroup>
@@ -475,8 +474,8 @@ const Sector2 = () => {
                 title={<div>2-3. 귀하께서는 농업 스타트업단지 내 농업기반시설 외 필요한 시설은 무엇이라고 생각하십니까? 다음 조건들에서 1, 2순위를 골라주세요.</div>}>
                 <FormControl fullWidth>
                     <Grid gridColumnProperty={"repeat(2,1fr)"}>
-                        <CenterBox padding={20}>1순위 : <strong>{s2b3_1}</strong></CenterBox>
-                        <CenterBox padding={20}>2순위 : <strong>{s2b3_2}</strong></CenterBox>
+                        <CenterBox size={20} weight={500} padding={20}>1순위 :&nbsp;&nbsp;<strong>{s2b3_1}</strong></CenterBox>
+                        <CenterBox size={20} weight={500} padding={20}>2순위 :&nbsp;&nbsp;<strong>{s2b3_2}</strong></CenterBox>
 
                         <FormControlLabel
                             control={<Checkbox name='1' checked={s2b3Data[1]} onChange={handleS2b3}/>}
@@ -506,13 +505,13 @@ const Sector2 = () => {
                             <FormControlLabel
                                 control={<Checkbox name='9' checked={s2b3Data[9]} onChange={handleS2b3}/>}
                                 label='9. 기타'/>
-                            <TextField value={s2b3_Etc9} onChange={(e) => setS2b3_Etc9(e.target.value)}/>
+                            <TextField value={s2b3_Etc9} onChange={(e) => setS2b3_Etc9(e.target.value)} size={'small'}/>
                         </Stack>
                         <Stack direction='row'>
                             <FormControlLabel
                                 control={<Checkbox name='10' checked={s2b3Data[10]} onChange={handleS2b3}/>}
                                 label='10. 기타'/>
-                            <TextField value={s2b3_Etc10} onChange={(e) => setS2b3_Etc10(e.target.value)}/>
+                            <TextField value={s2b3_Etc10} onChange={(e) => setS2b3_Etc10(e.target.value)} size={'small'}/>
                         </Stack>
                     </Grid>
                 </FormControl>
@@ -522,9 +521,9 @@ const Sector2 = () => {
             <QuestionBlock title={<div>2-4. 귀하께서는 농업 스타트업단지가 갖추어야 할 조건은 무엇이라고 생각하십니까? 다음 조건들에서 1, 2, 3순위를 골라주세요.</div>}>
                 <FormControl fullWidth>
                     <Grid gridColumnProperty={"repeat(2,1fr)"}>
-                        <CenterBox padding={20}>1순위 : <strong>{s2b4_1}</strong></CenterBox>
-                        <CenterBox padding={20}>2순위 : <strong>{s2b4_2}</strong></CenterBox>
-                        <CenterBox padding={20}>3순위 : <strong>{s2b4_3}</strong></CenterBox>
+                        <CenterBox size={20} weight={500} padding={20}>1순위 :&nbsp;&nbsp;<strong>{s2b4_1}</strong></CenterBox>
+                        <CenterBox size={20} weight={500} padding={20}>2순위 :&nbsp;&nbsp;<strong>{s2b4_2}</strong></CenterBox>
+                        <CenterBox size={20} weight={500} padding={20}>3순위 :&nbsp;&nbsp;<strong>{s2b4_3}</strong></CenterBox>
                         <div/>
 
                         <FormControlLabel
@@ -564,19 +563,19 @@ const Sector2 = () => {
                             <FormControlLabel
                                 control={<Checkbox name='12' checked={s2b4Data[12]} onChange={handleS2b4}/>}
                                 label='12. 기타'/>
-                            <TextField value={s2b4_Etc12} onChange={(e) => setS2b4_Etc12(e.target.value)}/>
+                            <TextField value={s2b4_Etc12} onChange={(e) => setS2b4_Etc12(e.target.value)} size={'small'}/>
                         </Stack>
                         <Stack direction='row'>
                             <FormControlLabel
                                 control={<Checkbox name='13' checked={s2b4Data[13]} onChange={handleS2b4}/>}
                                 label='13. 기타'/>
-                            <TextField value={s2b4_Etc13} onChange={(e) => setS2b4_Etc13(e.target.value)}/>
+                            <TextField value={s2b4_Etc13} onChange={(e) => setS2b4_Etc13(e.target.value)} size={'small'}/>
                         </Stack>
                         <Stack direction='row'>
                             <FormControlLabel
                                 control={<Checkbox name='14' checked={s2b4Data[14]} onChange={handleS2b4}/>}
                                 label='14. 기타'/>
-                            <TextField value={s2b4_Etc14} onChange={(e) => setS2b4_Etc14(e.target.value)}/>
+                            <TextField value={s2b4_Etc14} onChange={(e) => setS2b4_Etc14(e.target.value)} size={'small'}/>
                         </Stack>
                     </Grid>
                 </FormControl>

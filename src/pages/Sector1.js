@@ -104,6 +104,9 @@ const Sector1 = () => {
     const handleS1b5 = (e) => {
         setS1b5(e.target.value);
     }
+    const handleS1b5_Etc1 = (e) => {
+        setS1b5_Etc1(e.target.value);
+    }
 
     useEffect(() => {
         setS1b6(s1b6Data.map((b, idx) => {
@@ -160,14 +163,26 @@ const Sector1 = () => {
         setS1b10(e.target.value);
     }
 
-    const handleS1b11_1 = (e) => {
-        setS1b11_1(e.target.value);
+    const handleS1b11_1 = ({target: {value}}) => {
+        if (value.length > 3) {
+            return
+        }
+
+        setS1b11_1(value);
     }
-    const handleS1b11_2 = (e) => {
-        setS1b11_2(e.target.value);
+    const handleS1b11_2 = ({target: {value}}) => {
+        if (value.length > 4) {
+            return
+        }
+
+        setS1b11_2(value);
     }
-    const handleS1b11_3 = (e) => {
-        setS1b11_3(e.target.value);
+    const handleS1b11_3 = ({target: {value}}) => {
+        if (value.length > 4) {
+            return
+        }
+
+        setS1b11_3(value);
     }
 
     const validateAllWritten = () => {
@@ -281,9 +296,10 @@ const Sector1 = () => {
 
 
             <SmallQuestionBlock title={<div>2. 출생연도</div>}>
-                <FormControl fullWidth>
+                <FormControl size={'small'}>
                     <Grid gridColumnProperty={"repeat(3,1fr)"}>
-                        <Select value={s1b2} onChange={handleS1b2}>
+                        <Select displayEmpty value={s1b2} onChange={handleS1b2} autoWidth>
+                            <MenuItem disabled value={''}><i>출생연도</i></MenuItem>
                             <MenuItem value={'1970'}>1970</MenuItem>
                             <MenuItem value={'1971'}>1971</MenuItem>
                             <MenuItem value={'1972'}>1972</MenuItem>
@@ -327,18 +343,18 @@ const Sector1 = () => {
 
             <SmallQuestionBlock title={<div>3. 거주지 주소</div>}>
                 <Grid gridColumnProperty={"3fr 1fr 3fr 1fr 3fr"}>
-                    <FormControl fullWidth>
+                    <FormControl fullWidth size={'small'}>
                         <Select displayEmpty value={s1b3_1} onChange={handleS1b3_1}>
-                            <MenuItem disabled value={''}>도·시</MenuItem>
+                            <MenuItem disabled value={''}><i>도·시</i></MenuItem>
                             {
                                 dosis.map((dosi, idx) => <MenuItem key={dosi.code} value={idx}>{dosi.name}</MenuItem>)
                             }
                         </Select>
                     </FormControl>
                     <div/>
-                    <FormControl fullWidth>
+                    <FormControl fullWidth size={'small'}>
                         <Select displayEmpty value={s1b3_2} onChange={handleS1b3_2}>
-                            <MenuItem disabled value={''}>시·군·구</MenuItem>
+                            <MenuItem disabled value={''}><i>시·군·구</i></MenuItem>
                             {
                                 sigungus.map((sigungu, idx) => <MenuItem key={sigungu.code}
                                                                          value={idx}>{sigungu.name}</MenuItem>)
@@ -346,9 +362,9 @@ const Sector1 = () => {
                         </Select>
                     </FormControl>
                     <div/>
-                    <FormControl fullWidth>
+                    <FormControl fullWidth size={'small'}>
                         <Select displayEmpty value={s1b3_3} onChange={handleS1b3_3}>
-                            <MenuItem disabled value={''}>읍·면·동</MenuItem>
+                            <MenuItem disabled value={''}><i>읍·면·동</i></MenuItem>
                             {
                                 upmeongdongs.map((upmeongdong, idx) => <MenuItem key={upmeongdong.code}
                                                                                  value={idx}>{upmeongdong.name}</MenuItem>)
@@ -363,26 +379,61 @@ const Sector1 = () => {
                 <FormControl fullWidth>
                     <RadioGroup onChange={handleS1b4}>
                         <Grid gridColumnProperty={"repeat(3,1fr)"}>
-                            <FormControlLabel value='1' control={<Radio/>} label='거주지 인근(도보 10분이내)'/>
+                            <FormControlLabel value='1' control={<Radio/>} label={<CenterBox>거주지 인근<br/>(도보 10분이내)</CenterBox>}/>
                             <FormControlLabel value='2' control={<Radio/>} label='차로 10분 이내'/>
                             <FormControlLabel value='3' control={<Radio/>} label='차로 20분 이내'/>
                             <FormControlLabel value='4' control={<Radio/>} label='차로 30분 이내'/>
                             <FormControlLabel value='5' control={<Radio/>} label='차로 40분 이내'/>
                             <FormControlLabel value='6' control={<Radio/>} label='차로 50분 이내'/>
-                            <FormControlLabel value='7' control={<Radio/>} label='차로 1시간 이상'/>
                             <FormControlLabel value='8' control={<Radio/>} label='차로 1시간 이내'/>
+                            <FormControlLabel value='7' control={<Radio/>} label='차로 1시간 이상'/>
                         </Grid>
                     </RadioGroup>
                 </FormControl>
             </SmallQuestionBlock>
 
             <SmallQuestionBlock title={<div>5. 영농 시작연도</div>}>
-                <FormControl fullWidth>
+                <FormControl size={'small'}>
                     <RadioGroup onChange={handleS1b5}>
                         <Stack direction='row'>
                             <FormControlLabel value='1' control={<Radio/>}/>
-                            <TextField type='number' value={s1b5_Etc1} onChange={(e) => setS1b5_Etc1(e.target.value)}
-                                       style={{marginRight: 10}}/>
+                            <Select displayEmpty value={s1b5_Etc1} onChange={handleS1b5_Etc1} style={{ marginRight: 10}}>
+                                <MenuItem value={''}><i>시작연도</i></MenuItem>
+                                <MenuItem value={'1990'}>1990</MenuItem>
+                                <MenuItem value={'1991'}>1991</MenuItem>
+                                <MenuItem value={'1992'}>1992</MenuItem>
+                                <MenuItem value={'1993'}>1993</MenuItem>
+                                <MenuItem value={'1994'}>1994</MenuItem>
+                                <MenuItem value={'1995'}>1995</MenuItem>
+                                <MenuItem value={'1996'}>1996</MenuItem>
+                                <MenuItem value={'1997'}>1997</MenuItem>
+                                <MenuItem value={'1998'}>1998</MenuItem>
+                                <MenuItem value={'1999'}>1999</MenuItem>
+                                <MenuItem value={'2000'}>2000</MenuItem>
+                                <MenuItem value={'2001'}>2001</MenuItem>
+                                <MenuItem value={'2002'}>2002</MenuItem>
+                                <MenuItem value={'2003'}>2003</MenuItem>
+                                <MenuItem value={'2004'}>2004</MenuItem>
+                                <MenuItem value={'2005'}>2005</MenuItem>
+                                <MenuItem value={'2006'}>2006</MenuItem>
+                                <MenuItem value={'2007'}>2007</MenuItem>
+                                <MenuItem value={'2008'}>2008</MenuItem>
+                                <MenuItem value={'2009'}>2009</MenuItem>
+                                <MenuItem value={'2010'}>2010</MenuItem>
+                                <MenuItem value={'2011'}>2011</MenuItem>
+                                <MenuItem value={'2012'}>2012</MenuItem>
+                                <MenuItem value={'2013'}>2013</MenuItem>
+                                <MenuItem value={'2014'}>2014</MenuItem>
+                                <MenuItem value={'2015'}>2015</MenuItem>
+                                <MenuItem value={'2016'}>2016</MenuItem>
+                                <MenuItem value={'2017'}>2017</MenuItem>
+                                <MenuItem value={'2018'}>2018</MenuItem>
+                                <MenuItem value={'2019'}>2019</MenuItem>
+                                <MenuItem value={'2020'}>2020</MenuItem>
+                                <MenuItem value={'2021'}>2021</MenuItem>
+                                <MenuItem value={'2022'}>2022</MenuItem>
+                                <MenuItem value={'1990'}>1990</MenuItem>
+                            </Select>
                             <CenterBox>년에 농사 시작</CenterBox>
                         </Stack>
                         <FormControlLabel value='2' control={<Radio/>} label='아직 농사지은 경험이 없음'/>
@@ -411,7 +462,7 @@ const Sector1 = () => {
                 </FormControl>
             </SmallQuestionBlock>
 
-            <SmallQuestionBlock title={<div>7. 주요 생산 품목 <strong>(최대 3개 선택 가능)</strong></div>}>
+            <SmallQuestionBlock title={<div>7. 주요 생산 품목<br/><strong>(최대 3개 선택 <br/>가능)</strong></div>}>
                 <FormControl fullWidth>
                     <Grid gridColumnProperty={"repeat(5,1fr)"}>
                         <FormControlLabel control={<Checkbox name='1' checked={s1b7Data[1]} onChange={handleS1b7}/>}
@@ -454,7 +505,7 @@ const Sector1 = () => {
                             <FormControlLabel value='9' control={<Radio/>} label='8-9천만원'/>
                             <FormControlLabel value='10' control={<Radio/>} label='9천만원-1억원'/>
                             <FormControlLabel value='11' control={<Radio/>} label='1억원 이상'/>
-                            <FormControlLabel value='12' control={<Radio/>} label='미취업 또는 소득없음'/>
+                            <FormControlLabel value='12' control={<Radio/>} label={<CenterBox>미취업 또는<br/>소득없음</CenterBox>}/>
                         </Grid>
                     </RadioGroup>
                 </FormControl>
@@ -463,7 +514,8 @@ const Sector1 = () => {
             <SmallQuestionBlock title={<div>9. 농가형태</div>}>
                 <FormControl fullWidth>
                     <RadioGroup onChange={handleS1b9}>
-                        <FormControlLabel value='1' control={<Radio/>} label='전업농가 (영리목적으로 30일 이상 농사 이외의 일에 종사한 가구원 없음)'/>
+                        <FormControlLabel value='1' control={<Radio/>}
+                                          label='전업농가 (영리목적으로 30일 이상 농사 이외의 일에 종사한 가구원 없음)'/>
                         <FormControlLabel value='2' control={<Radio/>} label='1종겸업농가 (농업수입이 농외소득보다 많음)'/>
                         <FormControlLabel value='3' control={<Radio/>} label='2종겸업농가 (농업수입이 농외소득보다 적음)'/>
                     </RadioGroup>
@@ -484,11 +536,11 @@ const Sector1 = () => {
             <SmallQuestionBlock title={<div>11. 연락처(휴대폰)</div>}>
                 <FormControl fullWidth>
                     <Grid gridColumnProperty={"repeat(5,1fr)"}>
-                        <TextField type='number' value={s1b11_1} onChange={handleS1b11_1}/>
+                        <TextField placeholder='010' type='number' value={s1b11_1} onChange={handleS1b11_1} size={'small'} inputProps={{style: {textAlign: 'center'}}}/>
                         <CenterBox size={20}>-</CenterBox>
-                        <TextField type='number' value={s1b11_2} onChange={handleS1b11_2}/>
+                        <TextField placeholder='1234' type='number' value={s1b11_2} onChange={handleS1b11_2} size={'small'} inputProps={{style: {textAlign: 'center'}}}/>
                         <CenterBox size={20}>-</CenterBox>
-                        <TextField type='number' value={s1b11_3} onChange={handleS1b11_3}/>
+                        <TextField placeholder='5678' type='number' value={s1b11_3} onChange={handleS1b11_3} size={'small'} inputProps={{style: {textAlign: 'center'}}}/>
                     </Grid>
                 </FormControl>
             </SmallQuestionBlock>

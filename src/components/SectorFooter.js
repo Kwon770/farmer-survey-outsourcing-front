@@ -19,7 +19,8 @@ const SectorFooter = ({sector, movePreviousSector, moveNextSector, alertOpen, se
 
             <Button variant='text' onClick={moveNextSector}>{sector !== 5 ? '다음' : '제출'}</Button>
 
-            <Snackbar autoHideDuration={3500} open={alertOpen} onClose={() => setAlertOpen(false)}>
+            <Snackbar autoHideDuration={3500} open={alertOpen} onClose={() => setAlertOpen(false)}
+                      anchorOrigin={{vertical: 'bottom', horizontal: 'center'}}>
                 <Alert severity='error'>완료하지 않은 질문이 있습니다!</Alert>
             </Snackbar>
         </Footer>
