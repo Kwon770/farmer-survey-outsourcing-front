@@ -13,6 +13,7 @@ const AppRouter = () => (
     <Router>
         <Routes>
             <Route path="/" element={<Sector1/>} />
+            <Route path="/1" element={<Sector1/>} />
             <Route path="/2" element={<Sector2/>} />
             <Route path="/3" element={<Sector3/>} />
             <Route path="/4" element={<Sector4/>} />

@@ -259,6 +259,9 @@ const Sector2 = () => {
         localStorage.setItem('sector2', JSON.stringify(sector2DataObject))
     }
 
+    const movePreviousSector = () => {
+        navigate('/1');
+    }
     const moveNextSector = () => {
         if (!validateAllWritten()) {
             setAlertOpen(true)
@@ -588,7 +591,7 @@ const Sector2 = () => {
                 </FormControl>
             </QuestionBlock>
 
-            <SectorFooter sector={2} moveNextSector={moveNextSector} alertOpen={alertOpen} setAlertOpen={setAlertOpen}/>
+            <SectorFooter sector={2} movePreviousSector={movePreviousSector} moveNextSector={moveNextSector} alertOpen={alertOpen} setAlertOpen={setAlertOpen}/>
         </Background>
     )
 }

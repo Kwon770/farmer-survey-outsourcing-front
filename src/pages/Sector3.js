@@ -564,6 +564,10 @@ const Sector3 = () => {
 
     }
 
+    const movePreviousSector = () => {
+        navigate('/2');
+    }
+
     const moveNextSector = () => {
         if (!validateAllWritten()) {
             setAlertOpen(true)
@@ -1029,7 +1033,7 @@ const Sector3 = () => {
                 </>
             }
 
-            <SectorFooter sector={3} moveNextSector={moveNextSector} alertOpen={alertOpen} setAlertOpen={setAlertOpen}/>
+            <SectorFooter sector={3} movePreviousSector={movePreviousSector} moveNextSector={moveNextSector} alertOpen={alertOpen} setAlertOpen={setAlertOpen}/>
         </Background>
     )
 }

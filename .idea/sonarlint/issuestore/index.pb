@@ -24,7 +24,5 @@ D
 src/pages/Sector5.js,a/3/a3c607f3df28fbe01e42df58ced7f0c3dad25d3c
 F
 src/components/Grid.js,f/9/f9cb52308ea07a157b2d5d8d034842064156e088
-D
-src/pages/Sector4.js,c/2/c298ab446dd7aa2cfce447025cd79e13061ab6e8
 4
 .env,3/c/3c84dcdc6bbe3d7817c49dcdc327b926fea1808a
