@@ -22,7 +22,10 @@ const Sector00 = () => {
 
 
             <Button variant='contained' onClick={() => navigate('/')} >처음으로 돌아가기</Button>
-            <Button variant='contained' onClick={() => localStorage.clear()} >임시 데이터 초기화</Button>
+            <Button variant='contained' onClick={() => {
+                localStorage.clear();
+                navigate('/00');
+            }} >임시 데이터 초기화</Button>
         </Background>
     )
 }

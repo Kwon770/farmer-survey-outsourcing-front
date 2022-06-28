@@ -22,6 +22,14 @@ const Sector4 = () => {
     ])
     const [s4b2b2, setS4b2b2] = useState('');
 
+
+    useEffect(() => {
+        if (localStorage.getItem('sector3') === null) {
+            movePreviousSector();
+        }
+    }, [])
+
+
     const handleS4b1 = ({target: {value}}) => {
         setS4b1(value);
         if (value !== '1') {

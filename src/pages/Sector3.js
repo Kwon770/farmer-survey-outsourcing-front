@@ -101,6 +101,14 @@ const Sector3 = () => {
     const [s3b8b2, setS3b8b2] = useState('');
     const [s3b8b2_Etc6, setS3b8b2_Etc6] = useState('');
 
+
+    useEffect(() => {
+        if (localStorage.getItem('sector2') === null) {
+            movePreviousSector();
+        }
+    }, [])
+
+
     useEffect(() => {
         let non_total = 0;
         let non_rent = 0;

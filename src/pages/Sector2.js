@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React, {useState, useEffect} from "react";
 import {useNavigate} from "react-router-dom";
 import {Checkbox, FormControl, FormControlLabel, RadioGroup, Radio, Stack, TextField} from "@mui/material";
 import Background from "../components/Background";
@@ -72,6 +72,13 @@ const Sector2 = () => {
     ]);
 
     const [s2b5, setS2b5] = useState('');
+
+
+    useEffect(() => {
+        if (localStorage.getItem('sector1') === null) {
+            movePreviousSector();
+        }
+    }, [])
 
 
     const handleS2b1 = (e) => {

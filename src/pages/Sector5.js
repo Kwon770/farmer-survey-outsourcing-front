@@ -101,6 +101,13 @@ const Sector5 = () => {
     ]);
 
 
+    useEffect(() => {
+        if (localStorage.getItem('sector4') === null) {
+            movePreviousSector();
+        }
+    }, [])
+
+
     const handleS5b1_1 = ({target: {value}}) => {
         setS5b1_1(value);
 
