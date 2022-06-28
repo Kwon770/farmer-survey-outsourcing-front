@@ -1,6 +1,11 @@
 import React from "react";
 import styled from "styled-components";
-import {Alert, Button, Snackbar, Step, StepLabel, Stepper} from "@mui/material";
+import {Button, Snackbar, Step, StepLabel, Stepper} from "@mui/material";
+import MuiAlert from '@mui/material/Alert';
+
+const Alert = React.forwardRef(function Alert(props, ref) {
+    return <MuiAlert elevation={6} ref={ref} variant="filled" {...props} />;
+});
 
 const SectorFooter = ({sector, movePreviousSector, moveNextSector, alertOpen, setAlertOpen}) => {
 

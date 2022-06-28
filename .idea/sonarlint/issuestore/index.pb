@@ -18,12 +18,8 @@ I
 src/api/KoreanLocation.js,1/c/1cc8a75cded9c3cb56c58d6919069d552aca3313
 4
 .env,3/c/3c84dcdc6bbe3d7817c49dcdc327b926fea1808a
-D
-src/pages/Sector1.js,8/8/88b4c1bc438a0f775eccdaec4c3be55c67fdd131
 T
 $src/components/SmallQuestionBlock.js,c/2/c2d26c6088782c97f0fa4b9342911a6686e6183b
-N
-src/components/SectorFooter.js,d/e/de28fae61b3d617ca69c701426921ed427573793
 D
 src/pages/Sector2.js,a/5/a50c1d1fc8e4f0d648a85810c4cdcab81a98da48
 <

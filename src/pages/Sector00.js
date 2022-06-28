@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from "react";
+import React from "react";
 import {useNavigate} from "react-router-dom";
 import Background from "../components/Background";
 import TitleBlock from "../components/TitleBlock";
