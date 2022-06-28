@@ -37,7 +37,7 @@ const Title = styled.div`
 
 const Content = styled.div`
   width: 100%;
-  margin-top: 5px;
+  margin-top: 20px;
   
   font-size: 16px;
   font-weight: normal;

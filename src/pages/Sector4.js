@@ -86,8 +86,7 @@ const Sector4 = () => {
         }
 
         saveSector4Data()
-        // navigate('/5')
-        navigate('/00')
+        navigate('/5')
     }
 
     return (
