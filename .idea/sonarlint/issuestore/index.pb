@@ -20,8 +20,6 @@ I
 .env,3/c/3c84dcdc6bbe3d7817c49dcdc327b926fea1808a
 T
 $src/components/SmallQuestionBlock.js,c/2/c2d26c6088782c97f0fa4b9342911a6686e6183b
-D
-src/pages/Sector2.js,a/5/a50c1d1fc8e4f0d648a85810c4cdcab81a98da48
 <
 src/index.js,f/9/f900edc44cb929c2267a16100a32851f6d5b477d
 C

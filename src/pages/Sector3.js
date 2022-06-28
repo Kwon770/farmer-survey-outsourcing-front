@@ -170,8 +170,12 @@ const Sector3 = () => {
         setS3b3b1_3('');
         setS3b3b1_4('');
         setS3b3b1_5('');
+        setS3b3b1Data([['', '', '']]);
+
         setS3b3b2_1('');
         setS3b3b2_2('');
+        setS3b3b2Data(s3b3b2Data.map(() => false));
+
         setS3b3b3('');
 
     }
@@ -181,6 +185,9 @@ const Sector3 = () => {
         setS3b4_3('');
         setS3b4_4('');
         setS3b4_5('');
+        setS3b4Data([['', '', '']]);
+
+        setS3b6('');
     }
     const resetAllS3b5s = () => {
         setS3b5('');
@@ -363,26 +370,34 @@ const Sector3 = () => {
 
     const handleS3b6 = ({target: {value}}) => {
         setS3b6(value);
+
         if (value !== '1') {
             setS3b6b1('');
+
             setS3b7b1('');
-            setS3b7b2_1('');
-            setS3b7b2_2('');
-            setS3b7b2_3('');
+
+            resetS3b7b2();
         }
     }
+
     const handleS3b6b1 = ({target: {value}}) => {
         setS3b6b1(value);
         if (value !== '2' && value !== '3') {
             setS3b7b1('');
-            setS3b7b2_1('');
-            setS3b7b2_2('');
-            setS3b7b2_3('');
+
+            resetS3b7b2();
         }
     }
 
     const handleS3b7b1 = (e) => {
         setS3b7b1(e.target.value);
+    }
+
+    const resetS3b7b2 = () => {
+        setS3b7b2_1('');
+        setS3b7b2_2('');
+        setS3b7b2_3('');
+        setS3b7b2Data(s3b7b2Data.map(() => false));
     }
     const handleS3b7b2 = (e) => {
         // 3개 선택 유효성 확인
@@ -422,15 +437,19 @@ const Sector3 = () => {
 
     const handleS3b8 = ({target: {value}}) => {
         setS3b8(value);
+
         if (value !== '1') {
             setS3b8b1('');
+
         } else if (value !== '3') {
             setS3b8b2('');
         }
     }
+
     const handleS3b8b1 = (e) => {
         setS3b8b1(e.target.value);
     }
+
     const handleS3b8b2 = (e) => {
         setS3b8b2(e.target.value);
     }
