@@ -103,7 +103,7 @@ const Sector5 = () => {
 
     useEffect(() => {
         if (localStorage.getItem('sector4') === null) {
-            movePreviousSector();
+            // movePreviousSector();
         }
     }, [])
 
@@ -174,34 +174,70 @@ const Sector5 = () => {
         }
     }
 
-    const handleS5b2b1_1 = (e) => {
-        setS5b2b1_1(e.target.value);
+    const handleS5b2b1_1 = ({target: {value}}) => {
+        if (value.length > 3) {
+            return;
+        }
+
+        setS5b2b1_1(value);
     }
-    const handleS5b2b1_2 = (e) => {
-        setS5b2b1_2(e.target.value);
+    const handleS5b2b1_2 = ({target: {value}}) => {
+        if (value.length > 3) {
+            return;
+        }
+
+        setS5b2b1_2(value);
     }
-    const handleS5b2b1_3 = (e) => {
-        setS5b2b1_3(e.target.value);
+    const handleS5b2b1_3 = ({target: {value}}) => {
+        if (value.length > 3) {
+            return;
+        }
+
+        setS5b2b1_3(value);
     }
 
-    const handleS5b2b2_1 = (e) => {
-        setS5b2b2_1(e.target.value);
+    const handleS5b2b2_1 = ({target: {value}}) => {
+        if (value.length > 3) {
+            return;
+        }
+
+        setS5b2b2_1(value);
     }
-    const handleS5b2b2_2 = (e) => {
-        setS5b2b2_2(e.target.value);
+    const handleS5b2b2_2 = ({target: {value}}) => {
+        if (value.length > 3) {
+            return;
+        }
+
+        setS5b2b2_2(value);
     }
-    const handleS5b2b2_3 = (e) => {
-        setS5b2b2_3(e.target.value);
+    const handleS5b2b2_3 = ({target: {value}}) => {
+        if (value.length > 3) {
+            return;
+        }
+
+        setS5b2b2_3(value);
     }
 
-    const handleS5b3b1_1 = (e) => {
-        setS5b3b1_1(e.target.value);
+    const handleS5b3b1_1 = ({target: {value}}) => {
+        if (value.length > 3) {
+            return;
+        }
+
+        setS5b3b1_1(value);
     }
-    const handleS5b3b1_2 = (e) => {
-        setS5b3b1_2(e.target.value);
+    const handleS5b3b1_2 = ({target: {value}}) => {
+        if (value.length > 3) {
+            return;
+        }
+
+        setS5b3b1_2(value);
     }
-    const handleS5b3b1_3 = (e) => {
-        setS5b3b1_3(e.target.value);
+    const handleS5b3b1_3 = ({target: {value}}) => {
+        if (value.length > 3) {
+            return;
+        }
+
+        setS5b3b1_3(value);
     }
 
     const resetS5b3b2 = () => {
@@ -256,8 +292,12 @@ const Sector5 = () => {
     const resetS5b5 = () => {
         setS5b5('');
     }
-    const handleS5b5 = (e) => {
-        setS5b5(e.target.value)
+    const handleS5b5 = ({target: {value}}) => {
+        if (value.length > 3) {
+            return;
+        }
+
+        setS5b5(value);
     }
 
     const resetS5b6 = () => {
@@ -310,8 +350,12 @@ const Sector5 = () => {
     const resetS5b8 = () => {
         setS5b8('');
     }
-    const handleS5b8 = (e) => {
-        setS5b8(e.target.value);
+    const handleS5b8 = ({target: {value}}) => {
+        if (value.length > 3) {
+            return;
+        }
+
+        setS5b8(value);
     }
 
     const resetS5b9 = () => {
