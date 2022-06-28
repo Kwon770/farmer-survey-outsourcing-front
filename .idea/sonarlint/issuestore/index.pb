@@ -14,8 +14,6 @@ L
 .gitignore,a/5/a5cc2925ca8258af241be7e5b0381edf30266302
 K
 src/components/TextBlock.js,0/4/04a1ddcfc997df5dee10e27a264db0b40066106b
-I
-src/api/KoreanLocation.js,1/c/1cc8a75cded9c3cb56c58d6919069d552aca3313
 4
 .env,3/c/3c84dcdc6bbe3d7817c49dcdc327b926fea1808a
 T

@@ -347,7 +347,7 @@ const Sector1 = () => {
                         <Select displayEmpty value={s1b3_1} onChange={handleS1b3_1}>
                             <MenuItem disabled value={''}><i>도·시</i></MenuItem>
                             {
-                                dosis.map((dosi, idx) => <MenuItem key={dosi.code} value={idx}>{dosi.name}</MenuItem>)
+                                dosis?.map((dosi, idx) => <MenuItem key={dosi.code} value={idx}>{dosi.name}</MenuItem>)
                             }
                         </Select>
                     </FormControl>
@@ -356,7 +356,7 @@ const Sector1 = () => {
                         <Select displayEmpty value={s1b3_2} onChange={handleS1b3_2}>
                             <MenuItem disabled value={''}><i>시·군·구</i></MenuItem>
                             {
-                                sigungus.map((sigungu, idx) => <MenuItem key={sigungu.code}
+                                sigungus?.map((sigungu, idx) => <MenuItem key={sigungu.code}
                                                                          value={idx}>{sigungu.name}</MenuItem>)
                             }
                         </Select>
@@ -366,7 +366,7 @@ const Sector1 = () => {
                         <Select displayEmpty value={s1b3_3} onChange={handleS1b3_3}>
                             <MenuItem disabled value={''}><i>읍·면·동</i></MenuItem>
                             {
-                                upmeongdongs.map((upmeongdong, idx) => <MenuItem key={upmeongdong.code}
+                                upmeongdongs?.map((upmeongdong, idx) => <MenuItem key={upmeongdong.code}
                                                                                  value={idx}>{upmeongdong.name}</MenuItem>)
                             }
                         </Select>
