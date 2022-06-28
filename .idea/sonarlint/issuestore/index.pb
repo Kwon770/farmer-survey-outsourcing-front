@@ -12,8 +12,6 @@ L
 :
 
 .gitignore,a/5/a5cc2925ca8258af241be7e5b0381edf30266302
-E
-src/pages/Sector00.js,2/e/2efbf94458ac498dc896194810e5174ff5922136
 K
 src/components/TextBlock.js,0/4/04a1ddcfc997df5dee10e27a264db0b40066106b
 I
