@@ -300,16 +300,6 @@ const Sector1 = () => {
                     <Grid gridColumnProperty={"repeat(3,1fr)"}>
                         <Select displayEmpty value={s1b2} onChange={handleS1b2} autoWidth>
                             <MenuItem disabled value={''}><i>출생연도</i></MenuItem>
-                            <MenuItem value={'1970'}>1970</MenuItem>
-                            <MenuItem value={'1971'}>1971</MenuItem>
-                            <MenuItem value={'1972'}>1972</MenuItem>
-                            <MenuItem value={'1973'}>1973</MenuItem>
-                            <MenuItem value={'1974'}>1974</MenuItem>
-                            <MenuItem value={'1975'}>1975</MenuItem>
-                            <MenuItem value={'1976'}>1976</MenuItem>
-                            <MenuItem value={'1977'}>1977</MenuItem>
-                            <MenuItem value={'1978'}>1978</MenuItem>
-                            <MenuItem value={'1979'}>1979</MenuItem>
                             <MenuItem value={'1980'}>1980</MenuItem>
                             <MenuItem value={'1981'}>1981</MenuItem>
                             <MenuItem value={'1982'}>1982</MenuItem>
