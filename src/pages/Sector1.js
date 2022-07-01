@@ -121,6 +121,7 @@ const Sector1 = () => {
     const handleS1b5_Etc1 = (e) => {
         setS1b5_Etc1(e.target.value);
 
+        setS1b5('1');
         setS1b5_1Radio(true);
         setS1b5_2Radio(false);
     }
@@ -225,7 +226,6 @@ const Sector1 = () => {
             s1b9 === '' ||
             s1b10 === '' ||
             s1b11 === '' ||
-            s1b11b2 === '' ||
             s1b12_1 === '' ||
             s1b12_2 === '' ||
             s1b12_3 === ''
@@ -238,7 +238,7 @@ const Sector1 = () => {
                 return false;
 
         if (s1b11 === '1')
-            if (s1b11b1 === '')
+            if (s1b11b1 === '' || s1b11b2 === '' )
                 return false;
 
         return true
@@ -571,33 +571,36 @@ const Sector1 = () => {
 
             {
                 (s1b11 === '1') &&
-                <SmallQuestionBlock title={<div>11-1. 스마트팜 유형</div>} announcement={<em>(11번 문항에서 1번을 선택하신 분의 경우만 질의)</em>}>
-                    <FormControl fullWidth>
-                        <RadioGroup onChange={handleS1b11b1}>
-                            <Grid gridColumnProperty={"repeat(4,1fr)"}>
-                                <FormControlLabel value='1' control={<Radio/>} label={<div>시설원예 <br/>스마트팜</div>}/>
-                                <FormControlLabel value='2' control={<Radio/>} label='과수 스마트팜'/>
-                                <FormControlLabel value='3' control={<Radio/>} label='노지 스마트팜'/>
-                                <FormControlLabel value='4' control={<Radio/>} label='스마트 축사'/>
-                            </Grid>
-                        </RadioGroup>
-                    </FormControl>
-                </SmallQuestionBlock>
+                <>
+                    <SmallQuestionBlock title={<div>11-1. 스마트팜 유형</div>}
+                                        announcement={<em>(11번 문항에서 1번을 선택하신 분의 경우만 질의)</em>}>
+                        <FormControl fullWidth>
+                            <RadioGroup onChange={handleS1b11b1}>
+                                <Grid gridColumnProperty={"repeat(4,1fr)"}>
+                                    <FormControlLabel value='1' control={<Radio/>} label={<div>시설원예 <br/>스마트팜</div>}/>
+                                    <FormControlLabel value='2' control={<Radio/>} label='과수 스마트팜'/>
+                                    <FormControlLabel value='3' control={<Radio/>} label='노지 스마트팜'/>
+                                    <FormControlLabel value='4' control={<Radio/>} label='스마트 축사'/>
+                                </Grid>
+                            </RadioGroup>
+                        </FormControl>
+                    </SmallQuestionBlock>
+
+
+                    <SmallQuestionBlock title={<div>11-2. 장래 스마트팜 수요(설비/면적)</div>}>
+                        <FormControl fullWidth>
+                            <RadioGroup onChange={handleS1b11b2}>
+                                <Grid gridColumnProperty={"repeat(1,1fr)"}>
+                                    <FormControlLabel value='1' control={<Radio/>} label='스마트팜 시설과 면적 모두 유지한다.'/>
+                                    <FormControlLabel value='2' control={<Radio/>} label='스마트팜 시설은 확충하고 면적은 유지한다.'/>
+                                    <FormControlLabel value='3' control={<Radio/>} label='스마트팜 시설과 면적 모두 늘린다.'/>
+                                    <FormControlLabel value='4' control={<Radio/>} label='스마트팜 시설은 유지하고 면적은 확대한다.'/>
+                                </Grid>
+                            </RadioGroup>
+                        </FormControl>
+                    </SmallQuestionBlock>
+                </>
             }
-
-
-            <SmallQuestionBlock title={<div>11-2. 장래 스마트팜 수요(설비/면적)</div>}>
-                <FormControl fullWidth>
-                    <RadioGroup onChange={handleS1b11b2}>
-                        <Grid gridColumnProperty={"repeat(1,1fr)"}>
-                            <FormControlLabel value='1' control={<Radio/>} label='스마트팜 시설과 면적 모두 유지한다.'/>
-                            <FormControlLabel value='2' control={<Radio/>} label='스마트팜 시설은 확충하고 면적은 유지한다.'/>
-                            <FormControlLabel value='3' control={<Radio/>} label='스마트팜 시설과 면적 모두 늘린다.'/>
-                            <FormControlLabel value='4' control={<Radio/>} label='스마트팜 시설은 유지하고 면적은 확대한다.'/>
-                        </Grid>
-                    </RadioGroup>
-                </FormControl>
-            </SmallQuestionBlock>
 
 
             <SmallQuestionBlock title={<div>12. 연락처(휴대폰)</div>}>
