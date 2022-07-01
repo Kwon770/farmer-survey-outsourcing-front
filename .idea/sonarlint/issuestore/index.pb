@@ -7,8 +7,6 @@ L
 src/components/TitleBlock.js,5/e/5e8778452a1daca6daeb474e7060f6c3e56865eb
 <
 package.json,7/0/7030d0b2f71b999ff89a343de08c414af32fc93a
-L
-src/components/Background.js,1/a/1a23a3f0898c27924d13629f81d01e7497c95026
 :
 
 .gitignore,a/5/a5cc2925ca8258af241be7e5b0381edf30266302
@@ -34,11 +32,12 @@ N
 src/components/SectorFooter.js,d/e/de28fae61b3d617ca69c701426921ed427573793
 R
 "src/components/ColorCenterBlock.js,5/d/5def6db2562af04d2b8d36f90f1e3100394abc16
-D
-src/pages/Sector4.js,c/2/c298ab446dd7aa2cfce447025cd79e13061ab6e8
-D
-src/pages/Sector3.js,3/3/33a6d55cc226c68f542289e7a2e4770676f9d9fb
-D
-src/pages/Sector2.js,a/5/a50c1d1fc8e4f0d648a85810c4cdcab81a98da48
 E
 src/pages/Sector00.js,2/e/2efbf94458ac498dc896194810e5174ff5922136
+:
+
+src/App.js,1/e/1e43fa63aecd2127be034b3fb9d4caa172275714
+I
+src/api/KoreanLocation.js,1/c/1cc8a75cded9c3cb56c58d6919069d552aca3313
+4
+.env,3/c/3c84dcdc6bbe3d7817c49dcdc327b926fea1808a

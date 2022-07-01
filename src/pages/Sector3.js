@@ -102,11 +102,11 @@ const Sector3 = () => {
     const [s3b8b2_Etc6, setS3b8b2_Etc6] = useState('');
 
 
-    useEffect(() => {
-        if (localStorage.getItem('sector2') === null) {
-            movePreviousSector();
-        }
-    }, [])
+    // useEffect(() => {
+    //     if (localStorage.getItem('sector2') === null) {
+    //         movePreviousSector();
+    //     }
+    // }, [])
 
 
     useEffect(() => {

@@ -74,11 +74,11 @@ const Sector2 = () => {
     const [s2b5, setS2b5] = useState('');
 
 
-    useEffect(() => {
-        if (localStorage.getItem('sector1') === null) {
-            movePreviousSector();
-        }
-    }, [])
+    // useEffect(() => {
+    //     if (localStorage.getItem('sector1') === null) {
+    //         movePreviousSector();
+    //     }
+    // }, [])
 
 
     const handleS2b1 = (e) => {
