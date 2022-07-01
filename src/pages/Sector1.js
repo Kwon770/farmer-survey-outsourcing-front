@@ -69,7 +69,6 @@ const Sector1 = () => {
     const [s1b11_2, setS1b11_2] = useState('');
     const [s1b11_3, setS1b11_3] = useState('');
 
-
     const handleS1b1 = (e) => {
         setS1b1(e.target.value);
     }

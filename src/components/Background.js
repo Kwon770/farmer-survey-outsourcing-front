@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 
 const Background = styled.div`
-  width: 80%;
+  width: 100%;
   max-width: ${(props) => props.theme.blockWidth};;
   padding: 60px 0px;
 `;
