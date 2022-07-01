@@ -9,7 +9,7 @@ const Alert = React.forwardRef(function Alert(props, ref) {
 
 const SectorFooter = ({sector, movePreviousSector, moveNextSector, alertOpen, setAlertOpen}) => {
 
-    const steps = ['응답자 정보', "농업 스타트업단지 조성사업 참여 의향", '농지 수요', '스마트팜 수요', '저활용 농지 수요']
+    const steps = ['응답자 기본 정보', "청년농업인 농지 이용형태 및 수요", '농업 스마트업단지 조성사업 참여 의향', '농지매입 경험']
     return (
         <Footer>
             <Button variant='text' onClick={movePreviousSector} disabled={sector === 1}>이전</Button>

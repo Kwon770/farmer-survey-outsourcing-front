@@ -1,13 +1,13 @@
 import React from "react";
 import styled from "styled-components";
 
-const CenterBox = ({size, weight, padding, children}) => (
-    <Box size={size} weight={weight} padding={padding}>{children}</Box>
+const CenterBox = ({start, size, weight, padding, children}) => (
+    <Box start={start} size={size} weight={weight} padding={padding}>{children}</Box>
 )
 
 const Box = styled.div`
   display: flex;
-  justify-content: center;
+  justify-content: ${(props) => props.start ? 'flex-start' : 'center'};
   align-items: center;
   text-align: center;
   

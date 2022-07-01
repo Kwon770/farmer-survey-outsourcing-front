@@ -269,6 +269,7 @@ const Pector2 = () => {
     const movePreviousSector = () => {
         navigate('/1');
     }
+
     const moveNextSector = () => {
         if (!validateAllWritten()) {
             setAlertOpen(true)
@@ -278,6 +279,7 @@ const Pector2 = () => {
         saveSector2Data()
         navigate('/3')
     }
+
     return (
         <Background>
             <TitleBlock>

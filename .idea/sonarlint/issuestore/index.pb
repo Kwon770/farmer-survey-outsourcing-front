@@ -18,12 +18,8 @@ $src/components/SmallQuestionBlock.js,c/2/c2d26c6088782c97f0fa4b9342911a6686e61
 src/index.js,f/9/f900edc44cb929c2267a16100a32851f6d5b477d
 I
 src/components/GridImg.js,1/f/1f992c69586d43621d8683113c723e5871036ec4
-K
-src/components/CenterBox.js,7/4/7445fd8bc687df889b9d95399f86103ead930204
 C
 src/pages/Submit.js,c/e/ce7c5eec75d64faba78967b88adfecf67ef54f5c
-N
-src/components/SectorFooter.js,d/e/de28fae61b3d617ca69c701426921ed427573793
 R
 "src/components/ColorCenterBlock.js,5/d/5def6db2562af04d2b8d36f90f1e3100394abc16
 E
@@ -32,7 +28,5 @@ I
 src/api/KoreanLocation.js,1/c/1cc8a75cded9c3cb56c58d6919069d552aca3313
 4
 .env,3/c/3c84dcdc6bbe3d7817c49dcdc327b926fea1808a
-F
-src/components/Grid.js,f/9/f9cb52308ea07a157b2d5d8d034842064156e088
 C
 src/styles/Theme.js,a/2/a2a8cd67cc67e04d2101c0e95da09147b5c5e2b2
