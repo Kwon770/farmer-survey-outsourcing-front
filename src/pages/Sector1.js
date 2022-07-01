@@ -33,6 +33,8 @@ const Sector1 = () => {
     const [s1b4, setS1b4] = useState('');
 
     const [s1b5, setS1b5] = useState('');
+    const [s1b5_1Radio, setS1b5_1Radio] = useState(false);
+    const [s1b5_2Radio, setS1b5_2Radio] = useState(false);
     const [s1b5_Etc1, setS1b5_Etc1] = useState('');
 
     const [s1b6, setS1b6] = useState('');
@@ -104,11 +106,23 @@ const Sector1 = () => {
     const handleS1b4 = (e) => {
         setS1b4(e.target.value);
     }
-    const handleS1b5 = (e) => {
-        setS1b5(e.target.value);
+    const handleS1b5 = ({target: {value}}) => {
+        setS1b5(value);
+
+        if (value === '1') {
+            setS1b5_1Radio(true);
+            setS1b5_2Radio(false);
+        } else if (value === '2') {
+            setS1b5_2Radio(true);
+            setS1b5_1Radio(false);
+            setS1b5_Etc1('')
+        }
     }
     const handleS1b5_Etc1 = (e) => {
         setS1b5_Etc1(e.target.value);
+
+        setS1b5_1Radio(true);
+        setS1b5_2Radio(false);
     }
 
     useEffect(() => {
@@ -404,7 +418,7 @@ const Sector1 = () => {
                 <FormControl size={'small'}>
                     <RadioGroup onChange={handleS1b5}>
                         <Stack direction='row'>
-                            <FormControlLabel value='1' control={<Radio/>}/>
+                            <FormControlLabel value='1' control={<Radio checked={s1b5_1Radio}/>}/>
                             <Select displayEmpty value={s1b5_Etc1} onChange={handleS1b5_Etc1} style={{ marginRight: 10}}>
                                 <MenuItem value={''}><i>시작연도</i></MenuItem>
                                 <MenuItem value={'1990'}>1990</MenuItem>
@@ -444,7 +458,7 @@ const Sector1 = () => {
                             </Select>
                             <CenterBox>년에 농사 시작</CenterBox>
                         </Stack>
-                        <FormControlLabel value='2' control={<Radio/>} label='아직 농사지은 경험이 없음'/>
+                        <FormControlLabel value='2' control={<Radio checked={s1b5_2Radio}/>} label='아직 농사지은 경험이 없음'/>
                     </RadioGroup>
                 </FormControl>
             </SmallQuestionBlock>
