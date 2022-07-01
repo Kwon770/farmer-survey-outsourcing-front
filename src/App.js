@@ -12,7 +12,6 @@ import Sector1 from "./pages/Sector1";
 import Sector2 from "./pages/Sector2";
 import Sector3 from "./pages/Sector3";
 import Sector4 from "./pages/Sector4";
-import Sector5 from "./pages/Sector5";
 import Sector00 from "./pages/Sector00";
 
 const AppRouter = () => (
@@ -28,7 +27,6 @@ const AppRouter = () => (
             <Route path="/2" element={<Sector2/>} />
             <Route path="/3" element={<Sector3/>} />
             <Route path="/4" element={<Sector4/>} />
-            <Route path="/5" element={<Sector5/>} />
             <Route path="/00" element={<Sector00/>} />
         </Routes>
     </Router>
