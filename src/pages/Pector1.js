@@ -17,7 +17,7 @@ import SectorFooter from "../components/SectorFooter";
 import {getAllDosis, getSigungus, getUpmeongdong} from "../api/KoreanLocation";
 import Grid from "../components/Grid";
 
-const Sector1 = () => {
+const Pector1 = () => {
     const navigate = useNavigate();
     const [alertOpen, setAlertOpen] = useState(false);
     const [s1b1, setS1b1] = useState('');
@@ -65,13 +65,9 @@ const Sector1 = () => {
     const [s1b9, setS1b9] = useState('');
     const [s1b10, setS1b10] = useState('');
 
-    const [s1b11, setS1b11] = useState('');
-    const [s1b11b1, setS1b11b1] = useState('');
-    const [s1b11b2, setS1b11b2] = useState('');
-
-    const [s1b12_1, setS1b12_1] = useState('');
-    const [s1b12_2, setS1b12_2] = useState('');
-    const [s1b12_3, setS1b12_3] = useState('');
+    const [s1b11_1, setS1b11_1] = useState('');
+    const [s1b11_2, setS1b11_2] = useState('');
+    const [s1b11_3, setS1b11_3] = useState('');
 
     const handleS1b1 = (e) => {
         setS1b1(e.target.value);
@@ -166,36 +162,26 @@ const Sector1 = () => {
         setS1b10(e.target.value);
     }
 
-    const handleS1b11 = (e) => {
-        setS1b11(e.target.value);
-    }
-    const handleS1b11b1 = (e) => {
-        setS1b11b1(e.target.value);
-    }
-    const handleS1b11b2 = (e) => {
-        setS1b11b2(e.target.value);
-    }
-
-    const handleS1b12_1 = ({target: {value}}) => {
+    const handleS1b11_1 = ({target: {value}}) => {
         if (value.length > 3) {
             return
         }
 
-        setS1b12_1(value);
+        setS1b11_1(value);
     }
-    const handleS1b12_2 = ({target: {value}}) => {
+    const handleS1b11_2 = ({target: {value}}) => {
         if (value.length > 4) {
             return
         }
 
-        setS1b12_2(value);
+        setS1b11_2(value);
     }
-    const handleS1b12_3 = ({target: {value}}) => {
+    const handleS1b11_3 = ({target: {value}}) => {
         if (value.length > 4) {
             return
         }
 
-        setS1b12_3(value);
+        setS1b11_3(value);
     }
 
     const validateAllWritten = () => {
@@ -210,21 +196,15 @@ const Sector1 = () => {
             s1b8 === '' ||
             s1b9 === '' ||
             s1b10 === '' ||
-            s1b11 === '' ||
-            s1b11b2 === '' ||
-            s1b12_1 === '' ||
-            s1b12_2 === '' ||
-            s1b12_3 === ''
+            s1b11_1 === '' ||
+            s1b11_2 === '' ||
+            s1b11_3 === ''
         ) {
             return false
         }
 
         if (s1b5 === '1')
             if (s1b5_Etc1 === '')
-                return false;
-
-        if (s1b11 === '1')
-            if (s1b11b1 === '')
                 return false;
 
         return true
@@ -242,11 +222,10 @@ const Sector1 = () => {
             's1b8': s1b8,
             's1b9': s1b9,
             's1b10': s1b10,
-            's1b11': s1b11,
-            's1b11b1': s1b11b1,
-            's1b11b2': s1b11b2,
-            's1b12': s1b12_1 + s1b12_2 + s1b12_3,
+            's1b11': s1b11_1 + s1b11_2 + s1b11_3,
         }
+
+        console.log(sector1DataObject);
 
         localStorage.setItem('sector1', JSON.stringify(sector1DataObject))
 
@@ -273,22 +252,24 @@ const Sector1 = () => {
             <TextBlock start>
                 안녕하십니까? <br/>
                 <br/>
-                &nbsp;<strong><em>한국농어촌공사 농어촌연구원은 『농업 스타트업 단지 조성계획 수립』을 위하여 설문 조사를 진행하고 있습니다.</em></strong> 응답해 주신 정보는 연구의
-                목적으로만 사용될 것이며, <strong><em>본 조사의 설문 내용 및 개인 신상은 통계법 제33조에 의해 비밀이 보장</em></strong>됨을 알려드립니다.<br/>
-                &nbsp;귀한 시간을 내어 응답해 주신 분께는 추첨을 통해 소정의 모바일 상품권을 보내드리고자 하오니 설문지 내에 연락처를 기재해주시기를 바라며,
+                <strong><em>한국농어촌공사 농어촌연구원은 『농업 스타트업 단지 조성계획 수립』을 위하여 설문 조사를 진행하고 있습니다.</em></strong> 응답해 주신 정보는 연구의
+                목적으로만
+                사용될 것이며, <strong><em>본 조사의 설문 내용 및 개인
+                신상은 통계법 제33조에 의해 비밀이 보장</em></strong>됨을 알려드립니다. 귀한 시간을 내어 응답해 주신 분께는 추첨을 통해 소정의 모바일 상품권을 보내드리고자 하오니
+                설문지
+                내에
+                연락처를 기재해주시기를 바라며,
                 조사에 대하여 문의 사항이 있으시면 아래로 연락하여 주십시오.<br/>
                 <br/>
                 <br/>
-                ※ 연구수행기관 : <em>한국농어촌공사 농어촌연구원, 한국농업경제학회</em><br/>
-                ※ 연구책임자 : <em>이향미 책임연구원(061-338-5467)</em><br/>
-                ※ 조사책임자 : <em>문한필 전남대학교 교수(062-530-2173)</em><br/>
-                <br/>
-                <strong><em>※ 본 설문조사는 컴퓨터 브라우저에 최적화되어 있으므로, 컴퓨터 진행해주시기 바랍니다.</em></strong><br/>
+                ※ 연구수행기관 : <em>한국농어촌공사 농어촌연구원</em><br/>
+                ※ 연 구 책 임 자 : <em>이향미 책임연구원(061-338-5467)</em><br/>
                 <br/>
                 <br/>
                 <BoldText>
                     2022년 6월
                 </BoldText>
+                <br/>
                 <BoldText big>
                     한국농어촌공사 농어촌연구원
                 </BoldText>
@@ -296,11 +277,11 @@ const Sector1 = () => {
 
 
             <TitleBlock>
-                1. 응답자 기본정보
+                1. 응답자 정보
             </TitleBlock>
 
 
-            <strong><em>(2022년 6월 기준으로 응답 부탁드립니다.)</em></strong>
+            <strong><em>(2021년 12월 31일 기준으로 응답 부탁드립니다.)</em></strong>
             <SmallQuestionBlock title={<div>1. 성별</div>}>
                 <FormControl fullWidth>
                     <RadioGroup onChange={handleS1b1}>
@@ -365,7 +346,7 @@ const Sector1 = () => {
                             <MenuItem disabled value={''}><i>시·군·구</i></MenuItem>
                             {
                                 sigungus?.map((sigungu, idx) => <MenuItem key={sigungu.code}
-                                                                          value={idx}>{sigungu.name}</MenuItem>)
+                                                                         value={idx}>{sigungu.name}</MenuItem>)
                             }
                         </Select>
                     </FormControl>
@@ -375,7 +356,7 @@ const Sector1 = () => {
                             <MenuItem disabled value={''}><i>읍·면·동</i></MenuItem>
                             {
                                 upmeongdongs?.map((upmeongdong, idx) => <MenuItem key={upmeongdong.code}
-                                                                                  value={idx}>{upmeongdong.name}</MenuItem>)
+                                                                                 value={idx}>{upmeongdong.name}</MenuItem>)
                             }
                         </Select>
                     </FormControl>
@@ -387,7 +368,7 @@ const Sector1 = () => {
                 <FormControl fullWidth>
                     <RadioGroup onChange={handleS1b4}>
                         <Grid gridColumnProperty={"repeat(3,1fr)"}>
-                            <FormControlLabel value='1' control={<Radio/>} label={<div>거주지 인근<br/>(도보 10분이내)</div>}/>
+                            <FormControlLabel value='1' control={<Radio/>} label={<CenterBox>거주지 인근<br/>(도보 10분이내)</CenterBox>}/>
                             <FormControlLabel value='2' control={<Radio/>} label='차로 10분 이내'/>
                             <FormControlLabel value='3' control={<Radio/>} label='차로 20분 이내'/>
                             <FormControlLabel value='4' control={<Radio/>} label='차로 30분 이내'/>
@@ -502,18 +483,18 @@ const Sector1 = () => {
                 <FormControl fullWidth>
                     <RadioGroup onChange={handleS1b8}>
                         <Grid gridColumnProperty={"repeat(4,1fr)"}>
-                            <FormControlLabel value='1' control={<Radio/>} label='1천만원미만'/>
-                            <FormControlLabel value='2' control={<Radio/>} label='1-2천만원미만'/>
-                            <FormControlLabel value='3' control={<Radio/>} label='2-3천만원미만'/>
-                            <FormControlLabel value='4' control={<Radio/>} label='3-4천만원미만'/>
-                            <FormControlLabel value='5' control={<Radio/>} label='4-5천만원미만'/>
-                            <FormControlLabel value='6' control={<Radio/>} label='5-6천만원미만'/>
-                            <FormControlLabel value='7' control={<Radio/>} label='6-7천만원미만'/>
-                            <FormControlLabel value='8' control={<Radio/>} label='7-8천만원미만'/>
-                            <FormControlLabel value='9' control={<Radio/>} label='8-9천만원미만'/>
-                            <FormControlLabel value='10' control={<Radio/>} label='9천만원-1억원미만'/>
-                            <FormControlLabel value='11' control={<Radio/>} label='1억원이상'/>
-                            <FormControlLabel value='12' control={<Radio/>} label={<div>미취업 또는<br/>소득없음</div>}/>
+                            <FormControlLabel value='1' control={<Radio/>} label='1천만원 미안'/>
+                            <FormControlLabel value='2' control={<Radio/>} label='1-2천만원'/>
+                            <FormControlLabel value='3' control={<Radio/>} label='2-3천만원'/>
+                            <FormControlLabel value='4' control={<Radio/>} label='3-4천만원'/>
+                            <FormControlLabel value='5' control={<Radio/>} label='4-5천만원'/>
+                            <FormControlLabel value='6' control={<Radio/>} label='5-6천만원'/>
+                            <FormControlLabel value='7' control={<Radio/>} label='6-7천만원'/>
+                            <FormControlLabel value='8' control={<Radio/>} label='7-8천만원'/>
+                            <FormControlLabel value='9' control={<Radio/>} label='8-9천만원'/>
+                            <FormControlLabel value='10' control={<Radio/>} label='9천만원-1억원'/>
+                            <FormControlLabel value='11' control={<Radio/>} label='1억원 이상'/>
+                            <FormControlLabel value='12' control={<Radio/>} label={<CenterBox>미취업 또는<br/>소득없음</CenterBox>}/>
                         </Grid>
                     </RadioGroup>
                 </FormControl>
@@ -530,7 +511,6 @@ const Sector1 = () => {
                 </FormControl>
             </SmallQuestionBlock>
 
-
             <SmallQuestionBlock title={<div>10. 영농 승계 여부<br/><strong>(부모·친지·지인으로 부터)</strong></div>}>
                 <FormControl fullWidth>
                     <RadioGroup onChange={handleS1b10}>
@@ -542,58 +522,14 @@ const Sector1 = () => {
                 </FormControl>
             </SmallQuestionBlock>
 
-
-            <SmallQuestionBlock title={<div>11. 현재 스마트팜 운영 여부</div>}>
-                <FormControl fullWidth>
-                    <RadioGroup onChange={handleS1b11}>
-                        <Grid gridColumnProperty={"repeat(2,1fr)"}>
-                            <FormControlLabel value='1' control={<Radio/>} label='예'/>
-                            <FormControlLabel value='2' control={<Radio/>} label='아니요'/>
-                        </Grid>
-                    </RadioGroup>
-                </FormControl>
-            </SmallQuestionBlock>
-
-
-            {
-                (s1b11 === '1') &&
-                <SmallQuestionBlock title={<div>11-1. 스마트팜 유형</div>} announcement={<em>(11번 문항에서 1번을 선택하신 분의 경우만 질의)</em>}>
-                    <FormControl fullWidth>
-                        <RadioGroup onChange={handleS1b11b1}>
-                            <Grid gridColumnProperty={"repeat(4,1fr)"}>
-                                <FormControlLabel value='1' control={<Radio/>} label={<div>시설원예 <br/>스마트팜</div>}/>
-                                <FormControlLabel value='2' control={<Radio/>} label='과수 스마트팜'/>
-                                <FormControlLabel value='3' control={<Radio/>} label='노지 스마트팜'/>
-                                <FormControlLabel value='4' control={<Radio/>} label='스마트 축사'/>
-                            </Grid>
-                        </RadioGroup>
-                    </FormControl>
-                </SmallQuestionBlock>
-            }
-
-
-            <SmallQuestionBlock title={<div>11-2. 장래 스마트팜 수요(설비/면적)</div>}>
-                <FormControl fullWidth>
-                    <RadioGroup onChange={handleS1b11b2}>
-                        <Grid gridColumnProperty={"repeat(1,1fr)"}>
-                            <FormControlLabel value='1' control={<Radio/>} label='스마트팜 시설과 면적 모두 유지한다.'/>
-                            <FormControlLabel value='2' control={<Radio/>} label='스마트팜 시설은 확충하고 면적은 유지한다.'/>
-                            <FormControlLabel value='3' control={<Radio/>} label='스마트팜 시설과 면적 모두 늘린다.'/>
-                            <FormControlLabel value='4' control={<Radio/>} label='스마트팜 시설은 유지하고 면적은 확대한다.'/>
-                        </Grid>
-                    </RadioGroup>
-                </FormControl>
-            </SmallQuestionBlock>
-
-
-            <SmallQuestionBlock title={<div>12. 연락처(휴대폰)</div>}>
+            <SmallQuestionBlock title={<div>11. 연락처(휴대폰)</div>}>
                 <FormControl fullWidth>
                     <Grid gridColumnProperty={"repeat(5,1fr)"}>
-                        <TextField placeholder='010' type='number' value={s1b12_1} onChange={handleS1b12_1} size={'small'} inputProps={{style: {textAlign: 'center'}}}/>
+                        <TextField placeholder='010' type='number' value={s1b11_1} onChange={handleS1b11_1} size={'small'} inputProps={{style: {textAlign: 'center'}}}/>
                         <CenterBox size={20}>-</CenterBox>
-                        <TextField placeholder='1234' type='number' value={s1b12_2} onChange={handleS1b12_2} size={'small'} inputProps={{style: {textAlign: 'center'}}}/>
+                        <TextField placeholder='1234' type='number' value={s1b11_2} onChange={handleS1b11_2} size={'small'} inputProps={{style: {textAlign: 'center'}}}/>
                         <CenterBox size={20}>-</CenterBox>
-                        <TextField placeholder='5678' type='number' value={s1b12_3} onChange={handleS1b12_3} size={'small'} inputProps={{style: {textAlign: 'center'}}}/>
+                        <TextField placeholder='5678' type='number' value={s1b11_3} onChange={handleS1b11_3} size={'small'} inputProps={{style: {textAlign: 'center'}}}/>
                     </Grid>
                 </FormControl>
             </SmallQuestionBlock>
@@ -616,4 +552,4 @@ const BoldText = styled.div`
   font-weight: bold;
 `
 
-export default Sector1;
+export default Pector1;

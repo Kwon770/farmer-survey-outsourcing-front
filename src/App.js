@@ -3,6 +3,11 @@ import {ThemeProvider, createGlobalStyle} from "styled-components";
 import reset from 'styled-reset';
 import Theme from "./styles/Theme"
 import {BrowserRouter as Router, Routes, Route} from "react-router-dom";
+import Pector1 from "./pages/Pector1";
+import Pector2 from "./pages/Pector2";
+import Pector3 from "./pages/Pector3";
+import Pector4 from "./pages/Pector4";
+import Pector5 from "./pages/Pector5";
 import Sector1 from "./pages/Sector1";
 import Sector2 from "./pages/Sector2";
 import Sector3 from "./pages/Sector3";
@@ -13,6 +18,12 @@ import Sector00 from "./pages/Sector00";
 const AppRouter = () => (
     <Router>
         <Routes>
+            <Route path="/p" element={<Pector1/>} />
+            <Route path="/p2" element={<Pector2/>} />
+            <Route path="/p3" element={<Pector3/>} />
+            <Route path="/p4" element={<Pector4/>} />
+            <Route path="/p5" element={<Pector5/>} />
+
             <Route path="/" element={<Sector1/>} />
             <Route path="/2" element={<Sector2/>} />
             <Route path="/3" element={<Sector3/>} />
