@@ -159,7 +159,15 @@ const Sector2 = () => {
     }
 
 
-    const resetAllS2b2_1s = () => {
+    const handleS2b2 = ({target: {value}}) => {
+        setS2b2(value);
+        if (value !== '1') {
+            resetS2b2_23s();
+        } else {
+            resetS2b2_1s();
+        }
+    }
+    const resetS2b2_1s = () => {
         setS2b3b1_1('');
         setS2b3b1_2('');
         setS2b3b1_3('');
@@ -170,20 +178,9 @@ const Sector2 = () => {
         setS2b3b2_1('');
         setS2b3b2_2('');
         setS2b3b2Data(s2b3b2Data.map(() => false));
-
-        setS2b3b3('');
-
     }
-    const resetAllS2b2_23s = () => {
+    const resetS2b2_23s = () => {
         setS2b3b3('');
-    }
-    const handleS2b2 = ({target: {value}}) => {
-        setS2b2(value);
-        if (value !== '1') {
-            resetAllS2b2_23s();
-        } else {
-            resetAllS2b2_1s();
-        }
     }
 
 
@@ -288,6 +285,26 @@ const Sector2 = () => {
 
     const handleS2b4 = (e) => {
         setS2b4(e.target.value);
+        
+        if (e.target.value === '1') {
+            resetS2b4_2s();
+        } else {
+            resetS2b4_1s();
+        }
+    }
+    const resetS2b4_1s = () => {
+        setS2b4b1_1('');
+        setS2b4b1_2('');
+        setS2b4b1Data(s2b4b1Data.map(() => false));
+        setS2b4b1_Etc7('');
+        setS2b4b1_Etc8('');
+    }
+    const resetS2b4_2s = () => {
+        setS2b4b2_1('');
+        setS2b4b2_2('');
+        setS2b4b2Data(s2b4b2Data.map(() => false));
+        setS2b4b2_Etc7('');
+        setS2b4b2_Etc8('');
     }
 
     const handleS2b4b1 = (e) => {

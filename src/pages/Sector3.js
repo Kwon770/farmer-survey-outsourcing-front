@@ -139,8 +139,23 @@ const Sector3 = () => {
         setS3b3_11(e.target.value);
     }
 
-    const handleS3b4 = (e) => {
-        setS3b4(e.target.value);
+    const handleS3b4 = ({target: {value}}) => {
+        setS3b4(value);
+
+        if (value !== '1' || value !== '2')
+            resetS3b4_12s();
+    }
+    const resetS3b4_12s = () => {
+        setS3b4b1('');
+
+        setS3b4b2_1('');
+        setS3b4b2_2('');
+        setS3b4b2_3('');
+        setS3b4b2_4('');
+
+        setS3b4b3('');
+
+        resetS3b4b3_23s();
     }
 
     const handleS3b4b1 = (e) => {
@@ -162,7 +177,14 @@ const Sector3 = () => {
 
     const handleS3b4b3 = (e) => {
         setS3b4b3(e.target.value);
+
+        if (e.target.value === '1')
+            resetS3b4b3_23s();
     }
+    const resetS3b4b3_23s = () => {
+        setS3b4b4('');
+    }
+
     const handleS3b4b4 = (e) => {
         setS3b4b4(e.target.value);
     }

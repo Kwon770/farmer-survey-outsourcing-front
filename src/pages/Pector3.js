@@ -172,7 +172,7 @@ const Pector3 = () => {
         setS3b1Data(s3b1Data.filter((_, i) => i !== idx));
     }
 
-    const resetAllS3b3s = () => {
+    const resetS3b3s = () => {
         setS3b3b1_1('');
         setS3b3b1_2('');
         setS3b3b1_3('');
@@ -187,7 +187,7 @@ const Pector3 = () => {
         setS3b3b3('');
 
     }
-    const resetAllS3b4s = () => {
+    const resetS3b4s = () => {
         setS3b4_1('');
         setS3b4_2('');
         setS3b4_3('');
@@ -197,19 +197,19 @@ const Pector3 = () => {
 
         setS3b6('');
     }
-    const resetAllS3b5s = () => {
+    const resetS3b5s = () => {
         setS3b5('');
     }
     const handleS3b2 = ({target: {value}}) => {
         setS3b2(value);
         if (value !== '1') {
-            resetAllS3b4s();
-            resetAllS3b5s();
+            resetS3b4s();
+            resetS3b5s();
         } else if (value !== '2') {
-            resetAllS3b3s();
+            resetS3b3s();
         } else if (value !== '3') {
-            resetAllS3b3s();
-            resetAllS3b4s();
+            resetS3b3s();
+            resetS3b4s();
         }
     }
 
