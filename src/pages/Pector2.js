@@ -14,6 +14,13 @@ const Pector2 = () => {
     const navigate = useNavigate();
     const [alertOpen, setAlertOpen] = useState(false);
 
+    // useEffect(() => {
+    //     if (localStorage.getItem('sector1') === null) {
+    //         movePreviousSector();
+    //     }
+    // }, [])
+
+
     const [s2b1, setS2b1] = useState('');
 
     const [s2b2, setS2b2] = useState('');
@@ -73,12 +80,6 @@ const Pector2 = () => {
 
     const [s2b5, setS2b5] = useState('');
 
-
-    // useEffect(() => {
-    //     if (localStorage.getItem('sector1') === null) {
-    //         movePreviousSector();
-    //     }
-    // }, [])
 
 
     const handleS2b1 = (e) => {

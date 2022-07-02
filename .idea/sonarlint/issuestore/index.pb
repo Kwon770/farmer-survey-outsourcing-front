@@ -30,3 +30,19 @@ I
 .env,3/c/3c84dcdc6bbe3d7817c49dcdc327b926fea1808a
 C
 src/styles/Theme.js,a/2/a2a8cd67cc67e04d2101c0e95da09147b5c5e2b2
+>
+src/Sector2.js,3/6/36c430a27d1ceb4e128cdbcb9b767ef477e06553
+O
+src/components/QuestionBlock.js,3/1/31bfe298785ed66669ff3615467a716118237ce5
+L
+src/components/Background.js,1/a/1a23a3f0898c27924d13629f81d01e7497c95026
+D
+src/pages/Pector1.js,2/f/2fd0910444a61d3d01765f4eba3210c8a0e15bec
+D
+src/pages/Pector5.js,0/5/054ae0c3b43b33531f7e8f9f4f5ea51539b1abf6
+N
+src/components/SectorFooter.js,d/e/de28fae61b3d617ca69c701426921ed427573793
+F
+src/components/Grid.js,f/9/f9cb52308ea07a157b2d5d8d034842064156e088
+K
+src/components/CenterBox.js,7/4/7445fd8bc687df889b9d95399f86103ead930204
