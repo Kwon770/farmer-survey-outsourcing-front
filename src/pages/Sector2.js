@@ -538,7 +538,7 @@ const Sector2 = () => {
                                             <TextField placeholder='확대 임차 농지' type='number' size={'small'}
                                                        InputProps={{
                                                            endAdornment: <InputAdornment
-                                                               position="end">%</InputAdornment>
+                                                               position="end">평</InputAdornment>
                                                        }}
                                                        value={element[2]} onChange={(e) => handleS2b3b1(e, idx, 2)}/>
                                         </FormControl>
