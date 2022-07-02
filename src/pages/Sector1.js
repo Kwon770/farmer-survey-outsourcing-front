@@ -183,10 +183,20 @@ const Sector1 = () => {
 
     const handleS1b11 = (e) => {
         setS1b11(e.target.value);
+
+        if (e.target.value === '2') {
+            resetS1b11_1s();
+        }
     }
+    const resetS1b11_1s = () => {
+        setS1b11b1('');
+        setS1b11b2('');
+    }
+
     const handleS1b11b1 = (e) => {
         setS1b11b1(e.target.value);
     }
+
     const handleS1b11b2 = (e) => {
         setS1b11b2(e.target.value);
     }
@@ -587,7 +597,8 @@ const Sector1 = () => {
                     </SmallQuestionBlock>
 
 
-                    <SmallQuestionBlock title={<div>11-2. 장래 스마트팜 수요(설비/면적)</div>}>
+                    <SmallQuestionBlock title={<div>11-2. 장래 스마트팜 수요(설비/면적)</div>}
+                                        announcement={<em>(11번 문항에서 1번을 선택하신 분의 경우만 질의)</em>}>
                         <FormControl fullWidth>
                             <RadioGroup onChange={handleS1b11b2}>
                                 <Grid gridColumnProperty={"repeat(1,1fr)"}>
