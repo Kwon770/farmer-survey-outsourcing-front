@@ -6,7 +6,7 @@ export async function getAllDosis() {
 }
 
 export async function getSigungus(dosiCode) {
-    const response = await axios.get(process.env.REACT_APP_KOREAN_LOCATION_API_URL + dosiCode.substring(0,2) + '*000000')
+    const response = await axios.get(process.env.REACT_APP_KOREAN_LOCATION_API_URL + dosiCode.substring(0,2) + '*0000')
     return response.data.regcodes.map((element) => ({
         code: element.code,
         name: element.name.split(' ')[1]
@@ -14,7 +14,7 @@ export async function getSigungus(dosiCode) {
 }
 
 export async function getUpmeongdong(sigunguCode) {
-    const response = await axios.get(process.env.REACT_APP_KOREAN_LOCATION_API_URL + sigunguCode.substring(0,4) + '*00')
+    const response = await axios.get(process.env.REACT_APP_KOREAN_LOCATION_API_URL + sigunguCode.substring(0,5) + '*00')
     return response.data.regcodes.map((element) => ({
         code: element.code,
         name: element.name.split(' ')[2]

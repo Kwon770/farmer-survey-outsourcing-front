@@ -24,10 +24,6 @@ R
 "src/components/ColorCenterBlock.js,5/d/5def6db2562af04d2b8d36f90f1e3100394abc16
 E
 src/pages/Sector00.js,2/e/2efbf94458ac498dc896194810e5174ff5922136
-I
-src/api/KoreanLocation.js,1/c/1cc8a75cded9c3cb56c58d6919069d552aca3313
-4
-.env,3/c/3c84dcdc6bbe3d7817c49dcdc327b926fea1808a
 C
 src/styles/Theme.js,a/2/a2a8cd67cc67e04d2101c0e95da09147b5c5e2b2
 >
@@ -36,8 +32,6 @@ O
 src/components/QuestionBlock.js,3/1/31bfe298785ed66669ff3615467a716118237ce5
 L
 src/components/Background.js,1/a/1a23a3f0898c27924d13629f81d01e7497c95026
-D
-src/pages/Pector1.js,2/f/2fd0910444a61d3d01765f4eba3210c8a0e15bec
 D
 src/pages/Pector5.js,0/5/054ae0c3b43b33531f7e8f9f4f5ea51539b1abf6
 N
