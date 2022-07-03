@@ -30,12 +30,22 @@ const Sector2 = () => {
     // }, [])
 
 
-    const [s2b1_1, setS2b1_1] = useState('');
-    const [s2b1_2, setS2b1_2] = useState('');
-    const [s2b1_3, setS2b1_3] = useState('');
-    const [s2b1_4, setS2b1_4] = useState('');
-    const [s2b1_5, setS2b1_5] = useState('');
-    const [s2b1Data, setS2b1Data] = useState([['', '', '']]);
+    useEffect(() => {
+        setS2b1Data(JSON.parse(localStorage.getItem('sector1'))['s1b6'].split(','));
+    }, []);
+
+
+    const [s2b1Data, setS2b1Data] = useState([]);
+    const [s2b1_1total, setS2b1_1total] = useState('');
+    const [s2b1_1rent, setS2b1_1rent] = useState('');
+    const [s2b1_2total, setS2b1_2total] = useState('');
+    const [s2b1_2rent, setS2b1_2rent] = useState('');
+    const [s2b1_3total, setS2b1_3total] = useState('');
+    const [s2b1_3rent, setS2b1_3rent] = useState('');
+    const [s2b1_4total, setS2b1_4total] = useState('');
+    const [s2b1_4rent, setS2b1_4rent] = useState('');
+    const [s2b1_5total, setS2b1_5total] = useState('');
+    const [s2b1_5rent, setS2b1_5rent] = useState('');
 
     const [s2b2, setS2b2] = useState('');
 
@@ -64,8 +74,6 @@ const Sector2 = () => {
 
     const [s2b4b1_1, setS2b4b1_1] = useState('');
     const [s2b4b1_2, setS2b4b1_2] = useState('');
-    const [s2b4b1_Etc7, setS2b4b1_Etc7] = useState('');
-    const [s2b4b1_Etc8, setS2b4b1_Etc8] = useState('');
     const [s2b4b1Data, setS2b4b1Data] = useState([
         false, // 0
         false, // 1
@@ -73,15 +81,11 @@ const Sector2 = () => {
         false,
         false,
         false,
-        false,
-        false,
-        false // 8
+        false // 6
     ])
 
     const [s2b4b2_1, setS2b4b2_1] = useState('');
     const [s2b4b2_2, setS2b4b2_2] = useState('');
-    const [s2b4b2_Etc7, setS2b4b2_Etc7] = useState('');
-    const [s2b4b2_Etc8, setS2b4b2_Etc8] = useState('');
     const [s2b4b2Data, setS2b4b2Data] = useState([
         false, // 0
         false, // 1
@@ -89,74 +93,9 @@ const Sector2 = () => {
         false,
         false,
         false,
-        false,
-        false,
-        false // 8
+        false // 6
     ])
 
-
-    useEffect(() => {
-        let non_total = 0;
-        let non_rent = 0;
-        let bat_total = 0;
-        let bat_rent = 0;
-        let gwa_total = 0;
-        let gwa_rent = 0;
-        let si_total = 0;
-        let si_rent = 0;
-        let chuk_total = 0;
-        let chuk_rent = 0;
-
-        s2b1Data.forEach((element) => {
-            switch (element[0]) {
-                case '1':
-                    non_total += Number(element[1])
-                    non_rent += Number(element[2]);
-                    break;
-                case '2':
-                    bat_total += Number(element[1])
-                    bat_rent += Number(element[2]);
-                    break;
-                case '3':
-                    gwa_total += Number(element[1])
-                    gwa_rent += Number(element[2]);
-                    break;
-                case '4':
-                    si_total += Number(element[1])
-                    si_rent += Number(element[2]);
-                    break;
-                case '5':
-                    chuk_total += Number(element[1])
-                    chuk_rent += Number(element[2]);
-                    break;
-            }
-        })
-
-        if (bat_total === 0 || bat_rent === 0) setS2b1_2('');
-        else setS2b1_2(bat_total + ',' + bat_rent);
-        if (non_total === 0 || non_rent === 0) setS2b1_1('');
-        else setS2b1_1(non_total + ',' + non_rent);
-        if (gwa_total === 0 || gwa_rent === 0) setS2b1_3('');
-        else setS2b1_3(gwa_total + ',' + gwa_rent);
-        if (si_total === 0 || si_rent === 0) setS2b1_4('');
-        else setS2b1_4(si_total + ',' + si_rent);
-        if (chuk_total === 0 || chuk_rent === 0) setS2b1_5('');
-        else setS2b1_5(chuk_total + ',' + chuk_rent);
-    }, [s2b1Data])
-    const handleS2b1 = (e, idx, type) => {
-        setS2b1Data(s2b1Data.map((element, i) => {
-            if (i === idx) {
-                element[type] = e.target.value;
-            }
-            return element;
-        }));
-    }
-    const handleS2b1AddingColumn = () => {
-        setS2b1Data([...s2b1Data, ['', '', '']]);
-    }
-    const handleS2b1RemovingColumn = (idx) => {
-        setS2b1Data(s2b1Data.filter((_, i) => i !== idx));
-    }
 
 
     const handleS2b2 = ({target: {value}}) => {
@@ -221,15 +160,15 @@ const Sector2 = () => {
             }
         })
 
-        if (bat_total === 0 || bat_rent === 0) setS2b3b1_1('');
+        if (bat_total === 0) setS2b3b1_1('');
         else setS2b3b1_1(bat_total + ',' + bat_rent);
-        if (non_total === 0 || non_rent === 0) setS2b3b1_2('');
+        if (non_total === 0) setS2b3b1_2('');
         else setS2b3b1_2(non_total + ',' + non_rent);
-        if (gwa_total === 0 || gwa_rent === 0) setS2b3b1_3('');
+        if (gwa_total === 0) setS2b3b1_3('');
         else setS2b3b1_3(gwa_total + ',' + gwa_rent);
-        if (si_total === 0 || si_rent === 0) setS2b3b1_4('');
+        if (si_total === 0) setS2b3b1_4('');
         else setS2b3b1_4(si_total + ',' + si_rent);
-        if (chuk_total === 0 || chuk_rent === 0) setS2b3b1_5('');
+        if (chuk_total === 0) setS2b3b1_5('');
         else setS2b3b1_5(chuk_total + ',' + chuk_rent);
     }, [s2b3b1Data])
     const handleS2b3b1 = (e, idx, type) => {
@@ -285,7 +224,7 @@ const Sector2 = () => {
 
     const handleS2b4 = (e) => {
         setS2b4(e.target.value);
-        
+
         if (e.target.value === '1') {
             resetS2b4_2s();
         } else {
@@ -370,7 +309,7 @@ const Sector2 = () => {
 
     const validateAllWritten = () => {
         if (
-            (s2b1_1 === '' && s2b1_2 === '' && s2b1_3 === '' && s2b1_4 === '' && s2b1_5 === '') ||
+            (s2b1_1total === '' && s2b1_2total === '' && s2b1_3total === '' && s2b1_4total === '' && s2b1_5total === '') ||
             s2b2 === '' ||
             s2b4 === ''
         ) {
@@ -405,11 +344,11 @@ const Sector2 = () => {
 
     const saveSector2Data = () => {
         const sector3DataObject = {
-            's2b1_1': s2b1_1,
-            's2b1_2': s2b1_2,
-            's2b1_3': s2b1_3,
-            's2b1_4': s2b1_4,
-            's2b1_5': s2b1_5,
+            's2b1_1': Number(s2b1_1total) === 0 ? '' : (Number(s2b1_1total) + ',' + Number(s2b1_1rent)),
+            's2b1_2': Number(s2b1_2total) === 0 ? '' : (Number(s2b1_2total) + ',' + Number(s2b1_2rent)),
+            's2b1_3': Number(s2b1_3total) === 0 ? '' : (Number(s2b1_3total) + ',' + Number(s2b1_3rent)),
+            's2b1_4': Number(s2b1_4total) === 0 ? '' : (Number(s2b1_4total) + ',' + Number(s2b1_4rent)),
+            's2b1_5': Number(s2b1_5total) === 0 ? '' : (Number(s2b1_5total) + ',' + Number(s2b1_5rent)),
             's2b2': s2b2,
             's2b3b1_1': s2b3b1_1,
             's2b3b1_2': s2b3b1_2,
@@ -453,51 +392,127 @@ const Sector2 = () => {
 
             <QuestionBlock
                 title={<div>2-1. 귀하의 올해(2022년) 영농규모(농지 또는 축사 면적)를 묻는 문항입니다. 다음 표에서 해당하는 부 분에 응답하여 주십시오.</div>}>
-                <Grid gridColumnProperty={"10fr 10fr 10fr 1fr"} rowGap={10} columnGap={10}>
+                <Grid strict gridColumnProperty={"1fr 2fr 2fr"} rowGap={10} columnGap={10}>
                     <ColorCenterBlock>구분</ColorCenterBlock>
                     <ColorCenterBlock>전체 영농 면적<br/>(경작, 사육)</ColorCenterBlock>
                     <ColorCenterBlock>임대한 농지<br/>(자경지 제외)</ColorCenterBlock>
-                    <div/>
+
 
                     {
-                        s2b1Data.map((element, idx) => (
-                            <>
-                                <FormControl fullWidth size={'small'}>
-                                    <Select displayEmpty value={element[0]} onChange={(e) => handleS2b1(e, idx, 0)}>
-                                        <MenuItem disabled value={''}><i>논·밭·과수원·시설원예·축산</i></MenuItem>
-                                        <MenuItem value={'1'}>논</MenuItem>
-                                        <MenuItem value={'2'}>밭</MenuItem>
-                                        <MenuItem value={'3'}>과수원</MenuItem>
-                                        <MenuItem value={'4'}>시설원예</MenuItem>
-                                        <MenuItem value={'5'}>축산</MenuItem>
-                                    </Select>
-                                </FormControl>
-                                <FormControl fullWidth>
-                                    <TextField placeholder='전체 영농 면적' type='number' size={'small'}
-                                               InputProps={{
-                                                   endAdornment: <InputAdornment position="end">평</InputAdornment>
-                                               }}
-                                               value={element[1]} onChange={(e) => handleS2b1(e, idx, 1)}/>
-                                </FormControl>
-                                <FormControl fullWidth>
-                                    <TextField placeholder='임대한 농지' type='number' size={'small'}
-                                               InputProps={{
-                                                   endAdornment: <InputAdornment position="end">평</InputAdornment>
-                                               }}
-                                               value={element[2]} onChange={(e) => handleS2b1(e, idx, 2)}/>
-                                </FormControl>
+                        (s2b1Data.map((element) => {
+                            switch (element) {
+                                case '1':
+                                case '2':
+                                    return (
+                                        <>
+                                            <CenterBox>논</CenterBox>
+                                            <FormControl fullWidth>
+                                                <TextField placeholder='전체 영농 면적' type='number' size={'small'}
+                                                           InputProps={{
+                                                               endAdornment: <InputAdornment position="end">평</InputAdornment>
+                                                           }}
+                                                           value={s2b1_1total} onChange={(e) => setS2b1_1total(e.target.value)}/>
+                                            </FormControl>
+                                            <FormControl fullWidth>
+                                                <TextField placeholder='임대한 농지' type='number' size={'small'}
+                                                           InputProps={{
+                                                               endAdornment: <InputAdornment position="end">평</InputAdornment>
+                                                           }}
+                                                           value={s2b1_1rent} onChange={(e) => setS2b1_1rent(e.target.value)}/>
+                                            </FormControl>
+                                        </>
+                                    )
 
-                                {
-                                    idx === 0 ? <div/> : <Button variant='text' color='error'
-                                                                 onClick={() => handleS2b1RemovingColumn(idx)}>삭제</Button>
-                                }
-                            </>
-                        ))
+
+                                case '3':
+                                    return (
+                                        <>
+                                            <CenterBox>밭</CenterBox>
+                                            <FormControl fullWidth>
+                                                <TextField placeholder='전체 영농 면적' type='number' size={'small'}
+                                                           InputProps={{
+                                                               endAdornment: <InputAdornment position="end">평</InputAdornment>
+                                                           }}
+                                                           value={s2b1_2total} onChange={(e) => setS2b1_2total(e.target.value)}/>
+                                            </FormControl>
+                                            <FormControl fullWidth>
+                                                <TextField placeholder='임대한 농지' type='number' size={'small'}
+                                                           InputProps={{
+                                                               endAdornment: <InputAdornment position="end">평</InputAdornment>
+                                                           }}
+                                                           value={s2b1_2rent} onChange={(e) => setS2b1_2rent(e.target.value)}/>
+                                            </FormControl>
+                                        </>
+                                    )
+
+
+                                case '4':
+                                    return (
+                                        <>
+                                            <CenterBox>시설원예</CenterBox>
+                                            <FormControl fullWidth>
+                                                <TextField placeholder='전체 영농 면적' type='number' size={'small'}
+                                                           InputProps={{
+                                                               endAdornment: <InputAdornment position="end">평</InputAdornment>
+                                                           }}
+                                                           value={s2b1_4total} onChange={(e) => setS2b1_4total(e.target.value)}/>
+                                            </FormControl>
+                                            <FormControl fullWidth>
+                                                <TextField placeholder='임대한 농지' type='number' size={'small'}
+                                                           InputProps={{
+                                                               endAdornment: <InputAdornment position="end">평</InputAdornment>
+                                                           }}
+                                                           value={s2b1_4rent} onChange={(e) => setS2b1_4rent(e.target.value)}/>
+                                            </FormControl>
+                                        </>
+                                    )
+
+
+                                case '5':
+                                    return (
+                                        <>
+                                            <CenterBox>과수원</CenterBox>
+                                            <FormControl fullWidth>
+                                                <TextField placeholder='전체 영농 면적' type='number' size={'small'}
+                                                           InputProps={{
+                                                               endAdornment: <InputAdornment position="end">평</InputAdornment>
+                                                           }}
+                                                           value={s2b1_3total} onChange={(e) => setS2b1_3total(e.target.value)}/>
+                                            </FormControl>
+                                            <FormControl fullWidth>
+                                                <TextField placeholder='임대한 농지' type='number' size={'small'}
+                                                           InputProps={{
+                                                               endAdornment: <InputAdornment position="end">평</InputAdornment>
+                                                           }}
+                                                           value={s2b1_3rent} onChange={(e) => setS2b1_3rent(e.target.value)}/>
+                                            </FormControl>
+                                        </>
+                                    )
+
+
+                                case '6':
+                                    return (
+                                        <>
+                                            <CenterBox>축산</CenterBox>
+                                            <FormControl fullWidth>
+                                                <TextField placeholder='전체 영농 면적' type='number' size={'small'}
+                                                           InputProps={{
+                                                               endAdornment: <InputAdornment position="end">평</InputAdornment>
+                                                           }}
+                                                           value={s2b1_5total} onChange={(e) => setS2b1_5total(e.target.value)}/>
+                                            </FormControl>
+                                            <FormControl fullWidth>
+                                                <TextField placeholder='임대한 농지' type='number' size={'small'}
+                                                           InputProps={{
+                                                               endAdornment: <InputAdornment position="end">평</InputAdornment>
+                                                           }}
+                                                           value={s2b1_5rent} onChange={(e) => setS2b1_5rent(e.target.value)}/>
+                                            </FormControl>
+                                        </>
+                                    )
+                            }
+                        }))
                     }
-
-                    <div/>
-                    <Button variant='text' onClick={handleS2b1AddingColumn}>추가하기</Button>
-                    <div/>
                 </Grid>
             </QuestionBlock>
 
@@ -578,11 +593,6 @@ const Sector2 = () => {
                         <FormControl fullWidth>
                             <Grid gridColumnProperty={"repeat(2,1fr)"}>
 
-                                <CenterBox size={20} weight={500} padding={20}>1순위 :&nbsp;&nbsp;
-                                    <strong>{s2b3b2_1}</strong></CenterBox>
-                                <CenterBox size={20} weight={500} padding={20}>2순위 :&nbsp;&nbsp;
-                                    <strong>{s2b3b2_2}</strong></CenterBox>
-
                                 <FormControlLabel
                                     control={<Checkbox name='1' checked={s2b3b2Data[1]} onChange={handleS2b3b2}/>}
                                     label='1. 영농소득을 늘리기 위해서'/>
@@ -601,6 +611,14 @@ const Sector2 = () => {
                                 <FormControlLabel
                                     control={<Checkbox name='6' checked={s2b3b2Data[6]} onChange={handleS2b3b2}/>}
                                     label='6. 농기계-설비 확충을 위한 적정 면적확보'/>
+
+
+                                <CenterBox size={20} weight={500} padding={20}>
+                                    1순위 :&nbsp;&nbsp;(&nbsp;<strong>{s2b3b2_1}</strong>&nbsp;)
+                                </CenterBox>
+                                <CenterBox size={20} weight={500} padding={20}>
+                                    2순위 :&nbsp;&nbsp;(&nbsp;<strong>{s2b3b2_2}</strong>&nbsp;)
+                                </CenterBox>
                             </Grid>
                         </FormControl>
                     </QuestionBlock>
@@ -675,25 +693,10 @@ const Sector2 = () => {
                                     label='4. 자산가치로써 농지를 확보하기 위해서'/>
                                 <FormControlLabel
                                     control={<Checkbox name='5' checked={s2b4b1Data[5]} onChange={handleS2b4b1}/>}
-                                    label='5. 농기계-설비 이용률을 높이기 위해서'/>
+                                    label='5. 보유한 농기계·설비 이용률을 높이기 위해서'/>
                                 <FormControlLabel
                                     control={<Checkbox name='6' checked={s2b4b1Data[6]} onChange={handleS2b4b1}/>}
-                                    label='6. 농기계-설비 확충을 위한 적정 면적확보'/>
-
-                                <Stack direction='row'>
-                                    <FormControlLabel
-                                        control={<Checkbox name='7' checked={s2b4b1Data[7]} onChange={handleS2b4b1}/>}
-                                        label='7. 기타'/>
-                                    <TextField value={s2b4b1_Etc7} onChange={(e) => setS2b4b1_Etc7(e.target.value)}
-                                               size={"small"}/>
-                                </Stack>
-                                <Stack direction='row'>
-                                    <FormControlLabel
-                                        control={<Checkbox name='8' checked={s2b4b1Data[8]} onChange={handleS2b4b1}/>}
-                                        label='8. 기타'/>
-                                    <TextField value={s2b4b1_Etc8} onChange={(e) => setS2b4b1_Etc8(e.target.value)}
-                                               size={"small"}/>
-                                </Stack>
+                                    label='6. 농기계·설비 확충을 위한 적정 면적확보'/>
                             </Grid>
                         </FormControl>
                     </QuestionBlock>
@@ -728,25 +731,10 @@ const Sector2 = () => {
                                     label='4. 토양이 비옥하지 않아서'/>
                                 <FormControlLabel
                                     control={<Checkbox name='5' checked={s2b4b2Data[5]} onChange={handleS2b4b2}/>}
-                                    label='5. 용·베스 여건이 불량해서'/>
+                                    label='5. 용·배수 여건이 불량해서'/>
                                 <FormControlLabel
                                     control={<Checkbox name='6' checked={s2b4b2Data[6]} onChange={handleS2b4b2}/>}
                                     label='6. 야생동물이 자주 출몰해서'/>
-
-                                <Stack direction='row'>
-                                    <FormControlLabel
-                                        control={<Checkbox name='7' checked={s2b4b2Data[7]} onChange={handleS2b4b2}/>}
-                                        label='7. 기타'/>
-                                    <TextField value={s2b4b2_Etc7} onChange={(e) => setS2b4b2_Etc7(e.target.value)}
-                                               size={"small"}/>
-                                </Stack>
-                                <Stack direction='row'>
-                                    <FormControlLabel
-                                        control={<Checkbox name='8' checked={s2b4b2Data[8]} onChange={handleS2b4b2}/>}
-                                        label='8. 기타'/>
-                                    <TextField value={s2b4b2_Etc8} onChange={(e) => setS2b4b2_Etc8(e.target.value)}
-                                               size={"small"}/>
-                                </Stack>
                             </Grid>
                         </FormControl>
                     </QuestionBlock>

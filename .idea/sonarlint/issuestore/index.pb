@@ -34,8 +34,6 @@ L
 src/components/Background.js,1/a/1a23a3f0898c27924d13629f81d01e7497c95026
 D
 src/pages/Pector5.js,0/5/054ae0c3b43b33531f7e8f9f4f5ea51539b1abf6
-N
-src/components/SectorFooter.js,d/e/de28fae61b3d617ca69c701426921ed427573793
 F
 src/components/Grid.js,f/9/f9cb52308ea07a157b2d5d8d034842064156e088
 K

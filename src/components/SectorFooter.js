@@ -12,7 +12,7 @@ const SectorFooter = ({sector, movePreviousSector, moveNextSector, alertOpen, se
     const steps = ['응답자 기본 정보', "청년농업인 농지 이용형태 및 수요", '농업 스마트업단지 조성사업 참여 의향', '농지매입 경험']
     return (
         <Footer>
-            <Button variant='text' onClick={movePreviousSector} disabled={sector === 1}>이전</Button>
+            <Button variant='text' style={{fontSize: 25}} onClick={movePreviousSector} disabled={sector === 1}>이전</Button>
 
             <Stepper activeStep={sector - 1} alternativeLabel>
                 {steps.map((label) => (
@@ -22,7 +22,7 @@ const SectorFooter = ({sector, movePreviousSector, moveNextSector, alertOpen, se
                 ))}
             </Stepper>
 
-            <Button variant='text' onClick={moveNextSector}>{sector !== 5 ? '다음' : '제출'}</Button>
+            <Button variant='text' style={{fontSize: 25}} onClick={moveNextSector}>{sector !== 5 ? '다음' : '제출'}</Button>
 
             <Snackbar autoHideDuration={3500} open={alertOpen} onClose={() => setAlertOpen(false)}
                       anchorOrigin={{vertical: 'bottom', horizontal: 'center'}}>
