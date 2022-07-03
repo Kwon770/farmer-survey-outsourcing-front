@@ -6,7 +6,7 @@ export async function getAllDosis() {
 }
 
 export async function getSigungus(dosiCode) {
-    const response = await axios.get(process.env.REACT_APP_KOREAN_LOCATION_API_URL + dosiCode.substring(0,2) + '*0000')
+    const response = await axios.get(process.env.REACT_APP_KOREAN_LOCATION_API_URL + dosiCode.substring(0,2) + '*00000')
     return response.data.regcodes.map((element) => ({
         code: element.code,
         name: element.name.split(' ')[1]

@@ -29,6 +29,7 @@ const Sector2 = () => {
     //     }
     // }, [])
 
+
     const [s2b1_1, setS2b1_1] = useState('');
     const [s2b1_2, setS2b1_2] = useState('');
     const [s2b1_3, setS2b1_3] = useState('');
@@ -95,11 +96,6 @@ const Sector2 = () => {
 
 
     useEffect(() => {
-        console.log(s2b1_1);
-    }, [s2b1_1]);
-
-
-    useEffect(() => {
         let non_total = 0;
         let non_rent = 0;
         let bat_total = 0;
@@ -114,37 +110,37 @@ const Sector2 = () => {
         s2b1Data.forEach((element) => {
             switch (element[0]) {
                 case '1':
-                    non_total += parseInt(element[1])
-                    non_rent += parseInt(element[2]);
+                    non_total += Number(element[1])
+                    non_rent += Number(element[2]);
                     break;
                 case '2':
-                    bat_total += parseInt(element[1])
-                    bat_rent += parseInt(element[2]);
+                    bat_total += Number(element[1])
+                    bat_rent += Number(element[2]);
                     break;
                 case '3':
-                    gwa_total += parseInt(element[1])
-                    gwa_rent += parseInt(element[2]);
+                    gwa_total += Number(element[1])
+                    gwa_rent += Number(element[2]);
                     break;
                 case '4':
-                    si_total += parseInt(element[1])
-                    si_rent += parseInt(element[2]);
+                    si_total += Number(element[1])
+                    si_rent += Number(element[2]);
                     break;
                 case '5':
-                    chuk_total += parseInt(element[1])
-                    chuk_rent += parseInt(element[2]);
+                    chuk_total += Number(element[1])
+                    chuk_rent += Number(element[2]);
                     break;
             }
         })
 
-        if (isNaN(bat_total) || isNaN(bat_rent)) setS2b1_2('');
+        if (bat_total === 0 || bat_rent === 0) setS2b1_2('');
         else setS2b1_2(bat_total + ',' + bat_rent);
-        if (isNaN(non_total) || isNaN(non_rent)) setS2b1_1('');
+        if (non_total === 0 || non_rent === 0) setS2b1_1('');
         else setS2b1_1(non_total + ',' + non_rent);
-        if (isNaN(gwa_total) || isNaN(gwa_rent)) setS2b1_3('');
+        if (gwa_total === 0 || gwa_rent === 0) setS2b1_3('');
         else setS2b1_3(gwa_total + ',' + gwa_rent);
-        if (isNaN(si_total) || isNaN(si_rent)) setS2b1_4('');
+        if (si_total === 0 || si_rent === 0) setS2b1_4('');
         else setS2b1_4(si_total + ',' + si_rent);
-        if (isNaN(chuk_total) || isNaN(chuk_rent)) setS2b1_5('');
+        if (chuk_total === 0 || chuk_rent === 0) setS2b1_5('');
         else setS2b1_5(chuk_total + ',' + chuk_rent);
     }, [s2b1Data])
     const handleS2b1 = (e, idx, type) => {
@@ -203,37 +199,37 @@ const Sector2 = () => {
         s2b3b1Data.forEach((element) => {
             switch (element[0]) {
                 case '1':
-                    non_total += parseInt(element[1])
-                    non_rent += parseInt(element[2]);
+                    non_total += Number(element[1])
+                    non_rent += Number(element[2]);
                     break;
                 case '2':
-                    bat_total += parseInt(element[1])
-                    bat_rent += parseInt(element[2]);
+                    bat_total += Number(element[1])
+                    bat_rent += Number(element[2]);
                     break;
                 case '3':
-                    gwa_total += parseInt(element[1])
-                    gwa_rent += parseInt(element[2]);
+                    gwa_total += Number(element[1])
+                    gwa_rent += Number(element[2]);
                     break;
                 case '4':
-                    si_total += parseInt(element[1])
-                    si_rent += parseInt(element[2]);
+                    si_total += Number(element[1])
+                    si_rent += Number(element[2]);
                     break;
                 case '5':
-                    chuk_total += parseInt(element[1])
-                    chuk_rent += parseInt(element[2]);
+                    chuk_total += Number(element[1])
+                    chuk_rent += Number(element[2]);
                     break;
             }
         })
 
-        if (isNaN(bat_total) || isNaN(bat_rent)) setS2b3b1_1('');
+        if (bat_total === 0 || bat_rent === 0) setS2b3b1_1('');
         else setS2b3b1_1(bat_total + ',' + bat_rent);
-        if (isNaN(non_total) || isNaN(non_rent)) setS2b3b1_2('');
+        if (non_total === 0 || non_rent === 0) setS2b3b1_2('');
         else setS2b3b1_2(non_total + ',' + non_rent);
-        if (isNaN(gwa_total) || isNaN(gwa_rent)) setS2b3b1_3('');
+        if (gwa_total === 0 || gwa_rent === 0) setS2b3b1_3('');
         else setS2b3b1_3(gwa_total + ',' + gwa_rent);
-        if (isNaN(si_total) || isNaN(si_rent)) setS2b3b1_4('');
+        if (si_total === 0 || si_rent === 0) setS2b3b1_4('');
         else setS2b3b1_4(si_total + ',' + si_rent);
-        if (isNaN(chuk_total) || isNaN(chuk_rent)) setS2b3b1_5('');
+        if (chuk_total === 0 || chuk_rent === 0) setS2b3b1_5('');
         else setS2b3b1_5(chuk_total + ',' + chuk_rent);
     }, [s2b3b1Data])
     const handleS2b3b1 = (e, idx, type) => {
