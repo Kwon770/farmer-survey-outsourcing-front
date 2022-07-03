@@ -72,6 +72,19 @@ const Sector3 = () => {
     const [s3b6, setS3b6] = useState('');
     const [s3b7, setS3b7] = useState('');
 
+    const [s3b8_1, setS3b8_1] = useState('');
+    const [s3b8_2, setS3b8_2] = useState('');
+    const [s3b8Data, setS3b8Data] = useState([
+        false, // 0
+        false, // 1
+        false,
+        false,
+        false,
+        false,
+        false,
+        false, // 7
+    ])
+
 
     const handleS3b1 = (e) => {
         setS3b1(e.target.value);
@@ -202,16 +215,43 @@ const Sector3 = () => {
         setS3b7(e.target.value);
     }
 
+    const handleS3b8 = (e) => {
+        // 2개 선택 유효성 확인
+        let checking = false;
+        let checkable = s3b8_1 === '' || s3b8_2 === '';
+        s3b8Data.forEach((b, idx) => {
+            if (!b && idx === Number(e.target.name)) checking = true;
+        })
+        // 2개 이미 선택시 중단
+        if (checking && !checkable) {
+            return
+        }
+        //
+
+        setS3b8Data(s3b8Data.map((b, idx) => {
+            if (idx === Number(e.target.name)) {
+                return !b
+            } else {
+                return b
+            }
+        }))
+
+        if (checking) {
+            if (s3b8_1 === '') setS3b8_1(e.target.name);
+            else setS3b8_2(e.target.name);
+        } else {
+            if (s3b8_1 === e.target.name) setS3b8_1('');
+            else setS3b8_2('');
+        }
+    }
+
 
     const validateAllWritten = () => {
         if (
             s3b1 === '' ||
             s3b2_1 === '' || s3b2_2 === '' || s3b2_3 === '' || s3b2_4 === '' || s3b2_5 === '' || s3b2_6 === '' || s3b2_7 === '' || s3b2_8 === '' ||
             s3b3_1 === '' || s3b3_2 === '' || s3b3_3 === '' || s3b3_4 === '' || s3b3_5 === '' || s3b3_6 === '' || s3b3_7 === '' || s3b3_8 === '' || s3b3_9 === '' || s3b3_10 === '' || s3b3_11 === '' ||
-            s3b4 === '' ||
-            s3b5 === '' ||
-            s3b6 === '' ||
-            s3b7 === ''
+            s3b4 === ''
         ) {
             return false;
         }
@@ -221,7 +261,10 @@ const Sector3 = () => {
             if (
                 s3b4b1 === '' ||
                 s3b4b2_1 === '' || s3b4b2_2 === '' || s3b4b2_3 === '' || s3b4b2_4 === '' ||
-                s3b4b3 === ''
+                s3b4b3 === '' ||
+                s3b5 === '' ||
+                s3b6 === '' ||
+                s3b7 === ''
             ) {
                 return false;
             }
@@ -231,6 +274,10 @@ const Sector3 = () => {
                     return false;
         }
 
+        if (s3b4 === '4' || s3b4 === '5') {
+            if (s3b8_1 === '' || s3b8_2 === '')
+                return false;
+        }
 
         return true;
     }
@@ -265,9 +312,11 @@ const Sector3 = () => {
             's3b4b2_4': s3b4b2_4,
             's3b4b3': s3b4b3,
             's3b4b4': s3b4b4,
-            's3b5': s3b5 === '8' ? '8,' + s3b5_Etc8 : s3b5,
+            's3b5': s3b5,
             's3b6': s3b6,
             's3b7': s3b7,
+            's3b8_1': s3b8_1,
+            's3b8_2': s3b8_2
         }
 
         localStorage.setItem('sector3', JSON.stringify(sector3DataObject))
@@ -809,6 +858,51 @@ const Sector3 = () => {
                                 <div></div>
                             </Grid>
                             <div>※ 설치비용은 참고사항이며 온실사양에 따라 달라질 수 있음.</div>
+                        </FormControl>
+                    </QuestionBlock>
+                </>
+            }
+
+
+            {
+                (s3b4 === '4' || s3b4 === '5') &&
+                <>
+                    <strong><em>※ 3-4.문항에서 4, 5번을 선택하신 분의 경우에만 응답해주세요.</em></strong>
+                    <QuestionBlock title={<div>3-8.귀하께서는 농업 스타트업단지에 입주를 고려하지 않으시는 이유는 무엇입니까?</div>}>
+                        <FormControl fullWidth>
+                            <Grid gridColumnProperty={"repeat(2,1fr)"}>
+
+                                <FormControlLabel
+                                    control={<Checkbox name='1' checked={s3b8Data[1]} onChange={handleS3b8}/>}
+                                    label='1. 현재 재배하는 품목과 맞지 않아서'/>
+                                <FormControlLabel
+                                    control={<Checkbox name='2' checked={s3b8Data[2]} onChange={handleS3b8}/>}
+                                    label='2. 자금 부담이 클 것 같아서'/>
+                                <FormControlLabel
+                                    control={<Checkbox name='3' checked={s3b8Data[3]} onChange={handleS3b8}/>}
+                                    label='3. 장래 수익에 대한 확신이 없어서'/>
+                                <FormControlLabel
+                                    control={<Checkbox name='4' checked={s3b8Data[4]} onChange={handleS3b8}/>}
+                                    label='4. 인력의 확보가 어려워서 (노동력이 부족)'/>
+                                <FormControlLabel
+                                    control={<Checkbox name='5' checked={s3b8Data[5]} onChange={handleS3b8}/>}
+                                    label='5. 통작거리가 너무 멀 것 같아서'/>
+                                <FormControlLabel
+                                    control={<Checkbox name='6' checked={s3b8Data[6]} onChange={handleS3b8}/>}
+                                    label='6. 독자적인 영농활동을 선호해서'/>
+                                <FormControlLabel
+                                    control={<Checkbox name='7' checked={s3b8Data[7]} onChange={handleS3b8}/>}
+                                    label='7. 정부나 공사를 신뢰하지 못해서'/>
+                                <div/>
+
+
+                                <CenterBox size={20} weight={500} padding={20}>
+                                    1순위 :&nbsp;&nbsp;(&nbsp;<strong>{s3b8_1}</strong>&nbsp;)
+                                </CenterBox>
+                                <CenterBox size={20} weight={500} padding={20}>
+                                    2순위 :&nbsp;&nbsp;(&nbsp;<strong>{s3b8_2}</strong>&nbsp;)
+                                </CenterBox>
+                            </Grid>
                         </FormControl>
                     </QuestionBlock>
                 </>

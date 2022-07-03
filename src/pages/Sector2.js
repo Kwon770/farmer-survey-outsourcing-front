@@ -619,7 +619,7 @@ const Sector2 = () => {
                                 <CenterBox size={20} weight={500} padding={20}>
                                     2순위 :&nbsp;&nbsp;(&nbsp;<strong>{s2b3b2_2}</strong>&nbsp;)
                                 </CenterBox>
-                            </Grid>
+                            </Grid>순
                         </FormControl>
                     </QuestionBlock>
                 </>
