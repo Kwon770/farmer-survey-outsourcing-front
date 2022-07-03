@@ -27,7 +27,6 @@ const Sector4 = () => {
     const [s4b2b1, setS4b2b1] = useState('');
     const [s4b2b2_1, setS4b2b2_1] = useState('');
     const [s4b2b2_2, setS4b2b2_2] = useState('');
-    const [s4b2b2_3, setS4b2b2_3] = useState('');
     const [s4b2b2Data, setS4b2b2Data] = useState([
         false, // 0
         false, // 1
@@ -70,7 +69,6 @@ const Sector4 = () => {
 
         setS4b2b2_1('');
         setS4b2b2_2('');
-        setS4b2b2_3('');
         setS4b2b2Data(s4b2b2Data.map(() => false));
 
         setS4b2b3('');
@@ -81,13 +79,13 @@ const Sector4 = () => {
     }
 
     const handleS4b2b2 = (e) => {
-        // 3개 선택 유효성 확인
+        // 2개 선택 유효성 확인
         let checking = false;
-        let checkable = s4b2b2_1 === '' || s4b2b2_2 === '' || s4b2b2_3 === '';
+        let checkable = s4b2b2_1 === '' || s4b2b2_2 === ''
         s4b2b2Data.forEach((b, idx) => {
             if (!b && idx === Number(e.target.name)) checking = true;
         })
-        // 3개 이미 선택시 중단
+        // 2개 이미 선택시 중단
         if (checking && !checkable) {
             return
         }
@@ -104,11 +102,9 @@ const Sector4 = () => {
         if (checking) {
             if (s4b2b2_1 === '') setS4b2b2_1(e.target.name);
             else if (s4b2b2_2 === '') setS4b2b2_2(e.target.name);
-            else setS4b2b2_3(e.target.name);
         } else {
             if (s4b2b2_1 === e.target.name) setS4b2b2_1('');
             else if (s4b2b2_2 === e.target.name) setS4b2b2_2('');
-            else setS4b2b2_3('');
         }
     }
 
@@ -130,7 +126,7 @@ const Sector4 = () => {
             if (s4b2 === '1' || s4b2 === '3') {
                 if (
                     s4b2b1 === '' ||
-                    s4b2b2_1 === '' || s4b2b2_2 === '' || s4b2b2_3 === '' ||
+                    s4b2b2_1 === '' || s4b2b2_2 === '' ||
                     s4b2b3 === ''
                 ) {
                     return false;
@@ -149,7 +145,6 @@ const Sector4 = () => {
             's4b2b1': s4b2b1,
             's4b2b2_1': s4b2b2_1,
             's4b2b2_2': s4b2b2_2,
-            's4b2b2_3': s4b2b2_3,
             's4b2b3': s4b2b3,
             's4b3': s4b3
         }
@@ -231,17 +226,6 @@ const Sector4 = () => {
                             <strong><em>※ 4-2.문항에서 1, 3번을 선택하신 분만 응답해주세요.</em></strong>
                             <QuestionBlock title={<div>4-2-2. 농지은행이 아닌 개인간 매매로 농지를 취득하신 주요 요인은 무엇입니까?</div>}>
                                 <FormControl fullWidth>
-                                    <Grid gridColumnProperty={"repeat(3,1fr)"}>
-                                        <CenterBox size={20} weight={500} padding={20}>1순위 :&nbsp;&nbsp;
-                                            <strong>{s4b2b2_1}</strong></CenterBox>
-                                        <CenterBox size={20} weight={500} padding={20}>2순위 :&nbsp;&nbsp;
-                                            <strong>{s4b2b2_2}</strong></CenterBox>
-                                        <CenterBox size={20} weight={500} padding={20}>3순위 :&nbsp;&nbsp;
-                                            <strong>{s4b2b2_3}</strong></CenterBox>
-                                        <div/>
-                                    </Grid>
-
-
                                     <Grid gridColumnProperty={"repeat(2,1fr)"}>
                                         <FormControlLabel
                                             control={<Checkbox name='1' checked={s4b2b2Data[1]}
@@ -275,6 +259,13 @@ const Sector4 = () => {
                                             control={<Checkbox name='8' checked={s4b2b2Data[8]}
                                                                onChange={handleS4b2b2}/>}
                                             label='8. 자기자본 풍부'/>
+
+                                        <CenterBox size={20} weight={500} padding={20}>
+                                            1순위 :&nbsp;&nbsp;(&nbsp;<strong>{s4b2b2_1}</strong>&nbsp;)
+                                        </CenterBox>
+                                        <CenterBox size={20} weight={500} padding={20}>
+                                            2순위 :&nbsp;&nbsp;(&nbsp;<strong>{s4b2b2_2}</strong>&nbsp;)
+                                        </CenterBox>
                                     </Grid>
                                 </FormControl>
                             </QuestionBlock>
