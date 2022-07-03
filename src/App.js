@@ -97,11 +97,13 @@ const GlobalStyle = createGlobalStyle`
   }
 
   strong {
-    color: ${Theme.fontHighlightColor}
+    color: ${Theme.fontHighlightColor};
+    font-weight: bold;
   }
 
   em {
     text-decoration: underline;
+    font-weight: bold;
   }
   
   i {

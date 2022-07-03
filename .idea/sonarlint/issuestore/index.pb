@@ -42,10 +42,5 @@ K
 src/components/CenterBox.js,7/4/7445fd8bc687df889b9d95399f86103ead930204
 D
 src/pages/Pector4.js,1/5/1512a74ed2efebea0a1f70724fd13c97032f4991
-:
-
-src/App.js,1/e/1e43fa63aecd2127be034b3fb9d4caa172275714
 D
 src/pages/Pector1.js,2/f/2fd0910444a61d3d01765f4eba3210c8a0e15bec
-D
-src/pages/Sector1.js,8/8/88b4c1bc438a0f775eccdaec4c3be55c67fdd131
