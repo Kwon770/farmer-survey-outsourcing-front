@@ -46,9 +46,6 @@ D
 src/pages/Pector2.js,6/2/62edcacdaafc4c7fc5853117cbd982fa7e3184bd
 I
 src/api/KoreanLocation.js,1/c/1cc8a75cded9c3cb56c58d6919069d552aca3313
-:
-
-src/App.js,1/e/1e43fa63aecd2127be034b3fb9d4caa172275714
 N
 src/components/SectorFooter.js,d/e/de28fae61b3d617ca69c701426921ed427573793
 E

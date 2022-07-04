@@ -31,7 +31,11 @@ const Sector2 = () => {
 
 
     useEffect(() => {
-        setS2b1Data(JSON.parse(localStorage.getItem('sector1'))['s1b6'].split(','));
+        if (localStorage.getItem('sector1') === null) {
+            setS2b1Data([]);
+        } else {
+            setS2b1Data(JSON.parse(localStorage.getItem('sector1'))['s1b6'].split(','));
+        }
     }, []);
 
 
