@@ -370,7 +370,7 @@ const Sector1 = () => {
             </TitleBlock>
 
 
-            <strong><em>(2022년 6월 기준으로 응답 부탁드립니다.)</em></strong>
+            <strong><em>(2022년 7월 기준으로 응답 부탁드립니다.)</em></strong>
             <SmallQuestionBlock title={<div>1. 성별</div>}>
                 <FormControl fullWidth>
                     <RadioGroup onChange={handleS1b1}>

@@ -391,7 +391,7 @@ const Sector2 = () => {
             </TitleBlock>
 
             <QuestionBlock
-                title={<div>2-1. 귀하의 올해(2022년) 영농규모(농지 또는 축사 면적)를 묻는 문항입니다. 다음 표에서 해당하는 부 분에 응답하여 주십시오.</div>}>
+                title={<div>2-1. 귀하의 올해(2022년) 영농규모(농지 또는 축사 면적)를 묻는 문항입니다. 다음 표에서 해당하는 부분에 응답하여 주십시오.</div>}>
                 <Grid strict gridColumnProperty={"1fr 2fr 2fr"} rowGap={10} columnGap={10}>
                     <ColorCenterBlock>구분</ColorCenterBlock>
                     <ColorCenterBlock>전체 영농 면적<br/>(경작, 사육)</ColorCenterBlock>
@@ -607,10 +607,10 @@ const Sector2 = () => {
                                     label='4. 자산가치로써 농지를 확보하기 위해서'/>
                                 <FormControlLabel
                                     control={<Checkbox name='5' checked={s2b3b2Data[5]} onChange={handleS2b3b2}/>}
-                                    label='5. 농기계-설비 이용률을 높이기 위해서'/>
+                                    label='5. 농기계·설비 이용률을 높이기 위해서'/>
                                 <FormControlLabel
                                     control={<Checkbox name='6' checked={s2b3b2Data[6]} onChange={handleS2b3b2}/>}
-                                    label='6. 농기계-설비 확충을 위한 적정 면적확보'/>
+                                    label='6. 농기계·설비 확충을 위한 적정 면적확보'/>
 
 
                                 <CenterBox size={20} weight={500} padding={20}>
@@ -619,7 +619,7 @@ const Sector2 = () => {
                                 <CenterBox size={20} weight={500} padding={20}>
                                     2순위 :&nbsp;&nbsp;(&nbsp;<strong>{s2b3b2_2}</strong>&nbsp;)
                                 </CenterBox>
-                            </Grid>순
+                            </Grid>
                         </FormControl>
                     </QuestionBlock>
                 </>
@@ -630,14 +630,14 @@ const Sector2 = () => {
                 (s2b2 === '2' || s2b2 === '3') &&
                 <>
                     <strong><em>※ 2-2.문항에서 2,3번을 선택하신 분의 경우에만 응답해주세요.</em></strong>
-                    <QuestionBlock title={<div>2-3-3. 귀하께서 영농규모(농지 또는 축사면적)를 늘리지 않으시려는 이유는 무엇입니까?</div>}>
+                    <QuestionBlock title={<div>2-3-3. 귀하께서 영농규모(농지 또는 축사면적)를 축소하거나 늘리지 않으시려는 이유는 무엇입니까?</div>}>
                         <FormControl fullWidth>
                             <RadioGroup onChange={handleS2b3b3}>
                                 <Grid gridColumnProperty={"repeat(2,1fr)"}>
                                     <FormControlLabel value='1' control={<Radio/>} label='생산비가 부담되서'/>
                                     <FormControlLabel value='2' control={<Radio/>} label='생산 품목을 전환하기 위해서'/>
                                     <FormControlLabel value='3' control={<Radio/>} label='인력의 확보가 어려워서(노동력이 부족)'/>
-                                    <FormControlLabel value='4' control={<Radio/>} label='자금 확보다 여의찮아서'/>
+                                    <FormControlLabel value='4' control={<Radio/>} label='자금 확보가 여의찮아서'/>
                                     <FormControlLabel value='5' control={<Radio/>} label='단일 품목 생산을 위해서'/>
                                     <FormControlLabel value='6' control={<Radio/>} label='겸업 또는 부업 활동을 위해서'/>
                                     <FormControlLabel value='7' control={<Radio/>} label='농사를 그만두려고'/>
@@ -652,7 +652,7 @@ const Sector2 = () => {
             <QuestionBlock title={<div>
                 2-4. 만약 귀하께서 확대하고자 하는 영농규모를 취득(매매 또는 임차)하기가 여의치 않을 경우, 유휴농지라도 어느 정도 정비가 이루어진다면 활용할 의향이 있습니까?<br/>
                 <br/>
-                <strong><em>* 유휴농지</em></strong>는 <strong><em>2년 이상 경작을 하지 않아 경지로서의 형태를 상실하였고, 현시점에서는 향후 경 지로 이용할 가능성이
+                <strong><em>* 유휴농지</em></strong>는 <strong><em>2년 이상 경작을 하지 않아 경지로서의 형태를 상실하였고, 현시점에서는 향후 경지로 이용할 가능성이
                 낮다고 판단되는 땅</em></strong>으로 농지의 물리적인 영농조건이 열악하거나 농산물 시장의 가격조건이 불리한 경우 발생하는 토지입니다.
             </div>}>
                 <FormControl fullWidth>

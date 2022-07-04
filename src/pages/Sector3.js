@@ -348,8 +348,8 @@ const Sector3 = () => {
 
                 농업 스타트업단지는 <strong><em>청년농업인의 영농기반을 마련하여 농촌에 안정적으로 정착하고 농지확보 어려움을 해결하고자,
                 저활용 농지(유휴농지, 국·공유지 및 매입비축농지)를 활용해 특수작물 재배 및 시설영농이 가능하도록 10~20ha 규모의 단지에 생산기반시설을 구축</em></strong>한 다음,
-                인접 시군의 청년농업인에게 임 대·분양(1인당 상한 규모 설정)하는 것을 목적으로 설계되었습니다. 다만, 논에서의 벼재배는 해당 사업의 지원대상으로 고려하지 않고 있습니다.
-                아래 의 설문문항을 통해 농업 스타트업단지에 대한 귀하의 견해를 듣고자 합니다.
+                인접 시군의 청년농업인에게 임대·분양(1인당 상한 규모 설정)하는 것을 목적으로 설계되었습니다. 다만, 논에서의 벼재배는 해당 사업의 지원대상으로 고려하지 않고 있습니다.
+                아래의 설문문항을 통해 농업 스타트업단지에 대한 귀하의 견해를 듣고자 합니다.
             </TextBlock>
 
 
@@ -360,8 +360,8 @@ const Sector3 = () => {
                             <FormControlLabel value='1' control={<Radio/>} label='매우 필요함'/>
                             <FormControlLabel value='2' control={<Radio/>} label='대체로 필요함'/>
                             <FormControlLabel value='3' control={<Radio/>} label='보통'/>
-                            <FormControlLabel value='4' control={<Radio/>} label={<div>그다지<br/>필요없음</div>}/>
-                            <FormControlLabel value='5' control={<Radio/>} label='전혀 필요 없음'/>
+                            <FormControlLabel value='4' control={<Radio/>} label={<CenterBox>그다지<br/>필요없음</CenterBox>}/>
+                            <FormControlLabel value='5' control={<Radio/>} label={<CenterBox>전혀<br/>필요없음</CenterBox>}/>
                         </Grid>
                     </RadioGroup>
                 </FormControl>
@@ -511,7 +511,7 @@ const Sector3 = () => {
                     </Grid>
 
                     <Grid strict gridColumnProperty={'5fr 0.5fr 5fr'}>
-                        <CenterBox start>1. 저렴한 저가 및 임대료</CenterBox>
+                        <CenterBox start>1. 저렴한 지가 및 임대료</CenterBox>
                         <div></div>
                         <RadioGroup onChange={handleS3b3_1}>
                             <Grid strict gridColumnProperty={'repeat(5, 1fr)'} columnGap={27}>
@@ -675,7 +675,7 @@ const Sector3 = () => {
                             <FormControlLabel value='1' control={<Radio/>} label={<div>적극적으로<br/>입주할 것임</div>}/>
                             <FormControlLabel value='2' control={<Radio/>} label={<div>입주를 고려할<br/>것 같음</div>}/>
                             <FormControlLabel value='3' control={<Radio/>} label={'보통'}/>
-                            <FormControlLabel value='4' control={<Radio/>} label={<div>임주를 고려할<br/>것 같지 않음</div>}/>
+                            <FormControlLabel value='4' control={<Radio/>} label={<div>입주를 고려할<br/>것 같지 않음</div>}/>
                             <FormControlLabel value='5' control={<Radio/>} label={'전혀 없음'}/>
                         </Grid>
                     </RadioGroup>
@@ -805,7 +805,7 @@ const Sector3 = () => {
 
 
                     <QuestionBlock
-                        title={<div>3-5. 귀하께서는 농업 스타트업단지에 입주하신다면, 거주지에서 몇 분 이내의 통작거리까지 고려할 의 향이 있으십니까? <em>(※ 승용차 편도 기준)</em></div>}>
+                        title={<div>3-5. 귀하께서는 농업 스타트업단지에 입주하신다면, 거주지에서 몇 분 이내의 통작거리까지 고려할 의향이 있으십니까? <em>(※ 승용차 편도 기준)</em></div>}>
                         <FormControl fullWidth>
                             <RadioGroup onChange={handleS3b5}>
                                 <Grid gridColumnProperty={"repeat(2,1fr)"}>

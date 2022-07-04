@@ -242,7 +242,7 @@ const Sector4 = () => {
                                         <FormControlLabel
                                             control={<Checkbox name='4' checked={s4b2b2Data[4]}
                                                                onChange={handleS4b2b2}/>}
-                                            label='4. 상환기값이 짧다'/>
+                                            label='4. 상환기간이 짧다'/>
                                         <FormControlLabel
                                             control={<Checkbox name='5' checked={s4b2b2Data[5]}
                                                                onChange={handleS4b2b2}/>}

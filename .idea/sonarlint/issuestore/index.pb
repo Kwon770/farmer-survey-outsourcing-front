@@ -22,8 +22,6 @@ C
 src/pages/Submit.js,c/e/ce7c5eec75d64faba78967b88adfecf67ef54f5c
 R
 "src/components/ColorCenterBlock.js,5/d/5def6db2562af04d2b8d36f90f1e3100394abc16
-E
-src/pages/Sector00.js,2/e/2efbf94458ac498dc896194810e5174ff5922136
 C
 src/styles/Theme.js,a/2/a2a8cd67cc67e04d2101c0e95da09147b5c5e2b2
 >
@@ -42,3 +40,16 @@ D
 src/pages/Pector4.js,1/5/1512a74ed2efebea0a1f70724fd13c97032f4991
 D
 src/pages/Pector1.js,2/f/2fd0910444a61d3d01765f4eba3210c8a0e15bec
+D
+src/pages/Pector3.js,6/e/6e5d17f84ec8fea24a0918b7b39a9ecc65a8f553
+D
+src/pages/Pector2.js,6/2/62edcacdaafc4c7fc5853117cbd982fa7e3184bd
+I
+src/api/KoreanLocation.js,1/c/1cc8a75cded9c3cb56c58d6919069d552aca3313
+:
+
+src/App.js,1/e/1e43fa63aecd2127be034b3fb9d4caa172275714
+N
+src/components/SectorFooter.js,d/e/de28fae61b3d617ca69c701426921ed427573793
+E
+src/pages/Sector00.js,2/e/2efbf94458ac498dc896194810e5174ff5922136
