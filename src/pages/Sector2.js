@@ -97,7 +97,6 @@ const Sector2 = () => {
     ])
 
 
-
     const handleS2b2 = ({target: {value}}) => {
         setS2b2(value);
         if (value !== '1') {
@@ -235,15 +234,11 @@ const Sector2 = () => {
         setS2b4b1_1('');
         setS2b4b1_2('');
         setS2b4b1Data(s2b4b1Data.map(() => false));
-        setS2b4b1_Etc7('');
-        setS2b4b1_Etc8('');
     }
     const resetS2b4_2s = () => {
         setS2b4b2_1('');
         setS2b4b2_2('');
         setS2b4b2Data(s2b4b2Data.map(() => false));
-        setS2b4b2_Etc7('');
-        setS2b4b2_Etc8('');
     }
 
     const handleS2b4b1 = (e) => {
@@ -409,16 +404,20 @@ const Sector2 = () => {
                                             <FormControl fullWidth>
                                                 <TextField placeholder='전체 영농 면적' type='number' size={'small'}
                                                            InputProps={{
-                                                               endAdornment: <InputAdornment position="end">평</InputAdornment>
+                                                               endAdornment: <InputAdornment
+                                                                   position="end">평</InputAdornment>
                                                            }}
-                                                           value={s2b1_1total} onChange={(e) => setS2b1_1total(e.target.value)}/>
+                                                           value={s2b1_1total}
+                                                           onChange={(e) => setS2b1_1total(e.target.value)}/>
                                             </FormControl>
                                             <FormControl fullWidth>
                                                 <TextField placeholder='임대한 농지' type='number' size={'small'}
                                                            InputProps={{
-                                                               endAdornment: <InputAdornment position="end">평</InputAdornment>
+                                                               endAdornment: <InputAdornment
+                                                                   position="end">평</InputAdornment>
                                                            }}
-                                                           value={s2b1_1rent} onChange={(e) => setS2b1_1rent(e.target.value)}/>
+                                                           value={s2b1_1rent}
+                                                           onChange={(e) => setS2b1_1rent(e.target.value)}/>
                                             </FormControl>
                                         </>
                                     )
@@ -431,16 +430,20 @@ const Sector2 = () => {
                                             <FormControl fullWidth>
                                                 <TextField placeholder='전체 영농 면적' type='number' size={'small'}
                                                            InputProps={{
-                                                               endAdornment: <InputAdornment position="end">평</InputAdornment>
+                                                               endAdornment: <InputAdornment
+                                                                   position="end">평</InputAdornment>
                                                            }}
-                                                           value={s2b1_2total} onChange={(e) => setS2b1_2total(e.target.value)}/>
+                                                           value={s2b1_2total}
+                                                           onChange={(e) => setS2b1_2total(e.target.value)}/>
                                             </FormControl>
                                             <FormControl fullWidth>
                                                 <TextField placeholder='임대한 농지' type='number' size={'small'}
                                                            InputProps={{
-                                                               endAdornment: <InputAdornment position="end">평</InputAdornment>
+                                                               endAdornment: <InputAdornment
+                                                                   position="end">평</InputAdornment>
                                                            }}
-                                                           value={s2b1_2rent} onChange={(e) => setS2b1_2rent(e.target.value)}/>
+                                                           value={s2b1_2rent}
+                                                           onChange={(e) => setS2b1_2rent(e.target.value)}/>
                                             </FormControl>
                                         </>
                                     )
@@ -453,16 +456,20 @@ const Sector2 = () => {
                                             <FormControl fullWidth>
                                                 <TextField placeholder='전체 영농 면적' type='number' size={'small'}
                                                            InputProps={{
-                                                               endAdornment: <InputAdornment position="end">평</InputAdornment>
+                                                               endAdornment: <InputAdornment
+                                                                   position="end">평</InputAdornment>
                                                            }}
-                                                           value={s2b1_4total} onChange={(e) => setS2b1_4total(e.target.value)}/>
+                                                           value={s2b1_4total}
+                                                           onChange={(e) => setS2b1_4total(e.target.value)}/>
                                             </FormControl>
                                             <FormControl fullWidth>
                                                 <TextField placeholder='임대한 농지' type='number' size={'small'}
                                                            InputProps={{
-                                                               endAdornment: <InputAdornment position="end">평</InputAdornment>
+                                                               endAdornment: <InputAdornment
+                                                                   position="end">평</InputAdornment>
                                                            }}
-                                                           value={s2b1_4rent} onChange={(e) => setS2b1_4rent(e.target.value)}/>
+                                                           value={s2b1_4rent}
+                                                           onChange={(e) => setS2b1_4rent(e.target.value)}/>
                                             </FormControl>
                                         </>
                                     )
@@ -475,16 +482,20 @@ const Sector2 = () => {
                                             <FormControl fullWidth>
                                                 <TextField placeholder='전체 영농 면적' type='number' size={'small'}
                                                            InputProps={{
-                                                               endAdornment: <InputAdornment position="end">평</InputAdornment>
+                                                               endAdornment: <InputAdornment
+                                                                   position="end">평</InputAdornment>
                                                            }}
-                                                           value={s2b1_3total} onChange={(e) => setS2b1_3total(e.target.value)}/>
+                                                           value={s2b1_3total}
+                                                           onChange={(e) => setS2b1_3total(e.target.value)}/>
                                             </FormControl>
                                             <FormControl fullWidth>
                                                 <TextField placeholder='임대한 농지' type='number' size={'small'}
                                                            InputProps={{
-                                                               endAdornment: <InputAdornment position="end">평</InputAdornment>
+                                                               endAdornment: <InputAdornment
+                                                                   position="end">평</InputAdornment>
                                                            }}
-                                                           value={s2b1_3rent} onChange={(e) => setS2b1_3rent(e.target.value)}/>
+                                                           value={s2b1_3rent}
+                                                           onChange={(e) => setS2b1_3rent(e.target.value)}/>
                                             </FormControl>
                                         </>
                                     )
@@ -497,16 +508,20 @@ const Sector2 = () => {
                                             <FormControl fullWidth>
                                                 <TextField placeholder='전체 영농 면적' type='number' size={'small'}
                                                            InputProps={{
-                                                               endAdornment: <InputAdornment position="end">평</InputAdornment>
+                                                               endAdornment: <InputAdornment
+                                                                   position="end">평</InputAdornment>
                                                            }}
-                                                           value={s2b1_5total} onChange={(e) => setS2b1_5total(e.target.value)}/>
+                                                           value={s2b1_5total}
+                                                           onChange={(e) => setS2b1_5total(e.target.value)}/>
                                             </FormControl>
                                             <FormControl fullWidth>
                                                 <TextField placeholder='임대한 농지' type='number' size={'small'}
                                                            InputProps={{
-                                                               endAdornment: <InputAdornment position="end">평</InputAdornment>
+                                                               endAdornment: <InputAdornment
+                                                                   position="end">평</InputAdornment>
                                                            }}
-                                                           value={s2b1_5rent} onChange={(e) => setS2b1_5rent(e.target.value)}/>
+                                                           value={s2b1_5rent}
+                                                           onChange={(e) => setS2b1_5rent(e.target.value)}/>
                                             </FormControl>
                                         </>
                                     )
@@ -742,7 +757,8 @@ const Sector2 = () => {
             }
 
 
-            <SectorFooter sector={2} movePreviousSector={movePreviousSector} moveNextSector={moveNextSector} alertOpen={alertOpen} setAlertOpen={setAlertOpen}/>
+            <SectorFooter sector={2} movePreviousSector={movePreviousSector} moveNextSector={moveNextSector}
+                          alertOpen={alertOpen} setAlertOpen={setAlertOpen}/>
         </Background>
     )
 }
