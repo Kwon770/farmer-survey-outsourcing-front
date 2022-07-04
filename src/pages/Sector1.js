@@ -353,7 +353,7 @@ const Sector1 = () => {
                 ※ 연구책임자 : <em>이향미 책임연구원(061-338-5467)</em><br/>
                 ※ 조사책임자 : <em>문한필 전남대학교 교수(062-530-2173)</em><br/>
                 <br/>
-                <strong><em>※ 본 설문조사는 컴퓨터 브라우저에 최적화되어 있으므로, 컴퓨터 진행해주시기 바랍니다.</em></strong><br/>
+                <strong><em>※ 본 설문조사는 컴퓨터 크롬 브라우저에 최적화되어 있으므로, 컴퓨터 진행해주시기 바랍니다.</em></strong><br/>
                 <br/>
                 <br/>
                 <BoldText>
@@ -527,11 +527,11 @@ const Sector1 = () => {
                             <FormControlLabel control={<Checkbox name='2' checked={s1b6Data[2]} onChange={handleS1b6}/>}
                                               label='논 (타작물)'/>
                             <FormControlLabel control={<Checkbox name='3' checked={s1b6Data[3]} onChange={handleS1b6}/>}
-                                              label='시설원예'/>
-                            <FormControlLabel control={<Checkbox name='4' checked={s1b6Data[4]} onChange={handleS1b6}/>}
                                               label='밭 (노지)'/>
+                            <FormControlLabel control={<Checkbox name='4' checked={s1b6Data[4]} onChange={handleS1b6}/>}
+                                              label='시설원예'/>
                             <FormControlLabel control={<Checkbox name='5' checked={s1b6Data[5]} onChange={handleS1b6}/>}
-                                              label='괴수'/>
+                                              label='과수'/>
                             <FormControlLabel control={<Checkbox name='6' checked={s1b6Data[6]} onChange={handleS1b6}/>}
                                               label='축산'/>
                         </Grid>
@@ -607,7 +607,7 @@ const Sector1 = () => {
             </SmallQuestionBlock>
 
 
-            <SmallQuestionBlock title={<div>10. {s1b5 === '2' && '희망'} 영농 승계 여부<br/><strong>(부모·친지·지인으로 부터)</strong></div>}>
+            <SmallQuestionBlock title={<div>10. {s1b5 === '2' && '장래'} 영농 승계 여부<br/><strong>(부모·친지·지인으로 부터)</strong></div>}>
                 <FormControl fullWidth>
                     <RadioGroup onChange={handleS1b10}>
                         <Grid gridColumnProperty={"repeat(2,1fr)"}>
@@ -672,7 +672,7 @@ const Sector1 = () => {
             {
                 (s1b11 === '2' || s1b5 === '2') &&
                 <>
-                    <SmallQuestionBlock title={<div>11-3. {s1b5 === '2' && '희망'} 장래 스마트팜 계획 여부</div>}>
+                    <SmallQuestionBlock title={<div>11-3. 장래 스마트팜 계획 여부</div>}>
                         <FormControl fullWidth>
                             <RadioGroup onChange={handleS1b11b3}>
                                 <Grid gridColumnProperty={"repeat(2,1fr)"}>

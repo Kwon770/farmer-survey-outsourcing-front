@@ -42,11 +42,18 @@ D
 src/pages/Pector1.js,2/f/2fd0910444a61d3d01765f4eba3210c8a0e15bec
 D
 src/pages/Pector3.js,6/e/6e5d17f84ec8fea24a0918b7b39a9ecc65a8f553
-D
-src/pages/Pector2.js,6/2/62edcacdaafc4c7fc5853117cbd982fa7e3184bd
 I
 src/api/KoreanLocation.js,1/c/1cc8a75cded9c3cb56c58d6919069d552aca3313
 N
 src/components/SectorFooter.js,d/e/de28fae61b3d617ca69c701426921ed427573793
 E
 src/pages/Sector00.js,2/e/2efbf94458ac498dc896194810e5174ff5922136
+4
+.env,3/c/3c84dcdc6bbe3d7817c49dcdc327b926fea1808a
+D
+src/pages/Sector4.js,c/2/c298ab446dd7aa2cfce447025cd79e13061ab6e8
+:
+
+src/App.js,1/e/1e43fa63aecd2127be034b3fb9d4caa172275714
+D
+src/pages/Sector1.js,8/8/88b4c1bc438a0f775eccdaec4c3be55c67fdd131

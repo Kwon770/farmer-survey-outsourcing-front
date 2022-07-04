@@ -394,7 +394,7 @@ const Sector2 = () => {
                 <Grid strict gridColumnProperty={"1fr 2fr 2fr"} rowGap={10} columnGap={10}>
                     <ColorCenterBlock>구분</ColorCenterBlock>
                     <ColorCenterBlock>전체 영농 면적<br/>(경작, 사육)</ColorCenterBlock>
-                    <ColorCenterBlock>임대한 농지<br/>(자경지 제외)</ColorCenterBlock>
+                    <ColorCenterBlock>전체 면적 중 임대한 농지<br/>(자경지 제외)</ColorCenterBlock>
 
 
                     {
@@ -559,8 +559,8 @@ const Sector2 = () => {
                     >
                         <Grid gridColumnProperty={"10fr 10fr 10fr 1fr"} rowGap={10} columnGap={10}>
                             <ColorCenterBlock>구분</ColorCenterBlock>
-                            <ColorCenterBlock>확대하고자 하는 영농 면적<br/>(경작, 사육)</ColorCenterBlock>
-                            <ColorCenterBlock>확대하고자 하는 임차 농지<br/>(자경지 제외)</ColorCenterBlock>
+                            <ColorCenterBlock>확대하고자 하는 전체 영농 면적<br/>(경작, 사육)</ColorCenterBlock>
+                            <ColorCenterBlock>확대할 면적 중 임차 농지<br/>(자경지 제외)</ColorCenterBlock>
                             <div/>
 
                             {
@@ -614,7 +614,7 @@ const Sector2 = () => {
 
                                 <FormControlLabel
                                     control={<Checkbox name='1' checked={s2b3b2Data[1]} onChange={handleS2b3b2}/>}
-                                    label='1. 영농소득을 늘리기 위해서'/>
+                                    label='1. 현재 가용노동력 대비 농지가 부족해서'/>
                                 <FormControlLabel
                                     control={<Checkbox name='2' checked={s2b3b2Data[2]} onChange={handleS2b3b2}/>}
                                     label='2. 주 작목의 생산규모를 늘리기 위해서'/>
@@ -656,7 +656,7 @@ const Sector2 = () => {
                                     <FormControlLabel value='1' control={<Radio/>} label='생산비가 부담되서'/>
                                     <FormControlLabel value='2' control={<Radio/>} label='생산 품목을 전환하기 위해서'/>
                                     <FormControlLabel value='3' control={<Radio/>} label='인력의 확보가 어려워서(노동력이 부족)'/>
-                                    <FormControlLabel value='4' control={<Radio/>} label='자금 확보가 여의찮아서'/>
+                                    <FormControlLabel value='4' control={<Radio/>} label='자금 확보가 어려워서'/>
                                     <FormControlLabel value='5' control={<Radio/>} label='단일 품목 생산을 위해서'/>
                                     <FormControlLabel value='6' control={<Radio/>} label='겸업 또는 부업 활동을 위해서'/>
                                     <FormControlLabel value='7' control={<Radio/>} label='농사를 그만두려고'/>
@@ -669,10 +669,10 @@ const Sector2 = () => {
 
 
             <QuestionBlock title={<div>
-                2-4. 만약 귀하께서 확대하고자 하는 영농규모를 취득(매매 또는 임차)하기가 여의치 않을 경우, 유휴농지라도 어느 정도 정비가 이루어진다면 활용할 의향이 있습니까?<br/>
+                2-4. 만약 귀하께서 영농계획에 따라 농지를 취득(매매 또는 임차)하는 것이 쉽지 않을 경우, 유휴농지라도 어느 정도 정비가 이루어진다면 활용할 의향이 있습니까?<br/>
                 <br/>
-                <strong><em>* 유휴농지</em></strong>는 <strong><em>2년 이상 경작을 하지 않아 경지로서의 형태를 상실하였고, 현시점에서는 향후 경지로 이용할 가능성이
-                낮다고 판단되는 땅</em></strong>으로 농지의 물리적인 영농조건이 열악하거나 농산물 시장의 가격조건이 불리한 경우 발생하는 토지입니다.
+                <strong><em>* 유휴농지</em></strong>는 <strong><em>2년 이상 경작을 하지 않아 경지로서의 형태를 상실하였고,
+                현시점에서는 향후 경지로 이용할 가능성이 낮다고 판단되는 땅</em></strong>으로 농지의 물리적인 영농조건이 열악합니다.
             </div>}>
                 <FormControl fullWidth>
                     <RadioGroup onChange={handleS2b4}>

@@ -257,7 +257,7 @@ const Sector3 = () => {
         }
 
 
-        if (s3b4 === '1' || s3b4 === '2') {
+        if (s3b4 === '1' || s3b4 === '2' || s3b4 === '3') {
             if (
                 s3b4b1 === '' ||
                 s3b4b2_1 === '' || s3b4b2_2 === '' || s3b4b2_3 === '' || s3b4b2_4 === '' ||
@@ -345,15 +345,13 @@ const Sector3 = () => {
                 <strong><em>농업 스타트업단지 조성사업</em></strong>
                 <br/>
                 <br/>
-
-                농업 스타트업단지는 <strong><em>청년농업인의 영농기반을 마련하여 농촌에 안정적으로 정착하고 농지확보 어려움을 해결하고자,
-                저활용 농지(유휴농지, 국·공유지 및 매입비축농지)를 활용해 특수작물 재배 및 시설영농이 가능하도록 10~20ha 규모의 단지에 생산기반시설을 구축</em></strong>한 다음,
-                인접 시군의 청년농업인에게 임대·분양(1인당 상한 규모 설정)하는 것을 목적으로 설계되었습니다. 다만, 논에서의 벼재배는 해당 사업의 지원대상으로 고려하지 않고 있습니다.
-                아래의 설문문항을 통해 농업 스타트업단지에 대한 귀하의 견해를 듣고자 합니다.
+                농업 스타트업단지 조성사업은 <strong><em>청년농업인의 농지확보 어려움을 해결하고자 한국농어촌공사가 저활용 농지(유휴농지, 국·공유지 및 매입비축농지)를 정비해 제공(임대 또는 분양)하는 것을 목적으로 추진 중인 시범사업입니다.</em></strong>
+                지자체별 10~20ha 규모의 단지를 영농에 적합하게 조성하여 인접 시군의 청년농업인에게 임대·분양(1인당 상한 규모 설정)하는 것을 사업의 목표로 합니다. 다만, 논에서의 벼재배는 해당 사업의 지원대상으로 고려하지 않고 있습니다.
+                아래의 설문 문항을 통해 농업 스타트업단지에 대한 귀하의 견해를 듣고자 합니다.
             </TextBlock>
 
 
-            <QuestionBlock title={<div>3-1. 귀하께서는 확장, 이주, 신규 부지로서 농업 스타트업단지가 필요하다고 생각하십니까?</div>}>
+            <QuestionBlock title={<div>3-1. 향후 귀하를 포함한 청년농업인들의 성공적인 영농정착을 위해 농업 스타트업단지가 필요하다고 생각하십니까?</div>}>
                 <FormControl fullWidth>
                     <RadioGroup onChange={handleS3b1}>
                         <Grid gridColumnProperty={"repeat(5,1fr)"}>
@@ -684,10 +682,10 @@ const Sector3 = () => {
 
 
             {
-                (s3b4 === '1' || s3b4 === '2') &&
+                (s3b4 === '1' || s3b4 === '2' || s3b4 === '3') &&
                 <>
                     <strong><em>※ 3-4.문항에서 1, 2번을 선택하신 분의 경우에만 응답해주세요.</em></strong>
-                    <QuestionBlock title={<div>3-4-1. 귀하의 농업 스타트업단지 입주 혹은 이전을 희망하는 시기는 언제입니까?</div>}>
+                    <QuestionBlock title={<div>3-4-1. 귀하께서는 농업 스타트업단지에 입주하신다면, 입주 혹은 이전을 희망하는 시기는 언제입니까?</div>}>
                         <FormControl fullWidth>
                             <RadioGroup onChange={handleS3b4b1}>
                                 <Grid gridColumnProperty={"repeat(5,1fr)"}>
@@ -706,7 +704,7 @@ const Sector3 = () => {
                         <>
                             <div>3-4-2. 귀하께서는 농업 스타트업단지에 입주하신다면, 재배를 희망하는 작물 부문과 영농형태는 무엇입니까?</div>
                             <br/>
-                            <strong><em>※ 아래 4개 질문(1순위 재배 희망작물, 희망 영농형태, 영농계획 규모, 스마트팜 추진 여부)에 모두 답변해주세요.</em></strong>
+                            <strong><em>※ 아래 4개 질문(1순위 재배희망작물, 1순위 희망영농형태, 영농계획 규모, 스마트팜 추진 여부)에 모두 답변해주세요.</em></strong>
                         </>}
                     >
                         <QuestionBlock title={<ColorCenterBlock>1순위 재배 희망작물</ColorCenterBlock>}>
@@ -728,20 +726,22 @@ const Sector3 = () => {
                             </FormControl>
                         </QuestionBlock>
 
-                        <QuestionBlock title={<ColorCenterBlock>희망 영농형태</ColorCenterBlock>}>
+                        <QuestionBlock title={<ColorCenterBlock>1순위 희망 영농형태</ColorCenterBlock>}>
                             <FormControl fullWidth>
                                 <RadioGroup onChange={handleS3b4b2_2}>
                                     <Grid gridColumnProperty={"repeat(4,1fr)"}>
                                         <FormControlLabel value='1' control={<Radio/>} label='노지(밭) 재배'/>
-                                        <FormControlLabel value='2' control={<Radio/>} label='과수원'/>
-                                        <FormControlLabel value='3' control={<Radio/>} label={<CenterBox>시설원예<br/>(단동 비닐하우스)</CenterBox>}/>
-                                        <FormControlLabel value='4' control={<Radio/>} label={<CenterBox>시설원예<br/>(연동 비닐하우스)</CenterBox>}/>
+                                        <FormControlLabel value='2' control={<Radio/>} label='노지(타작물) 재배'/>
+                                        <FormControlLabel value='3' control={<Radio/>} label='과수원'/>
+                                        <FormControlLabel value='4' control={<Radio/>} label='축산'/>
+                                        <FormControlLabel value='5' control={<Radio/>} label={<CenterBox>시설원예<br/>(단동 비닐하우스)</CenterBox>}/>
+                                        <FormControlLabel value='6' control={<Radio/>} label={<CenterBox>시설원예<br/>(연동 비닐하우스)</CenterBox>}/>
                                     </Grid>
                                 </RadioGroup>
                             </FormControl>
                         </QuestionBlock>
 
-                        <QuestionBlock title={<ColorCenterBlock>영농계획 규모 (1인당 상한이 3,000평일 경우 가정)</ColorCenterBlock>}>
+                        <QuestionBlock title={<ColorCenterBlock>영농계획 규모 (1인당 상한을 3,000평일 경우 가정)</ColorCenterBlock>}>
                             <FormControl fullWidth>
                                 <RadioGroup onChange={handleS3b4b2_3}>
                                     <Grid gridColumnProperty={"repeat(5,1fr)"}>
