@@ -47,6 +47,7 @@ const Submit = () => {
 
 
         const response = await axios.post(process.env.REACT_APP_SERVER_API_URL + "/submit?secret=" + process.env.REACT_APP_SERVER_SECRET, surveyData);
+        console.log(response);
         if (response === undefined || response === null || response?.data === undefined || response?.data === null) {
             setError(true);
         }
