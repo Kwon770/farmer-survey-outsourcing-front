@@ -5,7 +5,7 @@ import TitleBlock from "../components/TitleBlock";
 import TextBlock from "../components/TextBlock";
 import {Button} from "@mui/material";
 
-const Sector00 = () => {
+const SectorLocal = () => {
     const navigate = useNavigate();
 
     return (
@@ -17,7 +17,6 @@ const Sector00 = () => {
                 <pre>{JSON.stringify(JSON.parse(localStorage.getItem('sector2')), null, 2)}</pre>
                 <pre>{JSON.stringify(JSON.parse(localStorage.getItem('sector3')), null, 2)}</pre>
                 <pre>{JSON.stringify(JSON.parse(localStorage.getItem('sector4')), null, 2)}</pre>
-                <pre>{JSON.stringify(JSON.parse(localStorage.getItem('sector5')), null, 2)}</pre>
             </TextBlock>
 
 
@@ -30,4 +29,4 @@ const Sector00 = () => {
     )
 }
 
-export default Sector00;
+export default SectorLocal;

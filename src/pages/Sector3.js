@@ -678,7 +678,7 @@ const Sector3 = () => {
                                 <RadioGroup onChange={handleS3b4b2_2}>
                                     <Grid gridColumnProperty={"repeat(4,1fr)"}>
                                         <FormControlLabel value='1' control={<Radio/>} label='노지(밭) 재배'/>
-                                        <FormControlLabel value='2' control={<Radio/>} label='노지(타작물) 재배'/>
+                                        <FormControlLabel value='2' control={<Radio/>} label='논(타작물) 재배'/>
                                         <FormControlLabel value='3' control={<Radio/>} label='과수원'/>
                                         <FormControlLabel value='4' control={<Radio/>} label='축산'/>
                                         <FormControlLabel value='5' control={<Radio/>} label={<CenterBox>시설원예<br/>(단동 비닐하우스)</CenterBox>}/>

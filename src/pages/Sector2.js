@@ -364,7 +364,7 @@ const Sector2 = () => {
             's2b4b2_2': s2b4b2_2
         }
 
-        localStorage.setItem('sector3', JSON.stringify(sector3DataObject))
+        localStorage.setItem('sector2', JSON.stringify(sector3DataObject))
 
     }
 

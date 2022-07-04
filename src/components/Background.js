@@ -3,7 +3,7 @@ import styled from "styled-components";
 
 const Background = styled.div`
   width: 100%;
-  max-width: ${(props) => props.theme.blockWidth};;
+  max-width: ${(props) => props.theme.blockWidth};
   padding: 60px 0px;
 `;
 

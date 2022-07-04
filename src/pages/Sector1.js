@@ -306,7 +306,7 @@ const Sector1 = () => {
         const sector1DataObject = {
             's1b1': s1b1,
             's1b2': s1b2,
-            's1b3': dosis[s1b3_1].name + ' ' + sigungus[s1b3_2].name + ' ' + upmeongdongs[s1b3_3], name,
+            's1b3': dosis[s1b3_1].name + ' ' + sigungus[s1b3_2].name + ' ' + upmeongdongs[s1b3_3].name,
             's1b4': s1b4,
             's1b5': s1b5 === '1' ? '1,' + s1b5_Etc1 : s1b5,
             's1b6': s1b6,

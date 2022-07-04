@@ -164,8 +164,7 @@ const Sector4 = () => {
         }
 
         saveSector4Data()
-        navigate('/00');
-        // navigate('/submit');
+        navigate('/submit');
     }
 
 

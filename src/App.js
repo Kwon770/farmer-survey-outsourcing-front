@@ -12,22 +12,27 @@ import Sector1 from "./pages/Sector1";
 import Sector2 from "./pages/Sector2";
 import Sector3 from "./pages/Sector3";
 import Sector4 from "./pages/Sector4";
-import Sector00 from "./pages/Sector00";
+import Submit from "./pages/Submit";
+import SectorLocal from "./pages/SectorLocal";
+import SectorServer from "./pages/SectorServer";
 
 const AppRouter = () => (
     <Router>
         <Routes>
-            <Route path="/p" element={<Pector1/>} />
-            <Route path="/p2" element={<Pector2/>} />
-            <Route path="/p3" element={<Pector3/>} />
-            <Route path="/p4" element={<Pector4/>} />
-            <Route path="/p5" element={<Pector5/>} />
+            <Route path="/old" element={<Pector1/>} />
+            <Route path="/old2" element={<Pector2/>} />
+            <Route path="/old3" element={<Pector3/>} />
+            <Route path="/old4" element={<Pector4/>} />
+            <Route path="/old5" element={<Pector5/>} />
 
             <Route path="/" element={<Sector1/>} />
             <Route path="/2" element={<Sector2/>} />
             <Route path="/3" element={<Sector3/>} />
             <Route path="/4" element={<Sector4/>} />
-            <Route path="/00" element={<Sector00/>} />
+            <Route path="/submit" element={<Submit/>} />
+
+            <Route path="/local" element={<SectorLocal/>} />
+            <Route path="/server" element={<SectorServer/>} />
         </Routes>
     </Router>
 )
