@@ -30,7 +30,7 @@ const Title = styled.div`
   margin-bottom: 15px;
 
   text-align: start;
-  font-size: 17px;
+  font-size: 19px;
   font-weight: normal;
   color: ${(props) => props.theme.titleFontColor};
 `

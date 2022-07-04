@@ -557,7 +557,7 @@ const Sector2 = () => {
                         title={<div>2-3-1. 귀하의 자금 여력과 현재 농지가격을 고려하였을 때 향후 <strong>5년간(`27년까지)</strong> 영농규모(농지 또는 축사
                             면적)를 어느 정도 확대하실 계획이십니까? 다음 표에서 해당하는 부분에 응답하여주십시오.</div>}
                     >
-                        <Grid gridColumnProperty={"10fr 10fr 10fr 1fr"} rowGap={10} columnGap={10}>
+                        <Grid strict gridColumnProperty={"10fr 10fr 10fr 1fr"} rowGap={10} columnGap={10}>
                             <ColorCenterBlock>구분</ColorCenterBlock>
                             <ColorCenterBlock>확대하고자 하는 전체 영농 면적<br/>(경작, 사육)</ColorCenterBlock>
                             <ColorCenterBlock>확대할 면적 중 임차 농지<br/>(자경지 제외)</ColorCenterBlock>

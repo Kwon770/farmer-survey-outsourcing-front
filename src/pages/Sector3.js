@@ -346,7 +346,7 @@ const Sector3 = () => {
                 <br/>
                 <br/>
                 농업 스타트업단지 조성사업은 <strong><em>청년농업인의 농지확보 어려움을 해결하고자 한국농어촌공사가 저활용 농지(유휴농지, 국·공유지 및 매입비축농지)를 정비해 제공(임대 또는 분양)하는 것을 목적으로 추진 중인 시범사업입니다.</em></strong>
-                지자체별 10~20ha 규모의 단지를 영농에 적합하게 조성하여 인접 시군의 청년농업인에게 임대·분양(1인당 상한 규모 설정)하는 것을 사업의 목표로 합니다. 다만, 논에서의 벼재배는 해당 사업의 지원대상으로 고려하지 않고 있습니다.
+                &nbsp;지자체별 10~20ha 규모의 단지를 영농에 적합하게 조성하여 인접 시군의 청년농업인에게 임대·분양(1인당 상한 규모 설정)하는 것을 사업의 목표로 합니다. 다만, 논에서의 벼재배는 해당 사업의 지원대상으로 고려하지 않고 있습니다.
                 아래의 설문 문항을 통해 농업 스타트업단지에 대한 귀하의 견해를 듣고자 합니다.
             </TextBlock>
 
@@ -370,123 +370,101 @@ const Sector3 = () => {
                 title={<div>3-2. 귀하께서는 농업 스타트업단지 내 농업기반시설 외 필요한 시설은 무엇이라고 생각하십니까? 다음 시설들에 대해서 5점 척도로 응답해 주세요.</div>}>
                 <FormControl fullWidth>
 
-                    <Grid strict gridColumnProperty={'5fr 1fr 1fr 1fr 1fr 1fr'} columnGap={6}>
+                    <Grid strict gridColumnProperty={'3fr 1fr 1fr 1fr 1fr 1fr'}>
                         <ColorCenterBlock></ColorCenterBlock>
-                        <ColorCenterBlock>전혀<br/>필요없다<br/>(1점)</ColorCenterBlock>
-                        <ColorCenterBlock>필요없다<br/>(2점)</ColorCenterBlock>
-                        <ColorCenterBlock>보통이다<br/>(3점)</ColorCenterBlock>
-                        <ColorCenterBlock>필요하다<br/>(4점)</ColorCenterBlock>
-                        <ColorCenterBlock>매우<br/>필요하다<br/>(5점)</ColorCenterBlock>
+                        <ColorCenterBlock paddingStyle={"8px 0px"}>전혀<br/>필요없다<br/>(1점)</ColorCenterBlock>
+                        <ColorCenterBlock paddingStyle={"8px 0px"}>필요없다<br/>(2점)</ColorCenterBlock>
+                        <ColorCenterBlock paddingStyle={"8px 0px"}>보통이다<br/>(3점)</ColorCenterBlock>
+                        <ColorCenterBlock paddingStyle={"8px 0px"}>필요하다<br/>(4점)</ColorCenterBlock>
+                        <ColorCenterBlock paddingStyle={"8px 0px"}>매우<br/>필요하다<br/>(5점)</ColorCenterBlock>
                     </Grid>
 
-                    <Grid strict gridColumnProperty={'5fr 0.5fr 5fr'}>
+                    <Grid strict gridColumnProperty={'3fr 5fr'}>
                         <CenterBox start>1. 생산품 가공시설</CenterBox>
-                        <div></div>
                         <RadioGroup onChange={handleS3b2_1}>
-                            <Grid strict gridColumnProperty={'repeat(5, 1fr)'} columnGap={27}>
-                                <FormControlLabel value='1' control={<Radio/>} label={''}/>
-                                <FormControlLabel value='2' control={<Radio/>} label={''}/>
-                                <FormControlLabel value='3' control={<Radio/>} label={''}/>
-                                <FormControlLabel value='4' control={<Radio/>} label={''}/>
-                                <FormControlLabel value='5' control={<Radio/>} label={''}/>
+                            <Grid strict gridColumnProperty={'repeat(5, 1fr)'}>
+                                <Radio value='1' />
+                                <Radio value='2' />
+                                <Radio value='3' />
+                                <Radio value='4' />
+                                <Radio value='5' />
                             </Grid>
                         </RadioGroup>
-                    </Grid>
 
-                    <Grid strict gridColumnProperty={'5fr 0.5fr 5fr'}>
                         <CenterBox start>2. 물류시설 (보관창고 등)</CenterBox>
-                        <div></div>
                         <RadioGroup onChange={handleS3b2_2}>
-                            <Grid strict gridColumnProperty={'repeat(5, 1fr)'} columnGap={27}>
-                                <FormControlLabel value='1' control={<Radio/>} label={''}/>
-                                <FormControlLabel value='2' control={<Radio/>} label={''}/>
-                                <FormControlLabel value='3' control={<Radio/>} label={''}/>
-                                <FormControlLabel value='4' control={<Radio/>} label={''}/>
-                                <FormControlLabel value='5' control={<Radio/>} label={''}/>
+                            <Grid strict gridColumnProperty={'repeat(5, 1fr)'}>
+                                <Radio value='1' />
+                                <Radio value='2' />
+                                <Radio value='3' />
+                                <Radio value='4' />
+                                <Radio value='5' />
                             </Grid>
                         </RadioGroup>
-                    </Grid>
 
-                    <Grid strict gridColumnProperty={'5fr 0.5fr 5fr'}>
                         <CenterBox start>3. 영농 교육훈련 및 홍보시설</CenterBox>
-                        <div></div>
                         <RadioGroup onChange={handleS3b2_3}>
-                            <Grid strict gridColumnProperty={'repeat(5, 1fr)'} columnGap={27}>
-                                <FormControlLabel value='1' control={<Radio/>} label={''}/>
-                                <FormControlLabel value='2' control={<Radio/>} label={''}/>
-                                <FormControlLabel value='3' control={<Radio/>} label={''}/>
-                                <FormControlLabel value='4' control={<Radio/>} label={''}/>
-                                <FormControlLabel value='5' control={<Radio/>} label={''}/>
+                            <Grid strict gridColumnProperty={'repeat(5, 1fr)'}>
+                                <Radio value='1' />
+                                <Radio value='2' />
+                                <Radio value='3' />
+                                <Radio value='4' />
+                                <Radio value='5' />
                             </Grid>
                         </RadioGroup>
-                    </Grid>
 
-                    <Grid strict gridColumnProperty={'5fr 0.5fr 5fr'}>
                         <CenterBox start>4. 커뮤니티 공간</CenterBox>
-                        <div></div>
                         <RadioGroup onChange={handleS3b2_4}>
-                            <Grid strict gridColumnProperty={'repeat(5, 1fr)'} columnGap={27}>
-                                <FormControlLabel value='1' control={<Radio/>} label={''}/>
-                                <FormControlLabel value='2' control={<Radio/>} label={''}/>
-                                <FormControlLabel value='3' control={<Radio/>} label={''}/>
-                                <FormControlLabel value='4' control={<Radio/>} label={''}/>
-                                <FormControlLabel value='5' control={<Radio/>} label={''}/>
+                            <Grid strict gridColumnProperty={'repeat(5, 1fr)'}>
+                                <Radio value='1' />
+                                <Radio value='2' />
+                                <Radio value='3' />
+                                <Radio value='4' />
+                                <Radio value='5' />
                             </Grid>
                         </RadioGroup>
-                    </Grid>
 
-                    <Grid strict gridColumnProperty={'5fr 0.5fr 5fr'}>
                         <CenterBox start>5. 공동 작업장</CenterBox>
-                        <div></div>
                         <RadioGroup onChange={handleS3b2_5}>
-                            <Grid strict gridColumnProperty={'repeat(5, 1fr)'} columnGap={27}>
-                                <FormControlLabel value='1' control={<Radio/>} label={''}/>
-                                <FormControlLabel value='2' control={<Radio/>} label={''}/>
-                                <FormControlLabel value='3' control={<Radio/>} label={''}/>
-                                <FormControlLabel value='4' control={<Radio/>} label={''}/>
-                                <FormControlLabel value='5' control={<Radio/>} label={''}/>
+                            <Grid strict gridColumnProperty={'repeat(5, 1fr)'}>
+                                <Radio value='1' />
+                                <Radio value='2' />
+                                <Radio value='3' />
+                                <Radio value='4' />
+                                <Radio value='5' />
                             </Grid>
                         </RadioGroup>
-                    </Grid>
 
-                    <Grid strict gridColumnProperty={'5fr 0.5fr 5fr'}>
                         <CenterBox start>6. 판매장 (로컬푸드매장 등)</CenterBox>
-                        <div></div>
                         <RadioGroup onChange={handleS3b2_6}>
-                            <Grid strict gridColumnProperty={'repeat(5, 1fr)'} columnGap={27}>
-                                <FormControlLabel value='1' control={<Radio/>} label={''}/>
-                                <FormControlLabel value='2' control={<Radio/>} label={''}/>
-                                <FormControlLabel value='3' control={<Radio/>} label={''}/>
-                                <FormControlLabel value='4' control={<Radio/>} label={''}/>
-                                <FormControlLabel value='5' control={<Radio/>} label={''}/>
+                            <Grid strict gridColumnProperty={'repeat(5, 1fr)'}>
+                                <Radio value='1' />
+                                <Radio value='2' />
+                                <Radio value='3' />
+                                <Radio value='4' />
+                                <Radio value='5' />
                             </Grid>
                         </RadioGroup>
-                    </Grid>
 
-                    <Grid strict gridColumnProperty={'5fr 0.5fr 5fr'}>
                         <CenterBox start>7. 기초 기반시설 (주차장 등)</CenterBox>
-                        <div></div>
                         <RadioGroup onChange={handleS3b2_7}>
-                            <Grid strict gridColumnProperty={'repeat(5, 1fr)'} columnGap={27}>
-                                <FormControlLabel value='1' control={<Radio/>} label={''}/>
-                                <FormControlLabel value='2' control={<Radio/>} label={''}/>
-                                <FormControlLabel value='3' control={<Radio/>} label={''}/>
-                                <FormControlLabel value='4' control={<Radio/>} label={''}/>
-                                <FormControlLabel value='5' control={<Radio/>} label={''}/>
+                            <Grid strict gridColumnProperty={'repeat(5, 1fr)'}>
+                                <Radio value='1' />
+                                <Radio value='2' />
+                                <Radio value='3' />
+                                <Radio value='4' />
+                                <Radio value='5' />
                             </Grid>
                         </RadioGroup>
-                    </Grid>
 
-                    <Grid strict gridColumnProperty={'5fr 0.5fr 5fr'}>
                         <CenterBox start>8. 외부인 방문·이용 가능 여가시설</CenterBox>
-                        <div></div>
                         <RadioGroup onChange={handleS3b2_8}>
-                            <Grid strict gridColumnProperty={'repeat(5, 1fr)'} columnGap={27}>
-                                <FormControlLabel value='1' control={<Radio/>} label={''}/>
-                                <FormControlLabel value='2' control={<Radio/>} label={''}/>
-                                <FormControlLabel value='3' control={<Radio/>} label={''}/>
-                                <FormControlLabel value='4' control={<Radio/>} label={''}/>
-                                <FormControlLabel value='5' control={<Radio/>} label={''}/>
+                            <Grid strict gridColumnProperty={'repeat(5, 1fr)'}>
+                                <Radio value='1' />
+                                <Radio value='2' />
+                                <Radio value='3' />
+                                <Radio value='4' />
+                                <Radio value='5' />
                             </Grid>
                         </RadioGroup>
                     </Grid>
@@ -499,165 +477,134 @@ const Sector3 = () => {
                 title={<div>3-3. 귀하께서는 농업 스타트업단지가 갖추어야 할 조건은 무엇이라고 생각하십니까? 다음 조건들에 대해서 5점 척도로 응답해 주세요.</div>}>
                 <FormControl fullWidth>
 
-                    <Grid strict gridColumnProperty={'5fr 1fr 1fr 1fr 1fr 1fr'} columnGap={6}>
-                        <ColorCenterBlock></ColorCenterBlock>
-                        <ColorCenterBlock>전혀<br/>필요없다<br/>(1점)</ColorCenterBlock>
-                        <ColorCenterBlock>필요없다<br/>(2점)</ColorCenterBlock>
-                        <ColorCenterBlock>보통이다<br/>(3점)</ColorCenterBlock>
-                        <ColorCenterBlock>필요하다<br/>(4점)</ColorCenterBlock>
-                        <ColorCenterBlock>매우<br/>필요하다<br/>(5점)</ColorCenterBlock>
+                    <Grid strict gridColumnProperty={'3fr 1fr 1fr 1fr 1fr 1fr'}>
+                        <ColorCenterBlock paddingStyle={"8px 0px"}></ColorCenterBlock>
+                        <ColorCenterBlock paddingStyle={"8px 0px"}>전혀<br/>필요없다<br/>(1점)</ColorCenterBlock>
+                        <ColorCenterBlock paddingStyle={"8px 0px"}>필요없다<br/>(2점)</ColorCenterBlock>
+                        <ColorCenterBlock paddingStyle={"8px 0px"}>보통이다<br/>(3점)</ColorCenterBlock>
+                        <ColorCenterBlock paddingStyle={"8px 0px"}>필요하다<br/>(4점)</ColorCenterBlock>
+                        <ColorCenterBlock paddingStyle={"8px 0px"}>매우<br/>필요하다<br/>(5점)</ColorCenterBlock>
                     </Grid>
 
-                    <Grid strict gridColumnProperty={'5fr 0.5fr 5fr'}>
+                    <Grid strict gridColumnProperty={'3fr 5fr'}>
                         <CenterBox start>1. 저렴한 지가 및 임대료</CenterBox>
-                        <div></div>
                         <RadioGroup onChange={handleS3b3_1}>
-                            <Grid strict gridColumnProperty={'repeat(5, 1fr)'} columnGap={27}>
-                                <FormControlLabel value='1' control={<Radio/>} label={''}/>
-                                <FormControlLabel value='2' control={<Radio/>} label={''}/>
-                                <FormControlLabel value='3' control={<Radio/>} label={''}/>
-                                <FormControlLabel value='4' control={<Radio/>} label={''}/>
-                                <FormControlLabel value='5' control={<Radio/>} label={''}/>
+                            <Grid strict gridColumnProperty={'repeat(5, 1fr)'}>
+                                <Radio value='1' />
+                                <Radio value='2' />
+                                <Radio value='3' />
+                                <Radio value='4' />
+                                <Radio value='5' />
                             </Grid>
                         </RadioGroup>
-                    </Grid>
 
-                    <Grid strict gridColumnProperty={'5fr 0.5fr 5fr'}>
                         <CenterBox start>2. 금융(대출 및 담보) 및 세제 지원</CenterBox>
-                        <div></div>
                         <RadioGroup onChange={handleS3b3_2}>
-                            <Grid strict gridColumnProperty={'repeat(5, 1fr)'} columnGap={27}>
-                                <FormControlLabel value='1' control={<Radio/>} label={''}/>
-                                <FormControlLabel value='2' control={<Radio/>} label={''}/>
-                                <FormControlLabel value='3' control={<Radio/>} label={''}/>
-                                <FormControlLabel value='4' control={<Radio/>} label={''}/>
-                                <FormControlLabel value='5' control={<Radio/>} label={''}/>
+                            <Grid strict gridColumnProperty={'repeat(5, 1fr)'}>
+                                <Radio value='1' />
+                                <Radio value='2' />
+                                <Radio value='3' />
+                                <Radio value='4' />
+                                <Radio value='5' />
                             </Grid>
                         </RadioGroup>
-                    </Grid>
 
-                    <Grid strict gridColumnProperty={'5fr 0.5fr 5fr'}>
                         <CenterBox start>3. 영농 기술 및 정보 획득 용이</CenterBox>
-                        <div></div>
                         <RadioGroup onChange={handleS3b3_3}>
-                            <Grid strict gridColumnProperty={'repeat(5, 1fr)'} columnGap={27}>
-                                <FormControlLabel value='1' control={<Radio/>} label={''}/>
-                                <FormControlLabel value='2' control={<Radio/>} label={''}/>
-                                <FormControlLabel value='3' control={<Radio/>} label={''}/>
-                                <FormControlLabel value='4' control={<Radio/>} label={''}/>
-                                <FormControlLabel value='5' control={<Radio/>} label={''}/>
+                            <Grid strict gridColumnProperty={'repeat(5, 1fr)'}>
+                                <Radio value='1' />
+                                <Radio value='2' />
+                                <Radio value='3' />
+                                <Radio value='4' />
+                                <Radio value='5' />
                             </Grid>
                         </RadioGroup>
-                    </Grid>
 
-                    <Grid strict gridColumnProperty={'5fr 0.5fr 5fr'}>
                         <CenterBox start>4. 인력 및 근로·복지 지원</CenterBox>
-                        <div></div>
                         <RadioGroup onChange={handleS3b3_4}>
-                            <Grid strict gridColumnProperty={'repeat(5, 1fr)'} columnGap={27}>
-                                <FormControlLabel value='1' control={<Radio/>} label={''}/>
-                                <FormControlLabel value='2' control={<Radio/>} label={''}/>
-                                <FormControlLabel value='3' control={<Radio/>} label={''}/>
-                                <FormControlLabel value='4' control={<Radio/>} label={''}/>
-                                <FormControlLabel value='5' control={<Radio/>} label={''}/>
+                            <Grid strict gridColumnProperty={'repeat(5, 1fr)'}>
+                                <Radio value='1' />
+                                <Radio value='2' />
+                                <Radio value='3' />
+                                <Radio value='4' />
+                                <Radio value='5' />
                             </Grid>
                         </RadioGroup>
-                    </Grid>
 
-                    <Grid strict gridColumnProperty={'5fr 0.5fr 5fr'}>
                         <CenterBox start>5. 복토 등 양호한 토질 여건</CenterBox>
-                        <div></div>
                         <RadioGroup onChange={handleS3b3_5}>
-                            <Grid strict gridColumnProperty={'repeat(5, 1fr)'} columnGap={27}>
-                                <FormControlLabel value='1' control={<Radio/>} label={''}/>
-                                <FormControlLabel value='2' control={<Radio/>} label={''}/>
-                                <FormControlLabel value='3' control={<Radio/>} label={''}/>
-                                <FormControlLabel value='4' control={<Radio/>} label={''}/>
-                                <FormControlLabel value='5' control={<Radio/>} label={''}/>
+                            <Grid strict gridColumnProperty={'repeat(5, 1fr)'}>
+                                <Radio value='1' />
+                                <Radio value='2' />
+                                <Radio value='3' />
+                                <Radio value='4' />
+                                <Radio value='5' />
                             </Grid>
                         </RadioGroup>
-                    </Grid>
 
-                    <Grid strict gridColumnProperty={'5fr 0.5fr 5fr'}>
                         <CenterBox start>6. 스타트업 커뮤니티·조직화 지원</CenterBox>
-                        <div></div>
                         <RadioGroup onChange={handleS3b3_6}>
-                            <Grid strict gridColumnProperty={'repeat(5, 1fr)'} columnGap={27}>
-                                <FormControlLabel value='1' control={<Radio/>} label={''}/>
-                                <FormControlLabel value='2' control={<Radio/>} label={''}/>
-                                <FormControlLabel value='3' control={<Radio/>} label={''}/>
-                                <FormControlLabel value='4' control={<Radio/>} label={''}/>
-                                <FormControlLabel value='5' control={<Radio/>} label={''}/>
+                            <Grid strict gridColumnProperty={'repeat(5, 1fr)'}>
+                                <Radio value='1' />
+                                <Radio value='2' />
+                                <Radio value='3' />
+                                <Radio value='4' />
+                                <Radio value='5' />
                             </Grid>
                         </RadioGroup>
-                    </Grid>
 
-                    <Grid strict gridColumnProperty={'5fr 0.5fr 5fr'}>
                         <CenterBox start>7. 시장확보의 용이성</CenterBox>
-                        <div></div>
                         <RadioGroup onChange={handleS3b3_7}>
-                            <Grid strict gridColumnProperty={'repeat(5, 1fr)'} columnGap={27}>
-                                <FormControlLabel value='1' control={<Radio/>} label={''}/>
-                                <FormControlLabel value='2' control={<Radio/>} label={''}/>
-                                <FormControlLabel value='3' control={<Radio/>} label={''}/>
-                                <FormControlLabel value='4' control={<Radio/>} label={''}/>
-                                <FormControlLabel value='5' control={<Radio/>} label={''}/>
+                            <Grid strict gridColumnProperty={'repeat(5, 1fr)'}>
+                                <Radio value='1' />
+                                <Radio value='2' />
+                                <Radio value='3' />
+                                <Radio value='4' />
+                                <Radio value='5' />
                             </Grid>
                         </RadioGroup>
-                    </Grid>
 
-                    <Grid strict gridColumnProperty={'5fr 0.5fr 5fr'}>
                         <CenterBox start>8. 거주지와의 인접성</CenterBox>
-                        <div></div>
                         <RadioGroup onChange={handleS3b3_8}>
-                            <Grid strict gridColumnProperty={'repeat(5, 1fr)'} columnGap={27}>
-                                <FormControlLabel value='1' control={<Radio/>} label={''}/>
-                                <FormControlLabel value='2' control={<Radio/>} label={''}/>
-                                <FormControlLabel value='3' control={<Radio/>} label={''}/>
-                                <FormControlLabel value='4' control={<Radio/>} label={''}/>
-                                <FormControlLabel value='5' control={<Radio/>} label={''}/>
+                            <Grid strict gridColumnProperty={'repeat(5, 1fr)'}>
+                                <Radio value='1' />
+                                <Radio value='2' />
+                                <Radio value='3' />
+                                <Radio value='4' />
+                                <Radio value='5' />
                             </Grid>
                         </RadioGroup>
-                    </Grid>
 
-                    <Grid strict gridColumnProperty={'5fr 0.5fr 5fr'}>
                         <CenterBox start>9. 인접도로와의 연결성</CenterBox>
-                        <div></div>
                         <RadioGroup onChange={handleS3b3_9}>
-                            <Grid strict gridColumnProperty={'repeat(5, 1fr)'} columnGap={27}>
-                                <FormControlLabel value='1' control={<Radio/>} label={''}/>
-                                <FormControlLabel value='2' control={<Radio/>} label={''}/>
-                                <FormControlLabel value='3' control={<Radio/>} label={''}/>
-                                <FormControlLabel value='4' control={<Radio/>} label={''}/>
-                                <FormControlLabel value='5' control={<Radio/>} label={''}/>
+                            <Grid strict gridColumnProperty={'repeat(5, 1fr)'}>
+                                <Radio value='1' />
+                                <Radio value='2' />
+                                <Radio value='3' />
+                                <Radio value='4' />
+                                <Radio value='5' />
                             </Grid>
                         </RadioGroup>
-                    </Grid>
 
-                    <Grid strict gridColumnProperty={'5fr 0.5fr 5fr'}>
                         <CenterBox start>10. 농로 구축</CenterBox>
-                        <div></div>
                         <RadioGroup onChange={handleS3b3_10}>
-                            <Grid strict gridColumnProperty={'repeat(5, 1fr)'} columnGap={27}>
-                                <FormControlLabel value='1' control={<Radio/>} label={''}/>
-                                <FormControlLabel value='2' control={<Radio/>} label={''}/>
-                                <FormControlLabel value='3' control={<Radio/>} label={''}/>
-                                <FormControlLabel value='4' control={<Radio/>} label={''}/>
-                                <FormControlLabel value='5' control={<Radio/>} label={''}/>
+                            <Grid strict gridColumnProperty={'repeat(5, 1fr)'}>
+                                <Radio value='1' />
+                                <Radio value='2' />
+                                <Radio value='3' />
+                                <Radio value='4' />
+                                <Radio value='5' />
                             </Grid>
                         </RadioGroup>
-                    </Grid>
 
-                    <Grid strict gridColumnProperty={'5fr 0.5fr 5fr'}>
                         <CenterBox start>11. 용이한 용·배수 여건</CenterBox>
-                        <div></div>
                         <RadioGroup onChange={handleS3b3_11}>
-                            <Grid strict gridColumnProperty={'repeat(5, 1fr)'} columnGap={27}>
-                                <FormControlLabel value='1' control={<Radio/>} label={''}/>
-                                <FormControlLabel value='2' control={<Radio/>} label={''}/>
-                                <FormControlLabel value='3' control={<Radio/>} label={''}/>
-                                <FormControlLabel value='4' control={<Radio/>} label={''}/>
-                                <FormControlLabel value='5' control={<Radio/>} label={''}/>
+                            <Grid strict gridColumnProperty={'repeat(5, 1fr)'}>
+                                <Radio value='1' />
+                                <Radio value='2' />
+                                <Radio value='3' />
+                                <Radio value='4' />
+                                <Radio value='5' />
                             </Grid>
                         </RadioGroup>
                     </Grid>

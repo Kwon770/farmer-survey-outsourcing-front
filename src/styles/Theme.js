@@ -10,7 +10,7 @@ export default {
     innerShadowColor: "#eaedf1",
     placeholderColor: "#AEAEAE",
 
-    blockWidth: "800px",
+    blockWidth: "830px",
     blockBorder: "8px",
     blockMargin: "20px",
     blockPadding: "25px"
