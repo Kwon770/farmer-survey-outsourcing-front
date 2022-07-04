@@ -10,7 +10,7 @@ const SectorLocal = () => {
 
     return (
         <Background>
-            <TitleBlock>데이터 체크</TitleBlock>
+            <TitleBlock>데이터 체크, 로컬</TitleBlock>
 
             <TextBlock start>
                 <pre>{JSON.stringify(JSON.parse(localStorage.getItem('sector1')), null, 2)}</pre>
