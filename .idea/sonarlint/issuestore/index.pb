@@ -41,3 +41,11 @@ G
 src/pages/OldSector5.js,8/4/848761a8b89db28e4cfc17e0bf98a895b05dd717
 D
 src/pages/Sector3.js,3/3/33a6d55cc226c68f542289e7a2e4770676f9d9fb
+N
+src/components/SectorFooter.js,d/e/de28fae61b3d617ca69c701426921ed427573793
+C
+src/pages/Submit.js,c/e/ce7c5eec75d64faba78967b88adfecf67ef54f5c
+4
+.env,3/c/3c84dcdc6bbe3d7817c49dcdc327b926fea1808a
+D
+src/pages/Sector4.js,c/2/c298ab446dd7aa2cfce447025cd79e13061ab6e8

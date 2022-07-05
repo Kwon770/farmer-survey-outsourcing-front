@@ -331,12 +331,12 @@ const Sector1 = () => {
         }
 
         saveSector1Data()
-        if (s1b5 === '1') {
-            localStorage.setItem("farmer", "true");
-            navigate('/2')
-        } else if (s1b5 === '2') {
+        if (s1b5 === '2') {
             localStorage.setItem("farmer", "false");
             navigate('/3');
+        } else {
+            localStorage.setItem("farmer", "true");
+            navigate('/2')
         }
     }
 
