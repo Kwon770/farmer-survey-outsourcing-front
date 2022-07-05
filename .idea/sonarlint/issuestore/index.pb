@@ -37,8 +37,6 @@ G
 src/pages/OldSector2.js,3/d/3dd0dc5785abd7cbbd932d4b885dcd974581ae48
 G
 src/pages/OldSector5.js,8/4/848761a8b89db28e4cfc17e0bf98a895b05dd717
-D
-src/pages/Sector3.js,3/3/33a6d55cc226c68f542289e7a2e4770676f9d9fb
 N
 src/components/SectorFooter.js,d/e/de28fae61b3d617ca69c701426921ed427573793
 4
