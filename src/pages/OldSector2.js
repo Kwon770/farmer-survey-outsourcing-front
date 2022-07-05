@@ -10,7 +10,7 @@ import ColorCenterBlock from "../components/ColorCenterBlock";
 import CenterBox from "../components/CenterBox";
 import SectorFooter from "../components/SectorFooter";
 
-const Pector2 = () => {
+const OldSector2 = () => {
     const navigate = useNavigate();
     const [alertOpen, setAlertOpen] = useState(false);
 
@@ -606,4 +606,4 @@ const Pector2 = () => {
     )
 }
 
-export default Pector2;
+export default OldSector2;

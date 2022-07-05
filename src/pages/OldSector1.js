@@ -17,7 +17,7 @@ import SectorFooter from "../components/SectorFooter";
 import {getAllDosis, getSigungus, getUpmeongdong} from "../api/KoreanLocation";
 import Grid from "../components/Grid";
 
-const Pector1 = () => {
+const OldSector1 = () => {
     const navigate = useNavigate();
     const [alertOpen, setAlertOpen] = useState(false);
     const [s1b1, setS1b1] = useState('');
@@ -552,4 +552,4 @@ const BoldText = styled.div`
   font-weight: bold;
 `
 
-export default Pector1;
+export default OldSector1;

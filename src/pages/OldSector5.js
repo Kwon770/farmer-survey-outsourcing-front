@@ -23,7 +23,7 @@ import CenterBox from "../components/CenterBox";
 import Grid from "../components/Grid";
 import GridImg from "../components/GridImg";
 
-const Pector5 = () => {
+const OldSector5 = () => {
     const navigate = useNavigate();
     const theme = useTheme();
     const fullScreen = useMediaQuery(theme.breakpoints.down('md'));
@@ -1052,4 +1052,4 @@ const Pector5 = () => {
     )
 }
 
-export default Pector5;
+export default OldSector5;

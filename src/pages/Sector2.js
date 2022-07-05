@@ -22,12 +22,15 @@ import SectorFooter from "../components/SectorFooter";
 const Sector2 = () => {
     const navigate = useNavigate();
     const [alertOpen, setAlertOpen] = useState(false);
+    const [farmer, setFarmer] = useState("");
 
-    // useEffect(() => {
+    useEffect(() => {
+        setFarmer(localStorage.getItem("farmer"));
+
     //     if (localStorage.getItem('sector1') === null) {
     //         movePreviousSector();
     //     }
-    // }, [])
+    }, [])
 
 
     useEffect(() => {
@@ -761,7 +764,7 @@ const Sector2 = () => {
             }
 
 
-            <SectorFooter sector={2} movePreviousSector={movePreviousSector} moveNextSector={moveNextSector}
+            <SectorFooter farmer={farmer} sector={2} movePreviousSector={movePreviousSector} moveNextSector={moveNextSector}
                           alertOpen={alertOpen} setAlertOpen={setAlertOpen}/>
         </Background>
     )

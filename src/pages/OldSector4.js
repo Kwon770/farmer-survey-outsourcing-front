@@ -8,7 +8,7 @@ import {Checkbox, FormControl, FormControlLabel, Radio, RadioGroup} from "@mui/m
 import QuestionBlock from "../components/QuestionBlock";
 import Grid from "../components/Grid";
 
-const Pector4 = () => {
+const OldSector4 = () => {
     const navigate = useNavigate();
     const [alertOpen, setAlertOpen] = useState(false);
 
@@ -155,4 +155,4 @@ const Pector4 = () => {
     )
 }
 
-export default Pector4;
+export default OldSector4;

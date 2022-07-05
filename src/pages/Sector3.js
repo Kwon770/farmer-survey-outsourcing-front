@@ -10,7 +10,7 @@ import {
     RadioGroup,
     TextField,
     Checkbox,
-    Stack
+    Stack, DialogTitle, DialogActions, Dialog
 } from "@mui/material";
 import Background from "../components/Background";
 import TitleBlock from "../components/TitleBlock";
@@ -25,12 +25,16 @@ import GridImg from "../components/GridImg";
 const Sector3 = () => {
     const navigate = useNavigate();
     const [alertOpen, setAlertOpen] = useState(false);
+    const [submitDialogOpen, setSubmitDialogOpen] = useState(false);
+    const [farmer, setFarmer] = useState("");
 
-    // useEffect(() => {
+    useEffect(() => {
+        setFarmer(localStorage.getItem("farmer"));
+
     //     if (localStorage.getItem('sector3') === null) {
     //         movePreviousSector();
     //     }
-    // }, [])
+    }, [])
 
 
     const [s3b1, setS3b1] = useState('');
@@ -323,16 +327,36 @@ const Sector3 = () => {
     }
 
     const movePreviousSector = () => {
-        navigate('/2');
+        if (farmer === "true") {
+            navigate('/2');
+        } else if (farmer === "false") {
+            navigate('/1');
+        }
     }
+
+    const handleSubmitDialogOpen = () => {
+        setSubmitDialogOpen(true);
+    }
+    const handleSubmitDialogClose = () => {
+        setSubmitDialogOpen(false);
+    }
+
     const moveNextSector = () => {
         if (!validateAllWritten()) {
-            setAlertOpen(true)
-            return
+            setAlertOpen(true);
+            return;
         }
 
         saveSector3Data()
-        navigate('/4')
+        if (farmer === "true") {
+            navigate('/4');
+        } else if (farmer === "false") {
+            handleSubmitDialogOpen();
+        }
+    }
+
+    const submitSurvey = () => {
+        navigate('/submit');
     }
 
     return (
@@ -856,7 +880,20 @@ const Sector3 = () => {
             }
 
 
-            <SectorFooter sector={3} movePreviousSector={movePreviousSector} moveNextSector={moveNextSector} alertOpen={alertOpen} setAlertOpen={setAlertOpen}/>
+            <SectorFooter farmer={farmer} sector={3} last={farmer === "false"} movePreviousSector={movePreviousSector} moveNextSector={moveNextSector} alertOpen={alertOpen} setAlertOpen={setAlertOpen}/>
+            <Dialog open={submitDialogOpen} onClose={handleSubmitDialogClose}>
+                <DialogTitle>
+                    설문조사를 제출하시겠습니까?
+                </DialogTitle>
+                <DialogActions>
+                    <Button autoFocus onClick={handleSubmitDialogClose}>
+                        아니오
+                    </Button>
+                    <Button onClick={submitSurvey} autoFocus>
+                        네
+                    </Button>
+                </DialogActions>
+            </Dialog>
         </Background>
     )
 }

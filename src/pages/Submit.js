@@ -9,12 +9,15 @@ import axios from 'axios';
 
 const Submit = () => {
     const navigate = useNavigate();
+    const [farmer, setFarmer] = useState("");
 
     const [open, setOpen] = useState(true);
     const [error, setError] = useState(false);
     const [hmm, setHmm] = useState(false);
 
     useEffect(() => {
+        setFarmer(localStorage.getItem("farmer"));
+
         submitSurvey();
         setOpen(false);
     }, [])
@@ -22,9 +25,9 @@ const Submit = () => {
     async function submitSurvey() {
         if (
             localStorage.getItem('sector1') === null ||
-            localStorage.getItem('sector2') === null ||
+            (farmer === "true" && localStorage.getItem('sector2') === null) ||
             localStorage.getItem('sector3') === null ||
-            localStorage.getItem('sector4') === null
+            (farmer === "true" && localStorage.getItem('sector4') === null)
         ) {
             setHmm(true);
             return;
@@ -36,13 +39,55 @@ const Submit = () => {
         const sector1Data = JSON.parse(localStorage.getItem('sector1'));
         Object.assign(surveyData, sector1Data);
 
-        const sector2Data = JSON.parse(localStorage.getItem('sector2'));
+
+        let sector2Data;
+        if (farmer === "true") {
+            sector2Data = JSON.parse(localStorage.getItem('sector2'));
+        } else if (farmer === "false") {
+            sector2Data = {
+                's2b1_1': "",
+                's2b1_2': "",
+                's2b1_3': "",
+                's2b1_4': "",
+                's2b1_5': "",
+                's2b2': "",
+                's2b3b1_1': "",
+                's2b3b1_2': "",
+                's2b3b1_3': "",
+                's2b3b1_4': "",
+                's2b3b1_5': "",
+                's2b3b2_1': "",
+                's2b3b2_2': "",
+                's2b3b3': "",
+                's2b4': "",
+                's2b4b1_1': "",
+                's2b4b1_2': "",
+                's2b4b2_1': "",
+                's2b4b2_2': ""
+            }
+        }
         Object.assign(surveyData, sector2Data);
+
 
         const sector3Data = JSON.parse(localStorage.getItem('sector3'));
         Object.assign(surveyData, sector3Data);
 
-        const sector4Data = JSON.parse(localStorage.getItem('sector4'));
+
+
+        let sector4Data;
+        if (farmer === "true") {
+            sector4Data = JSON.parse(localStorage.getItem('sector4'));
+        } else if (farmer === "false") {
+            sector4Data = {
+                's4b1': "",
+                's4b2': "",
+                's4b2b1': "",
+                's4b2b2_1': "",
+                's4b2b2_2': "",
+                's4b2b3': "",
+                's4b3': ""
+            }
+        }
         Object.assign(surveyData, sector4Data);
 
 

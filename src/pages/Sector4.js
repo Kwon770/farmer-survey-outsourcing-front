@@ -4,7 +4,18 @@ import {useNavigate} from "react-router-dom";
 import Background from "../components/Background";
 import TitleBlock from "../components/TitleBlock";
 import SectorFooter from "../components/SectorFooter";
-import {Checkbox, FormControl, FormControlLabel, Radio, RadioGroup, Stack, TextField} from "@mui/material";
+import {
+    Button,
+    Checkbox, Dialog,
+    DialogActions,
+    DialogTitle,
+    FormControl,
+    FormControlLabel,
+    Radio,
+    RadioGroup,
+    Stack,
+    TextField, useMediaQuery
+} from "@mui/material";
 import QuestionBlock from "../components/QuestionBlock";
 import Grid from "../components/Grid";
 import CenterBox from "../components/CenterBox";
@@ -12,12 +23,16 @@ import CenterBox from "../components/CenterBox";
 const Sector4 = () => {
     const navigate = useNavigate();
     const [alertOpen, setAlertOpen] = useState(false);
+    const [submitDialogOpen, setSubmitDialogOpen] = useState(false);
+    const [farmer, setFarmer] = useState("");
 
-    // useEffect(() => {
+    useEffect(() => {
+        setFarmer(localStorage.getItem("farmer"));
+
     //     if (localStorage.getItem('sector4') === null) {
     //         movePreviousSector();
     //     }
-    // }, [])
+    }, [])
 
 
     const [s4b1, setS4b1] = useState('');
@@ -157,6 +172,13 @@ const Sector4 = () => {
         navigate('/3');
     }
 
+    const handleSubmitDialogOpen = () => {
+        setSubmitDialogOpen(true);
+    }
+    const handleSubmitDialogClose = () => {
+        setSubmitDialogOpen(false);
+    }
+
     const moveNextSector = () => {
         if (!validateAllWritten()) {
             setAlertOpen(true)
@@ -164,9 +186,12 @@ const Sector4 = () => {
         }
 
         saveSector4Data()
-        navigate('/submit');
+        handleSubmitDialogOpen();
     }
 
+    const submitSurvey = () => {
+        navigate('/submit');
+    }
 
     return (
         <Background>
@@ -297,7 +322,20 @@ const Sector4 = () => {
             </QuestionBlock>
 
 
-            <SectorFooter sector={4} movePreviousSector={movePreviousSector} moveNextSector={moveNextSector} alertOpen={alertOpen} setAlertOpen={setAlertOpen}/>
+            <SectorFooter farmer={farmer} sector={4} last={true} movePreviousSector={movePreviousSector} moveNextSector={moveNextSector} alertOpen={alertOpen} setAlertOpen={setAlertOpen}/>
+            <Dialog open={submitDialogOpen} onClose={handleSubmitDialogClose}>
+                <DialogTitle>
+                    설문조사를 제출하시겠습니까?
+                </DialogTitle>
+                <DialogActions>
+                    <Button autoFocus onClick={handleSubmitDialogClose}>
+                        아니오
+                    </Button>
+                    <Button onClick={submitSurvey} autoFocus>
+                        네
+                    </Button>
+                </DialogActions>
+            </Dialog>
         </Background>
     )
 }
