@@ -7,8 +7,6 @@ import HelpOutlineIcon from '@mui/icons-material/HelpOutline';
 import axios from 'axios';
 
 const Submit = () => {
-    const [farmer, setFarmer] = useState('');
-
     const [open, setOpen] = useState(true);
     const [error, setError] = useState(false);
     const [hmm, setHmm] = useState(false);
@@ -20,7 +18,7 @@ const Submit = () => {
     }, [])
 
     async function submitSurvey() {
-        setFarmer(localStorage.getItem("farmer"));
+        const farmer = localStorage.getItem("farmer");
 
 
         if (

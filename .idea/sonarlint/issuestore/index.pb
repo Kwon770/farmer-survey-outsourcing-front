@@ -33,8 +33,6 @@ H
 :
 
 src/App.js,1/e/1e43fa63aecd2127be034b3fb9d4caa172275714
-I
-src/pages/SectorServer.js,9/c/9cea1a6d99b51f3b9c22ccdf4703a7c612714436
 G
 src/pages/OldSector2.js,3/d/3dd0dc5785abd7cbbd932d4b885dcd974581ae48
 G
@@ -43,8 +41,6 @@ D
 src/pages/Sector3.js,3/3/33a6d55cc226c68f542289e7a2e4770676f9d9fb
 N
 src/components/SectorFooter.js,d/e/de28fae61b3d617ca69c701426921ed427573793
-C
-src/pages/Submit.js,c/e/ce7c5eec75d64faba78967b88adfecf67ef54f5c
 4
 .env,3/c/3c84dcdc6bbe3d7817c49dcdc327b926fea1808a
 D
