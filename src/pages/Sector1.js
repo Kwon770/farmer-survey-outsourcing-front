@@ -704,7 +704,7 @@ const Sector1 = () => {
                 </FormControl>
             </SmallQuestionBlock>
 
-            <SectorFooter sector={1} moveNextSector={moveNextSector} alertOpen={alertOpen}
+            <SectorFooter farmer={"true"} sector={1} moveNextSector={moveNextSector} alertOpen={alertOpen}
                           setAlertOpen={setAlertOpen}/>
         </Background>
     )
