@@ -17,14 +17,14 @@ const SectorFooter = ({farmer, last, sector, movePreviousSector, moveNextSector,
 
             <Stepper activeStep={sector - 1} alternativeLabel>
                 {
-                    farmer === "true" ? (
-                        farmerSteps.map((label) => (
-                                <Step key={label}>
-                                    <StepLabel>{label}</StepLabel>
-                                </Step>
-                            ))
-                    ) : (
+                    farmer === "false" ? (
                         notFarmerSteps.map((label) => (
+                            <Step key={label}>
+                                <StepLabel>{label}</StepLabel>
+                            </Step>
+                        ))
+                    ) : (
+                        farmerSteps.map((label) => (
                                 <Step key={label}>
                                     <StepLabel>{label}</StepLabel>
                                 </Step>
