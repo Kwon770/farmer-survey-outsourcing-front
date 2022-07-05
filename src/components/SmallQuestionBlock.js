@@ -29,8 +29,8 @@ const Block = styled.div`
 `;
 
 const Title = styled.div`
-  width: 23%;
-  padding-right: 10px;
+  width: 22%;
+  padding-right: 9px;
   border-right: 3px solid ${(props) => props.theme.innerShadowColor};
 
   text-align: start;
