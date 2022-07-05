@@ -562,8 +562,8 @@ const Sector2 = () => {
                     >
                         <Grid strict gridColumnProperty={"10fr 10fr 10fr 1fr"} rowGap={10} columnGap={10}>
                             <ColorCenterBlock>구분</ColorCenterBlock>
-                            <ColorCenterBlock>확대하고자 하는 전체 영농 면적<br/>(경작, 사육)</ColorCenterBlock>
-                            <ColorCenterBlock>확대할 면적 중 임차 농지<br/>(자경지 제외)</ColorCenterBlock>
+                            <ColorCenterBlock>확대하고자 하는<br/>전체 영농 면적<br/>(경작, 사육)</ColorCenterBlock>
+                            <ColorCenterBlock>확대할 면적 중<br/>임차 농지<br/>(자경지 제외)</ColorCenterBlock>
                             <div/>
 
                             {
@@ -696,11 +696,6 @@ const Sector2 = () => {
                         <FormControl fullWidth>
                             <Grid gridColumnProperty={"repeat(2,1fr)"}>
 
-                                <CenterBox size={20} weight={500} padding={20}>1순위 :&nbsp;&nbsp;
-                                    <strong>{s2b4b1_1}</strong></CenterBox>
-                                <CenterBox size={20} weight={500} padding={20}>2순위 :&nbsp;&nbsp;
-                                    <strong>{s2b4b1_2}</strong></CenterBox>
-
                                 <FormControlLabel
                                     control={<Checkbox name='1' checked={s2b4b1Data[1]} onChange={handleS2b4b1}/>}
                                     label='1. 영농소득을 늘리기 위해서'/>
@@ -719,6 +714,13 @@ const Sector2 = () => {
                                 <FormControlLabel
                                     control={<Checkbox name='6' checked={s2b4b1Data[6]} onChange={handleS2b4b1}/>}
                                     label='6. 농기계·설비 확충을 위한 적정 면적확보'/>
+
+                                <CenterBox size={20} weight={500} padding={20}>
+                                    1순위 :&nbsp;&nbsp;(&nbsp;<strong>{s2b4b1_1}</strong>&nbsp;)
+                                </CenterBox>
+                                <CenterBox size={20} weight={500} padding={20}>
+                                    2순위 :&nbsp;&nbsp;(&nbsp;<strong>{s2b4b1_2}</strong>&nbsp;)
+                                </CenterBox>
                             </Grid>
                         </FormControl>
                     </QuestionBlock>
@@ -733,11 +735,6 @@ const Sector2 = () => {
                     <QuestionBlock title={<div>2-4-2. 귀하는 유휴농지를 활용할 의향이 없다면, 그 이유는 무엇입니까?</div>}>
                         <FormControl fullWidth>
                             <Grid gridColumnProperty={"repeat(2,1fr)"}>
-
-                                <CenterBox size={20} weight={500} padding={20}>1순위 :&nbsp;&nbsp;
-                                    <strong>{s2b4b2_1}</strong></CenterBox>
-                                <CenterBox size={20} weight={500} padding={20}>2순위 :&nbsp;&nbsp;
-                                    <strong>{s2b4b2_2}</strong></CenterBox>
 
                                 <FormControlLabel
                                     control={<Checkbox name='1' checked={s2b4b2Data[1]} onChange={handleS2b4b2}/>}
@@ -757,6 +754,13 @@ const Sector2 = () => {
                                 <FormControlLabel
                                     control={<Checkbox name='6' checked={s2b4b2Data[6]} onChange={handleS2b4b2}/>}
                                     label='6. 야생동물이 자주 출몰해서'/>
+
+                                <CenterBox size={20} weight={500} padding={20}>
+                                    1순위 :&nbsp;&nbsp;(&nbsp;<strong>{s2b4b2_1}</strong>&nbsp;)
+                                </CenterBox>
+                                <CenterBox size={20} weight={500} padding={20}>
+                                    2순위 :&nbsp;&nbsp;(&nbsp;<strong>{s2b4b2_2}</strong>&nbsp;)
+                                </CenterBox>
                             </Grid>
                         </FormControl>
                     </QuestionBlock>

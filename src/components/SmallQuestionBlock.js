@@ -29,12 +29,12 @@ const Block = styled.div`
 `;
 
 const Title = styled.div`
-  width: 22%;
+  width: 23%;
   padding-right: 10px;
   border-right: 3px solid ${(props) => props.theme.innerShadowColor};
 
   text-align: start;
-  font-size: 19px;
+  font-size: 18px;
   font-weight: normal;
   color: ${(props) => props.theme.titleFontColor};
 `

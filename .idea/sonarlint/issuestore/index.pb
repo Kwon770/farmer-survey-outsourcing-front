@@ -11,12 +11,6 @@ I
 src/components/GridImg.js,1/f/1f992c69586d43621d8683113c723e5871036ec4
 >
 src/Sector2.js,3/6/36c430a27d1ceb4e128cdbcb9b767ef477e06553
-D
-src/pages/Pector4.js,1/5/1512a74ed2efebea0a1f70724fd13c97032f4991
-D
-src/pages/Pector3.js,6/e/6e5d17f84ec8fea24a0918b7b39a9ecc65a8f553
-T
-$src/components/SmallQuestionBlock.js,c/2/c2d26c6088782c97f0fa4b9342911a6686e6183b
 K
 src/components/CenterBox.js,7/4/7445fd8bc687df889b9d95399f86103ead930204
 9
@@ -26,8 +20,6 @@ R
 :
 
 .gitignore,a/5/a5cc2925ca8258af241be7e5b0381edf30266302
-D
-src/pages/Pector1.js,2/f/2fd0910444a61d3d01765f4eba3210c8a0e15bec
 <
 package.json,7/0/7030d0b2f71b999ff89a343de08c414af32fc93a
 L
@@ -36,8 +28,6 @@ C
 src/styles/Theme.js,a/2/a2a8cd67cc67e04d2101c0e95da09147b5c5e2b2
 I
 src/api/KoreanLocation.js,1/c/1cc8a75cded9c3cb56c58d6919069d552aca3313
-O
-src/components/QuestionBlock.js,3/1/31bfe298785ed66669ff3615467a716118237ce5
 H
 src/pages/SectorLocal.js,8/c/8c763758011504c111f5e999b73528bcda27f804
 :
@@ -45,3 +35,9 @@ H
 src/App.js,1/e/1e43fa63aecd2127be034b3fb9d4caa172275714
 I
 src/pages/SectorServer.js,9/c/9cea1a6d99b51f3b9c22ccdf4703a7c612714436
+G
+src/pages/OldSector2.js,3/d/3dd0dc5785abd7cbbd932d4b885dcd974581ae48
+G
+src/pages/OldSector5.js,8/4/848761a8b89db28e4cfc17e0bf98a895b05dd717
+D
+src/pages/Sector3.js,3/3/33a6d55cc226c68f542289e7a2e4770676f9d9fb
