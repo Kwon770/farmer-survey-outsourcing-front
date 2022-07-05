@@ -40,8 +40,8 @@ const Title = styled.div`
 `
 
 const Content = styled.div`
-  width: 82%;
-  padding-left: 20px;
+  width: 78%;
+  padding-left: 15px;
 
   font-size: 16px;
   font-weight: normal;
