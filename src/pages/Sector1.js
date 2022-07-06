@@ -90,11 +90,16 @@ const Sector1 = () => {
         getDosis();
     }, []);
     const handleS1b3_1 = async (e) => {
+        setS1b3_2('');
+        setS1b3_3('');
+
         setS1b3_1(e.target.value);
         const dosiCode = dosis[e.target.value].code;
         setSigungus(await getSigungus(dosiCode));
     }
     const handleS1b3_2 = async (e) => {
+        setS1b3_3('');
+
         setS1b3_2(e.target.value);
         const sigunguCode = sigungus[e.target.value].code;
         setUpmeongdongs(await getUpmeongdong(sigunguCode));
