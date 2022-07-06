@@ -39,16 +39,19 @@ export async function getSigungus(dosiCode) {
 
 export async function getUpmeongdong(sigunguCode) {
     const response = await axios.get(process.env.REACT_APP_KOREAN_LOCATION_API_URL + sigunguCode.substring(0,4) + '*00')
-    console.log(sigunguCode.substring(0,5) + '*00');
 
     return response.data.regcodes.map((element) => {
         const names = element.name.split(' ');
         let name = "";
-        names.forEach((n, idx) => {
-            if (idx >= 2) {
-                name += n + " ";
-            }
-        })
+        if (names.length >= 3) {
+            names.forEach((n, idx) => {
+                if (idx >= 2) {
+                    name += n + " ";
+                }
+            })
+        } else {
+            name = names[1];
+        }
 
         return {
             code: element.code,
