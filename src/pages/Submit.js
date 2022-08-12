@@ -5,6 +5,7 @@ import CheckCircleOutlineIcon from '@mui/icons-material/CheckCircleOutline';
 import ErrorOutlineIcon from '@mui/icons-material/ErrorOutline';
 import HelpOutlineIcon from '@mui/icons-material/HelpOutline';
 import axios from 'axios';
+import {browserName} from "react-device-detect";
 
 const Submit = () => {
     const [open, setOpen] = useState(true);
@@ -89,14 +90,39 @@ const Submit = () => {
         }
 
 
-        const response = await axios.post(process.env.REACT_APP_SERVER_API_URL + "/submit?secret=" + process.env.REACT_APP_SERVER_SECRET, surveyData);
-        console.log(response);
+        const url = encodeURI(process.env.REACT_APP_SERVER_API_URL + "/submit?secret=" + process.env.REACT_APP_SERVER_SECRET);
+        const response = await axios.post(url, surveyData);
+        let err = false;
         if (response === undefined || response === null || response?.data === undefined || response?.data === null) {
-            setError(true);
+            err = true;
         }
 
 
-        localStorage.clear();
+        if (err) {
+            await axios.post(encodeURI(process.env.REACT_APP_API_URL + "/log"), {}, {
+                params: {
+                    broken: true,
+                    browser: browserName,
+                    url: url,
+                    number: sector1Data.s1b12,
+                    first: sector1Data.s1b1,
+                }
+            });
+        } else {
+            await axios.post(encodeURI(process.env.REACT_APP_API_URL + "/log"), {}, {
+                params: {
+                    broken: false,
+                    browser: browserName,
+                    url: url,
+                    number: sector1Data.s1b12,
+                    first: sector1Data.s1b1,
+                }
+            });
+
+            localStorage.clear();
+        }
+
+        setError(err);
     }
 
     return (

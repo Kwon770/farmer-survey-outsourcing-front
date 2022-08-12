@@ -4,7 +4,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2f3c6d04-6c48-474a-bece-c0372766d535" name="Changes" comment="" />
+    <list default="true" id="2f3c6d04-6c48-474a-bece-c0372766d535" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/1/e/1e43fa63aecd2127be034b3fb9d4caa172275714" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/a/2/a2a8cd67cc67e04d2101c0e95da09147b5c5e2b2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/Sector1.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Sector1.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/Submit.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Submit.js" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -12,6 +21,9 @@
   </component>
   <component name="ComposerSettings">
     <execution />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -90,7 +102,25 @@
       <workItem from="1656983009093" duration="3943000" />
       <workItem from="1656987237005" duration="1617000" />
       <workItem from="1657023383732" duration="3539000" />
-      <workItem from="1657092309418" duration="2715000" />
+      <workItem from="1657092309418" duration="2829000" />
+      <workItem from="1657119526500" duration="383000" />
+      <workItem from="1657247574723" duration="48000" />
+      <workItem from="1657282404719" duration="1517000" />
+      <workItem from="1657287286379" duration="951000" />
+      <workItem from="1657502682474" duration="74000" />
+      <workItem from="1657520405771" duration="589000" />
+      <workItem from="1658211201880" duration="215000" />
+      <workItem from="1658408887979" duration="8099000" />
+      <workItem from="1658460496708" duration="544000" />
+      <workItem from="1658841170222" duration="13000" />
+      <workItem from="1658845796594" duration="36000" />
+      <workItem from="1658984024762" duration="12000" />
+      <workItem from="1658984120173" duration="644000" />
+      <workItem from="1658991761028" duration="598000" />
+      <workItem from="1659094127256" duration="439000" />
+      <workItem from="1659337431042" duration="805000" />
+      <workItem from="1660290104479" duration="68000" />
+      <workItem from="1660294811632" duration="151000" />
     </task>
     <servers />
   </component>

@@ -257,7 +257,7 @@ const Sector1 = () => {
         setS1b12_3(value);
     }
 
-    const validateAllWritten = () => {
+     const validateAllWritten = () => {
         if (
             s1b1 === '' ||
             s1b2 === '' ||
